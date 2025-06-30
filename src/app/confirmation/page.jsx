@@ -1,5 +1,7 @@
 "use client";
 
+import { Suspense } from "react";
+
 export const dynamic = "force-dynamic";
 
 import { useRouter, useSearchParams } from "next/navigation";
@@ -12,7 +14,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 // import html2pdf from "html2pdf.js";
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
     const router = useRouter();
     const params = useSearchParams();
     const data = params.get("data");
@@ -246,5 +248,13 @@ export default function ConfirmationPage() {
                 ))}
             </div>
         </div>
+    );
+}
+
+export default function ConfirmationPage() {
+    return (
+        <Suspense fallback={<div className="text-white p-8 text-center">Loading reservation details...</div>}>
+            <ConfirmationContent />
+        </Suspense>
     );
 }

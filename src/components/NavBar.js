@@ -44,7 +44,6 @@ export default function NavBar() {
 
 
     const handleLanguageSelect = (code) => {
-        console.log('setLanguage', code);
         setLanguage(code);
         i18n.changeLanguage(code);
     };

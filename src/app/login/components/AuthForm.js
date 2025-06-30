@@ -3,13 +3,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaEnvelope, FaUserPlus, FaSignInAlt } from "react-icons/fa";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function AuthForm() {
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const redirect = searchParams.get('redirect') || '/';
-
     const [isLogin, setIsLogin] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);

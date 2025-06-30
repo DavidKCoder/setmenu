@@ -6,21 +6,19 @@ import Testimonials from "@/components/Testimonials";
 import NavBar from "@/components/NavBar";
 import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
-import EventPlanning from "@/components/EventPlanning";
+import { Suspense } from "react";
 
 export default function Home() {
     return (
         <>
             <NavBar />
-            <Hero />
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+                <Hero />
+            </Suspense>
 
             <section id="categories">
                 <Categories />
             </section>
-
-            {/*<section id="eventPlanning">*/}
-            {/*    <EventPlanning />*/}
-            {/*</section>*/}
 
             <section id="our-story">
                 <OurStory />

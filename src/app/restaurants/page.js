@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { restaurants } from "@/constants/restaurants";
 import RestaurantCard from "@/app/restaurants/components/RestaurantCard";
 import Link from "next/link";
@@ -50,10 +50,12 @@ export default function AllRestaurantsPage() {
                         All Restaurants
                     </h1>
                     <div className="relative max-w-6xl mx-auto">
-                        <RestaurantSearchBar
-                            restaurants={restaurants}
-                            onResults={setFilteredRestaurants}
-                        />
+                        <Suspense fallback={<div>Loading search...</div>}>
+                            <RestaurantSearchBar
+                                restaurants={restaurants}
+                                onResults={setFilteredRestaurants}
+                            />
+                        </Suspense>
                     </div>
                 </section>
                 <div className="ova-section relative h-56 text-center flex flex-col items-center justify-center">
@@ -61,7 +63,7 @@ export default function AllRestaurantsPage() {
                         className={`text-orange-500 text-4xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
-                        Reserve your favorite restaurants
+                    Reserve your favorite restaurants
                     </div>
 
                     <div
