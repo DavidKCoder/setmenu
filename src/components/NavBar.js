@@ -52,8 +52,8 @@ export default function NavBar() {
                 {/* Logo */}
                 <Link href="/" passHref>
                     <div className="flex items-center text-sm gap-2 cursor-pointer">
-                        <Image src="/logo.webp" alt="logo" width="35" height="35" className="object-cover" />
-                        <div className="text-3xl font-bold text-white select-none">SetMenu</div>
+                        <Image src="/logo.webp" alt="logo" width="35" height="35" className="object-cover w-6 h-6 sm:w-10 sm:h-10" />
+                        <div className="text-xl sm:text-3xl font-bold text-white select-none">SetMenu</div>
                     </div>
                 </Link>
 
