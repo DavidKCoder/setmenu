@@ -9,10 +9,7 @@ import { useSearchParams } from "next/navigation";
 export default function MenuPage({ params }) {
     const { slug } = use(params);
     const searchParams = useSearchParams();
-    const eventDate = searchParams.get("date");
-    const eventType = searchParams.get("event");
     const variantType = searchParams.get("variant");
-    const personCount = searchParams.get("people");
 
     const restaurant = restaurants.find(r => r.slug === slug);
 
@@ -28,9 +25,6 @@ export default function MenuPage({ params }) {
             />
             <Menu
                 restaurant={restaurant}
-                eventType={eventType}
-                personCount={personCount}
-                eventDate={eventDate}
                 selectedVariant={selectedVariant}
             />
         </div>

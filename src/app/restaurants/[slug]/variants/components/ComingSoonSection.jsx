@@ -15,8 +15,8 @@ export default function ComingSoonSection() {
                 backgroundSize: "cover",
             }}
         >
-            <div className="ova-section bg-white relative h-56 text-center flex flex-col items-center justify-center">
-                <div className={`text-4xl text-secondary uppercase ${forum_splash.className}`}>
+            <div className="ova-section bg-white relative h-56 text-center flex flex-col items-center justify-center px-2">
+                <div className={`text-2xl sm:text-4xl text-secondary uppercase ${forum_splash.className}`}>
                     {t("chefWorking")}
                 </div>
 

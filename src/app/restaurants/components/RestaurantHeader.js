@@ -60,7 +60,7 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                 </div>
 
                 {/* Dropdown section*/}
-                <div className="bg-white justify-center z-50">
+                <div className="bg-white z-50">
                     <div className="flex items-center justify-center">
                         <div className="relative inline-block text-left dropdown">
                         <span className="rounded-md shadow-sm">
@@ -80,18 +80,23 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                                 >
                                     <button
                                         onClick={handleEmail}
-                                        className="w-full px-4 py-3 flex items-center gap-2 hover:bg-gray-100 text-gray-700 text-sm"
+                                        className="w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 text-gray-700 text-sm text-right sm:text-left"
                                     >
                                         <MdOutlineMail className="text-lg" />
-                                        <span>Email</span>
+                                        <span className="text-right sm:text-left">Email</span>
                                     </button>
+
                                     <button
                                         onClick={handleCopyLink}
-                                        className={`w-full px-4 py-3 flex items-center gap-2 hover:bg-gray-100 ${copied ? "text-green-500" : "text-gray-700"} text-sm`}
+                                        className={`w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 ${
+                                            copied ? "text-green-500" : "text-gray-700"
+                                        } text-sm text-right sm:text-left`}
                                     >
                                         <BsLink45Deg className="text-lg" />
-                                        <span>{copied ? "Link copied!" : "Copy link"}</span>
+                                        <span
+                                            className="text-right sm:text-left">{copied ? "Link copied!" : "Copy link"}</span>
                                     </button>
+
                                 </div>
                             </div>
                         </div>

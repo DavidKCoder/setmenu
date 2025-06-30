@@ -2,7 +2,7 @@
 
 import React, { use } from "react";
 import { restaurants } from "@/constants/restaurants";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import MenuVariantCard from "@/app/restaurants/[slug]/variants/components/MenuVariantCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,19 +13,14 @@ import ComingSoonSection from "@/app/restaurants/[slug]/variants/components/Comi
 export default function MenuVariantSelector({ params }) {
     const router = useRouter();
     const { t } = useTranslation();
-    const searchParams = useSearchParams();
     const { slug } = use(params);
-
-    const eventType = searchParams.get("event");
-    const peopleCount = searchParams.get("people");
-    const eventDate = searchParams.get("date");
 
     const restaurant = restaurants.find(r => r.slug === slug);
 
     const onSelectVariant = (variant) => {
         const isLoggedIn = localStorage.getItem("token");
 
-        const nextUrl = `/restaurants/${slug}/menu?event=${eventType}&people=${peopleCount}&date=${eventDate}&variant=${variant}`;
+        const nextUrl = `/restaurants/${slug}/menu?variant=${variant}`;
 
         if (!isLoggedIn) {
             router.push(`/login?redirect=${encodeURIComponent(nextUrl)}`);
@@ -65,9 +60,7 @@ export default function MenuVariantSelector({ params }) {
                     {restaurant?.menuVariants.map((variant) => (
                         <MenuVariantCard
                             key={variant.id}
-                            slug={slug}
                             variant={variant}
-                            categories={restaurant.categories}
                             onSelectVariant={onSelectVariant}
                         />
                     ))}

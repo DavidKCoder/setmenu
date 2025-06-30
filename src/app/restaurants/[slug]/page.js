@@ -17,7 +17,7 @@ export default function RestaurantPage({ params }) {
     if (!restaurant) return <div className="p-12 text-center text-xl">Restaurant not found</div>;
 
     return (
-        <main className="px-3 py-4 bg-white text-black max-w-6xl mx-auto">
+        <main className="px-3 py-2 sm:py-4 md:py-4 bg-white text-black max-w-6xl mx-auto">
             <RestaurantHeader {...restaurant} />
             <RestaurantGallery mainImage={restaurant.mainImage} images={restaurant.images} />
             <RestaurantDetails

@@ -17,36 +17,39 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 function ConfirmationContent() {
     const router = useRouter();
     const params = useSearchParams();
-    const data = params.get("data");
-    const menuData = params.get("variantData");
 
-    console.log("menuData", !data, !menuData);
-    // Guard against missing query params
-    if (!data || !menuData) {
-        return (
-            <div className="text-white p-8 text-center">
-                Missing or invalid reservation details. Please start over.
-            </div>
-        );
-    }
+    const restaurantName = params.get("restaurant_name");
+    const eventType = params.get("eventType");
+    const people = params.get("people");
+    const date = params.get("date");
+    const location = params.get("location");
+    const pricePerPerson = params.get("price_per_person");
+
+    // if (!data || !menuData) {
+    //     return (
+    //         <div className="text-white p-8 text-center">
+    //             Missing or invalid reservation details. Please start over.
+    //         </div>
+    //     );
+    // }
 
     let parsed = {};
     let parsedMenu = {};
 
-    try {
-        parsed = JSON.parse(decodeURIComponent(data));
-        parsedMenu = JSON.parse(decodeURIComponent(menuData));
-    } catch (e) {
-        console.error("Failed to parse query data", e);
-        return (
-            <div className="text-white p-8 text-center">
-                Failed to load reservation details. Please try again.
-            </div>
-        );
-    }
+    // try {
+    //     parsed = JSON.parse(decodeURIComponent(data));
+    //     parsedMenu = JSON.parse(decodeURIComponent(menuData));
+    // } catch (e) {
+    //     console.error("Failed to parse query data", e);
+    //     return (
+    //         <div className="text-white p-8 text-center">
+    //             Failed to load reservation details. Please try again.
+    //         </div>
+    //     );
+    // }
 
-    const { date, restaurant, eventType, people, location } = parsed;
-    const { pricePerPerson } = parsedMenu;
+    // const { date, restaurant, eventType, people, location } = parsed;
+    // const { pricePerPerson } = parsedMenu;
 
     const {
         register,
@@ -104,7 +107,7 @@ function ConfirmationContent() {
                         </li>
                         <li className="flex items-center gap-2 text-warmGray-50 font-mono">
                             <MdRestaurantMenu className="text-amber-500" />
-                            <span className="text-gray-400">Restaurant:</span> {restaurant}
+                            <span className="text-gray-400">Restaurant:</span> {restaurantName}
                         </li>
                         <li className="flex items-center gap-2 text-warmGray-50 font-mono">
                             <MdLocationOn className="text-amber-500" />

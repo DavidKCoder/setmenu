@@ -41,7 +41,7 @@ export default function AllRestaurantsPage() {
             </div>
             <section className="bg-white text-black">
                 <section
-                    className="relative w-full h-72 md:h-96 bg-center bg-cover grid items-center justify-center"
+                    className="relative w-full h-auto sm-auto md:h-96 lg:h-96 xl:h-96 bg-center bg-cover grid items-center justify-center"
                     style={{ backgroundImage: `url('https://images.pexels.com/photos/27626757/pexels-photo-27626757.png')` }} // замените на своё изображение
                 >
                     <div className="absolute inset-0 bg-black/40"></div>
@@ -58,9 +58,9 @@ export default function AllRestaurantsPage() {
                         </Suspense>
                     </div>
                 </section>
-                <div className="ova-section relative h-56 text-center flex flex-col items-center justify-center">
+                <div className="ova-section relative h-40 sm:h-56 md:h-56 lg:h-56 xl:h-56 text-center flex flex-col items-center justify-center">
                     <div
-                        className={`text-orange-500 text-4xl uppercase ${forum_splash.className}`}
+                        className={`text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
                     Reserve your favorite restaurants
@@ -83,7 +83,7 @@ export default function AllRestaurantsPage() {
                     </div>
                 </div>
 
-                <div className="max-w-6xl mt-10 mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10">
+                <div className="max-w-6xl mt-10 mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
                     {filteredRestaurants.length > 0 ? (
                         filteredRestaurants.map((restaurant) => (
                             <Link href={`/restaurants/${restaurant.slug}`} key={restaurant.slug}>
