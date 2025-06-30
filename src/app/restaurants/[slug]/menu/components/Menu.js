@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { oswald_splash } from "@/app/fonts";
 import Modal from "./Modal";
 import { GrDocumentDownload } from "react-icons/gr";
+import html2pdf from "html2pdf.js";
 
 export default function Menu({ restaurant, selectedVariant }) {
     const menuRef = useRef(null);
@@ -12,33 +13,23 @@ export default function Menu({ restaurant, selectedVariant }) {
     const [showModal, setShowModal] = useState(false);
 
     const handleDownload = () => {
-        // if (!menuRef.current) return;
-        //
-        // const opt = {
-        //     margin: 0.5,
-        //     filename: `${restaurant.name}-${eventType}-menu.pdf`,
-        //     image: { type: "jpeg", quality: 0.98 },
-        //     html2canvas: { scale: 2 },
-        //     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-        // };
-        //
-        // html2pdf().set(opt).from(menuRef.current).save();
-    };
+        if (!menuRef.current) return;
 
-    const handleConfirm = () => {
-        setShowModal(!showModal);
-        // const details = {
-        //     restaurant: restaurant.name,
-        //     date: eventDate,
-        //     eventType: eventType,
-        //     people: personCount,
-        //     location: restaurant.location,
-        // };
+        const opt = {
+            margin: 0.5,
+            filename: `${restaurant.name}-${selectedVariant.title}-menu.pdf`,
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: {
+                scale: 2,
+                useCORS: true,
+                logging: true,
+                allowTaint: false,
+                scrollY: 0,
+            },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
 
-        // const queryString = encodeURIComponent(JSON.stringify(details));
-        // const queryVariantString = encodeURIComponent(JSON.stringify(selectedVariant));
-
-        // router.push(`/confirmation?data=${queryString}&variantData=${queryVariantString}`);
+        html2pdf().set(opt).from(menuRef.current).save();
     };
 
     if (!selectedVariant.menu.length) return notFound();
@@ -89,7 +80,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                                                         className="flex-grow border-b border-dotted border-gray-400 mx-2" />
                                                     {item.badge &&
                                                         <span
-                                                            className="relative inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-amber-500 ring-1 ring-orange-300 ring-inset">
+                                                            className="rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-amber-500 ring-1 ring-orange-300 ring-inset">
                                                         {item.badge}
                                                     </span>
                                                     }
@@ -105,8 +96,8 @@ export default function Menu({ restaurant, selectedVariant }) {
                 </div>
                 <div className="mt-12">
                     <button
-                        className="w-full bg-main hover:bg-cyan-500 text-white py-2 text-xl font-semibold rounded-xl transition"
-                        onClick={handleConfirm}
+                        className="uppercase w-full bg-main hover:bg-cyan-500 text-white py-2 text-lg font-semibold rounded-xl transition"
+                        onClick={() => setShowModal(!showModal)}
                     >
                         Set Your Menu
                     </button>
