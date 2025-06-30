@@ -1,15 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { notFound, useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import { oswald_splash } from "@/app/fonts";
 import Modal from "./Modal";
+import { GrDocumentDownload } from "react-icons/gr";
 
 export default function Menu({ restaurant, selectedVariant }) {
-    const router = useRouter();
     const menuRef = useRef();
-
-    console.log("restaurant", restaurant);
 
     const [showModal, setShowModal] = useState(false);
 
@@ -49,24 +47,20 @@ export default function Menu({ restaurant, selectedVariant }) {
         <>
             <main id="menu-content"
                   className="relative px-6 py-8 bg-white text-black max-w-3xl mx-auto rounded-2xl border-2 border-black">
-                <div className="flex justify-end mb-4">
+                <div className="absolute right-5 flex justify-end mb-4">
                     <button
                         onClick={handleDownload}
                         title="Download menu"
-                        className="flex items-center gap-2 text-sm font-medium bg-red-200 text-white px-4 py-2 rounded cursor-pointer shadow hover:bg-red-600 transition"
+                        className="flex items-center gap-2 text-sm font-medium bg-red-200 text-white px-2 py-2 sm:px-4 sm:py-2 rounded cursor-pointer shadow hover:bg-red-600 transition"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-                        </svg>
-                        Download PDF
+                        <GrDocumentDownload size={18} />
+                        <span className="hidden sm:block">Download PDF</span>
                     </button>
                 </div>
 
                 <div ref={menuRef}>
                     <h1
-                        className={`text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold mb-10 text-center text-black capitalize underline ${oswald_splash.className}`}
+                        className={`text-2xl md:text-3xl font-bold mb-10 text-center text-black capitalize underline ${oswald_splash.className}`}
                         style={{ textDecorationColor: "#E9C0A4", textUnderlineOffset: 4, textDecorationThickness: 3 }}
                     >
                         {restaurant.name}

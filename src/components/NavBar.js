@@ -22,7 +22,6 @@ export default function NavBar() {
     const [language, setLanguage] = useState(currentLanguage);
     const dropdownRef = useRef(null);
 
-
     const navItems = [
         { label: t("categories"), href: "#categories" },
         { label: t("stats"), href: "#stats" },
@@ -41,7 +40,6 @@ export default function NavBar() {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
-
 
     const handleLanguageSelect = (code) => {
         setLanguage(code);

@@ -23,7 +23,7 @@ export default function Hero() {
                     </p>
                 </div>
             </div>
-            <div className="relative max-w-6xl m-auto top-16">
+            <div className="flex justify-center items-center mt-16 sm:mt-20 ">
                 <RestaurantSearchBar
                     restaurants={restaurants}
                     onResults={() => {
