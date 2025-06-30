@@ -8,14 +8,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import RestaurantSearchBar from "@/components/RestaurantSearchBar";
 import Image from "next/image";
 import { FaRegUserCircle } from "react-icons/fa";
-import { forum_splash } from "@/app/fonts";
+import { forum_splash, kids_splash } from "@/app/fonts";
 
 export default function AllRestaurantsPage() {
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
     return (
         <>
-            <div className="bg-orange-50 mx-auto flex justify-between text-right py-2 px-2 z-50">
+            <div className="bg-orange-50 mx-auto flex justify-between text-right py-2 px-2">
                 <Link href="/" passHref>
                     <div className="flex items-center text-sm gap-2">
                         <Image
@@ -41,11 +41,10 @@ export default function AllRestaurantsPage() {
             </div>
             <section className="bg-white text-black">
                 <section
-                    className="relative w-full h-auto sm-auto md:h-96 lg:h-96 xl:h-96 bg-center bg-cover grid items-center justify-center"
+                    className="relative w-full bg-center bg-cover grid items-center h-auto md:h-96 lg:h-96 xl:h-96"
                     style={{ backgroundImage: `url('https://images.pexels.com/photos/27626757/pexels-photo-27626757.png')` }} // замените на своё изображение
                 >
-                    <div className="absolute inset-0 bg-black/40"></div>
-                    <h1 className={`relative text-4xl md:text-5xl text-white text-center uppercase tracking-widest ${forum_splash.className}`}
+                    <h1 className={`relative text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl py-8 sm:py-8 md:py-0 lg:py-0 xl:py-0 text-white text-center uppercase tracking-widest ${forum_splash.className}`}
                         style={{ fontWeight: 600 }}>
                         All Restaurants
                     </h1>
@@ -58,12 +57,12 @@ export default function AllRestaurantsPage() {
                         </Suspense>
                     </div>
                 </section>
-                <div className="ova-section relative h-40 sm:h-56 md:h-56 lg:h-56 xl:h-56 text-center flex flex-col items-center justify-center">
+                <div className="ova-section relative h-40 sm:h-56 text-center flex flex-col items-center justify-center">
                     <div
                         className={`text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
-                    Reserve your favorite restaurants
+                        Reserve your favorite restaurant
                     </div>
 
                     <div

@@ -4,7 +4,7 @@ export default function RestaurantCategories({ categories }) {
     if (!categories?.length) return null;
 
     return (
-        <div className="m-auto">
+        <div className="">
             <h2 className="text-2xl font-semibold mb-4">Categories</h2>
             <div className="flex flex-wrap gap-2">
                 {categories.map((cat, index) => (

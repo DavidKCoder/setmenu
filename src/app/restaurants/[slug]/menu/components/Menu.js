@@ -7,7 +7,7 @@ import Modal from "./Modal";
 import { GrDocumentDownload } from "react-icons/gr";
 
 export default function Menu({ restaurant, selectedVariant }) {
-    const menuRef = useRef();
+    const menuRef = useRef(null);
 
     const [showModal, setShowModal] = useState(false);
 
@@ -108,7 +108,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                         className="w-full bg-main hover:bg-cyan-500 text-white py-2 text-xl font-semibold rounded-xl transition"
                         onClick={handleConfirm}
                     >
-                        Confirm Menu
+                        Set Your Menu
                     </button>
                 </div>
             </main>
@@ -117,6 +117,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                     name={restaurant.name}
                     price={selectedVariant.pricePerPerson}
                     showModal={showModal}
+                    setShowModal={setShowModal}
                     location={restaurant.location}
                     categories={restaurant.categories}
                 />}

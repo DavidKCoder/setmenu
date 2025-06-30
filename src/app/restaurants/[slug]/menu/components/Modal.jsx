@@ -7,7 +7,7 @@ import { useTranslation } from "next-i18next";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdArrowDropDown } from "react-icons/md";
 
-export default function Modal({ name, showModal, categories, location, price }) {
+export default function Modal({ name, showModal, setShowModal, categories, location, price }) {
     const { t } = useTranslation();
     const router = useRouter();
 
@@ -51,12 +51,12 @@ export default function Modal({ name, showModal, categories, location, price }) 
                             textDecorationThickness: 1,
                             textUnderlineOffset: 4,
                         }}>
-                        {t("checkYourMenu")}
+                        {t("SetYourMenuDetails")}
                     </h2>
 
                     <div className="mb-4 w-full">
                         <label className={`block mb-2 font-medium ${forum_splash.className}`}>
-                            Select Event Type:
+                            Set Event Type:
                         </label>
                         <div className="relative w-full">
                             <select
@@ -81,7 +81,9 @@ export default function Modal({ name, showModal, categories, location, price }) 
 
 
                     <div className="mb-6">
-                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>Select person:</label>
+                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>
+                            Set person:
+                        </label>
                         <input
                             type="number"
                             min="2"
@@ -95,7 +97,9 @@ export default function Modal({ name, showModal, categories, location, price }) 
 
                     {/* Date Picker */}
                     <div className="mb-6">
-                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>Select Date:</label>
+                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>
+                            Set Date:
+                        </label>
                         <DatePicker
                             selected={eventDate}
                             onChange={date => setEventDate(date)}

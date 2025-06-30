@@ -2,12 +2,11 @@ import { FaClock, FaMapMarkerAlt, FaPhone, FaFacebookF, FaInstagram, FaTwitter }
 import { MdEmail } from "react-icons/md";
 import { LuCircleCheckBig } from "react-icons/lu";
 import WorkingHoursSection from "@/app/restaurants/components/WorkingHoursSection";
-import { forum_splash } from "@/app/fonts";
 import React from "react";
 
 export default function RestaurantDetails({ about, features, workingHours, location, phone }) {
     return (
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-6 sm:mb-12">
             <div>
                 <h2 className="text-2xl font-semibold mb-4">About</h2>
                 <p className="text-gray-700 leading-relaxed">{about}</p>

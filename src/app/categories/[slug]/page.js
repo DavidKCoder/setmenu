@@ -71,9 +71,9 @@ export default function CategoryPage({ params }) {
                     </div>
                 </section>
 
-                <div className="ova-section relative h-56 text-center flex flex-col items-center justify-center">
+                <div className="ova-section relative h-40 sm:h-56 text-center flex flex-col items-center justify-center">
                     <div
-                        className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
+                        className={`text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
                         {headline}
