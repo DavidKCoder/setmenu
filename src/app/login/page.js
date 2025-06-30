@@ -1,6 +1,8 @@
-import dynamic from "next/dynamic";
+import dynamicImport from 'next/dynamic';
 
-const AuthForm = dynamic(() => import("./components/AuthForm"));
+export const dynamic = 'force-dynamic';
+
+const AuthForm = dynamicImport(() => import('./components/AuthForm'), { ssr: false });
 
 export default function LoginPage() {
     return <AuthForm />;
