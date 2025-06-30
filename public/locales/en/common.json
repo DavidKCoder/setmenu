@@ -1,0 +1,71 @@
+{
+  "title": "Find the Perfect Menu for Every Event",
+  "subTitle": "Weddings, birthdays, corporate events - we will help you choose the best place for your event.",
+
+  "categories": "categories",
+  "story": "our Story",
+  "stats": "statistics",
+  "popular": "popular menus",
+  "popularRestaurants": "popular restaurants",
+  "testimonials": "testimonials",
+  "FAQ": "FAQ",
+
+  "filterDate": "Filter by date",
+  "eventType": "Event Type",
+  "weddings": "Weddings",
+  "birthdays": "Birthdays",
+  "anniversary": "Anniversaries",
+  "anniversaries": "Anniversaries",
+  "engagement": "Engagement",
+  "corporate": "Corporate",
+  "holiday parties": "Holiday Parties",
+  "casual gatherings": "Casual Gatherings",
+  "kids": "Kids",
+
+  "location": "location",
+  "search": "search",
+  "event planning": "event planning",
+  "event categories": "event categories",
+  "choose your event category": "choose your event category",
+
+  "ourStory": "our story",
+  "seeAll": "see all",
+  "chooseMenu": "Choose Menu",
+  "checkMenu": "Check Menu",
+  "checkYourMenu": "Check Your Menu",
+  "perPerson": "per person",
+
+  "chefWorking": "The chef is working on it… menu will be ready soon!",
+  "comingSoon": "Coming Soon",
+
+  "comingSoonMessage": "Meanwhile, you can <0>go back home</0> or <1>explore other restaurants</1>.",
+
+  "eventDescription": "At SetMenu, we believe every event deserves amazing food. Born from a love of cuisine and celebration, we help you find the ideal menu — no matter the occasion. Our platform connects you with curated dishes, trusted local restaurants, and inspiration to make your event truly special.",
+
+  "eventHeadlines": {
+    "wedding": "Plan the Wedding Feast of Your Dreams",
+    "birthday": "Celebrate Your Birthday at the Perfect Restaurant",
+    "anniversary": "Make Your Anniversary Unforgettable",
+    "engagement": "Celebrate Your Engagement with Style",
+    "corporate": "Host Your Corporate Event with Elegance",
+    "holiday-parties": "Book the Perfect Spot for Your Holiday Party",
+    "casual-gatherings": "Enjoy Great Food with Great People",
+    "kids": "Fun Menus for the Little Guests"
+  },
+  "eventPageTitles": {
+    "wedding": "Wedding Restaurants",
+    "birthday": "Birthday Restaurants",
+    "anniversary": "Anniversary Dining",
+    "engagement": "Engagement Venues",
+    "corporate": "Corporate Event Restaurants",
+    "holiday-parties": "Holiday Party Spots",
+    "casual-gatherings": "Casual Dining Places",
+    "kids": "Restaurants Kids Love"
+  },
+
+  "bestRestaurantsSubtitle": "Best restaurants for you & family",
+
+  "noRestaurantsTitle": "Oops! No matching restaurants",
+  "noRestaurantsSubtitle": "Try adjusting your filters or search term."
+
+}
