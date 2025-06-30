@@ -59,7 +59,7 @@ export default function Menu({ restaurant, eventType, personCount, eventDate, se
 
             <div ref={menuRef}>
                 <h1
-                    className="text-3xl font-bold mb-10 text-center text-black capitalize underline"
+                    className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold mb-10 text-center text-black capitalize underline"
                     style={{ textDecorationColor: "#E9C0A4", textUnderlineOffset: 4, textDecorationThickness: 3 }}
                 >
                     {restaurant.name} {eventType} Menu for {personCount} Persons
@@ -74,7 +74,7 @@ export default function Menu({ restaurant, eventType, personCount, eventDate, se
                         >
                             {/* Menu Items */}
                             <div className="w-full md:w-1/2">
-                                <h2 className="text-2xl font-bold mb-px pb-2 text-black">{section.category}</h2>
+                                <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-bold mb-px pb-2 text-black">{section.category}</h2>
                                 <ul className="space-y-2">
                                     {section.items.map((item, i) => (
                                         <div key={i}>

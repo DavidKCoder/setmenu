@@ -45,7 +45,7 @@ export default function MenuVariantSelector({ params }) {
             />
             <div
                 className="w-full items-center bg-white border rounded-xl gap-6 max-w-5xl mx-auto px-6 my-2 relative py-8 bg-opacity-80 text-black">
-                <Link href="/" passHref>
+                <Link href="/" passHref className="hidden sm:block md:block lg:block xl:block">
                     <div className="absolute flex items-center gap-2">
                         <Image
                             src="/logo.webp"

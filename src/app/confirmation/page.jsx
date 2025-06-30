@@ -92,7 +92,8 @@ function ConfirmationContent() {
             }}
         >
             <div
-                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-8 px-6 grid md:grid-cols-2 gap-8 text-black">
+                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-8 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
+
                 {/* Event Info */}
                 <div className="rounded-xl py-6 px-2">
                     <h2 className="text-2xl font-bold mb-4 text-white">Event Summary</h2>

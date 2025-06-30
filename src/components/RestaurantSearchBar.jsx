@@ -70,29 +70,28 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
     return (
         <div
-            className="flex flex-wrap md:flex-nowrap gap-4 py-4 px-4 rounded-md items-center justify-center mb-8 bg-orange-300">
+            className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 md:flex gap-4 py-4 px-4 rounded-md items-center justify-center mb-8 bg-orange-300 md:w-auto">
+
             <input
                 type="text"
                 placeholder="Search by name"
-                className="border rounded px-4 py-2 w-full md:w-64"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                className="border rounded px-4 py-2 w-full sm:col-span-2"
             />
 
-            <div className="w-full md:w-auto">
+            <div className="w-full">
                 <DatePicker
                     selected={selectedDate}
                     onChange={setSelectedDate}
                     minDate={new Date()}
                     placeholderText={`📅 ${t("filterDate")}`}
-                    className="w-full md:w-56 border border-gray-300 p-2 rounded"
+                    className="w-full border border-gray-300 p-2 rounded"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
                     highlightDates={[addDays(new Date(), 0)]}
                 />
             </div>
 
-            <div className="relative w-full md:w-60">
+            <div className="relative w-full">
                 <select
                     className={`border rounded px-2 py-2 w-full truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300 italic"}`}
                     value={eventFilter}
@@ -120,7 +119,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 )}
             </div>
 
-            <div className="relative w-full md:w-60">
+            <div className="relative w-full">
                 <select
                     className={`border rounded px-2 py-2 w-full truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300 italic"}`}
                     value={locationFilter}
@@ -145,7 +144,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
             </div>
 
             <button
-                className="w-full sm:w-36 md:w-auto px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                className="w-full px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
                 onClick={handleSearch}
             >
                 <span className="text-lg text-amber-500"><AiOutlineFileSearch /></span>

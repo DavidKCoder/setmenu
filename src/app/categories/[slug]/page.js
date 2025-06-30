@@ -55,10 +55,10 @@ export default function CategoryPage({ params }) {
             </div>
             <section className="bg-white text-black">
                 <section
-                    className="relative w-full h-72 md:h-96 bg-center bg-cover grid items-center"
+                    className="relative w-full bg-center bg-cover grid items-center"
                     style={{ backgroundImage: urlImage }}
                 >
-                    <h1 className={`relative text-4xl md:text-5xl text-white text-center uppercase tracking-widest ${isKids ? kids_splash.className : forum_splash.className}`}
+                    <h1 className={`relative text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl py-8 sm:py-8 md:py-0 lg:py-0 xl:py-0 text-white text-center uppercase tracking-widest ${isKids ? kids_splash.className : forum_splash.className}`}
                         style={{ fontWeight: 600 }}>
                         {slug.replace("-", " ")} Restaurants
                     </h1>
@@ -73,7 +73,7 @@ export default function CategoryPage({ params }) {
 
                 <div className="ova-section relative h-56 text-center flex flex-col items-center justify-center">
                     <div
-                        className={`text-4xl uppercase ${forum_splash.className}`}
+                        className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
                         {headline}
@@ -96,7 +96,7 @@ export default function CategoryPage({ params }) {
                     </div>
                 </div>
 
-                <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10">
+                <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
                     {filteredRestaurants.length > 0 ? (
                         filteredRestaurants.map((restaurant) => (
                             <Link href={`/restaurants/${restaurant.slug}`} key={restaurant.slug}>

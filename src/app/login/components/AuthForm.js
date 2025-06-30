@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaEnvelope, FaUserPlus, FaSignInAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
-export default function AuthForm() {
+export default function AuthForm({ redirect }) {
     const router = useRouter();
     const [isLogin, setIsLogin] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
@@ -24,10 +24,10 @@ export default function AuthForm() {
         await new Promise((r) => setTimeout(r, 1500));
 
         if (isLogin) {
-            router.push(redirect); // redirect after login
+            router.push(redirect);
         } else {
             alert("Registered! You can now sign in.");
-            setIsLogin(true); // switch to login
+            setIsLogin(true);
         }
     };
 
