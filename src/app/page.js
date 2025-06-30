@@ -7,6 +7,7 @@ import NavBar from "@/components/NavBar";
 import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import { Suspense } from "react";
+import HowItWorks from "@/app/howItWorks/page";
 
 export default function Home() {
     return (
@@ -15,6 +16,10 @@ export default function Home() {
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
                 <Hero />
             </Suspense>
+
+            <section id="categories">
+                <HowItWorks />
+            </section>
 
             <section id="categories">
                 <Categories />

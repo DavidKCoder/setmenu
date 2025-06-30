@@ -13,7 +13,7 @@ export default function Categories() {
         <section className="relative py-4 sm:py-10 md:py-12 px-6 bg-white text-black">
             <div className="flex items-center my-4">
                 <div className="flex-grow border-t border-gray-300" />
-                <h2 className={`mx-4 text-3xl text-gray-400 text-center font-semibold capitalize ${splash.className}`}>
+                <h2 className={`mx-4 text-3xl text-gray-400 text-center font-semibold uppercase ${forum_splash.className}`}>
                     {t("choose your event category")}
                 </h2>
                 <div className="flex-grow border-t border-gray-300" />
