@@ -3,11 +3,26 @@ import { IoShareOutline } from "react-icons/io5";
 import { BsLink45Deg } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { forum_splash } from "@/app/fonts";
-import React, { use, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import RestaurantRating from "@/app/restaurants/components/RestaurantRating";
 
 export default function RestaurantHeader({ name, slug, rating, cuisine, location, price }) {
     const [copied, setCopied] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const dropdownRef = useRef(null);
+
+    // Close dropdown on outside click
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
     const handleCopyLink = () => {
         navigator.clipboard
@@ -62,42 +77,42 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                 {/* Dropdown section*/}
                 <div className="bg-white z-50">
                     <div className="flex items-center justify-center">
-                        <div className="relative inline-block text-left dropdown">
-                        <span className="rounded-md shadow-sm">
-                        <button
-                            className="inline-flex items-center gap-2 justify-center w-full px-4 py-2 font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
-                            type="button" aria-haspopup="true" aria-expanded="true"
-                            aria-controls="headlessui-menu-items-117">
-                            <span className="text-xl items-center"><IoShareOutline /></span>
-                            <span>Share</span>
-                        </button>
-                        </span>
+                        <div className="relative inline-block text-left" ref={dropdownRef}>
+                            <button
+                                onClick={() => setOpen(o => !o)}
+                                className="inline-flex items-center gap-2 px-4 py-2 font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:text-gray-500"
+                                type="button"
+                            >
+                                <IoShareOutline className="text-xl" />
+                                <span>Share</span>
+                            </button>
+
                             <div
-                                className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
-                                <div
-                                    className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-50"
-                                    role="menu"
+                                className={`
+              absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 
+              divide-y divide-gray-100 rounded-md shadow-lg z-50 transition-all duration-300 transform
+              ${open ? "opacity-100 visible scale-100 translate-y-0" : "opacity-0 invisible scale-95 -translate-y-2"}
+            `}
+                                role="menu"
+                            >
+                                <button
+                                    onClick={handleEmail}
+                                    className="w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 text-gray-700 text-sm"
                                 >
-                                    <button
-                                        onClick={handleEmail}
-                                        className="w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 text-gray-700 text-sm text-right sm:text-left"
-                                    >
-                                        <MdOutlineMail className="text-lg" />
-                                        <span className="text-right sm:text-left">Email</span>
-                                    </button>
-
-                                    <button
-                                        onClick={handleCopyLink}
-                                        className={`w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 ${
-                                            copied ? "text-green-500" : "text-gray-700"
-                                        } text-sm text-right sm:text-left`}
-                                    >
-                                        <BsLink45Deg className="text-lg" />
-                                        <span
-                                            className="text-right sm:text-left">{copied ? "Link copied!" : "Copy link"}</span>
-                                    </button>
-
-                                </div>
+                                    <MdOutlineMail className="text-lg" />
+                                    <span className="text-right sm:text-left">Email</span>
+                                </button>
+                                <button
+                                    onClick={handleCopyLink}
+                                    className={`w-full px-4 py-3 flex items-center gap-2 justify-end sm:justify-start hover:bg-gray-100 ${
+                                        copied ? "text-green-500" : "text-gray-700"
+                                    } text-sm`}
+                                >
+                                    <BsLink45Deg className="text-lg" />
+                                    <span className="text-right sm:text-left">
+                {copied ? "Link copied!" : "Copy link"}
+              </span>
+                                </button>
                             </div>
                         </div>
                     </div>

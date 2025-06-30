@@ -6,11 +6,12 @@ import { useTranslation } from "next-i18next";
 
 export default function Hero() {
     const { t } = useTranslation();
+    const urlImage = `url('/hero_bg.jpeg')`
 
     return (
         <div
             className="w-full h-auto sm:h-screen bg-fixed bg-center bg-cover py-12 sm:p-0 xl:p-0"
-            style={{ backgroundImage: `url('/hero_bg.jpeg')` }}
+            style={{ backgroundImage: urlImage }}
         >
             <div className="relative inset-0 bg-black/40 px-6 py-10 top-24 flex items-start justify-start">
                 <div className="max-w-xl space-y-6">

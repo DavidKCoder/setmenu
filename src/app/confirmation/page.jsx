@@ -89,18 +89,18 @@ function ConfirmationContent() {
 
     return (
         <div
-            className="min-h-screen bg-cover bg-center flex items-center justify-center p-6 bg-gray-800"
+            className="min-h-screen bg-cover bg-center flex items-center justify-center p-2 sm:p-6 bg-gray-800"
             style={{
                 backgroundImage: `url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/2a/67/f3/azura-represents-a-journey.jpg?w=1400&h=800&s=1')`,
             }}
         >
             <div
-                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-8 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
+                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-1 sm:py-8 px-2.5 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
 
                 {/* Event Info */}
                 <div className="rounded-xl py-6 px-2">
-                    <h2 className="text-2xl font-bold mb-4 text-white">Event Summary</h2>
-                    <ul className="space-y-1.5 text-md">
+                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Event Summary</h2>
+                    <ul className="space-y-1.5 text-sm sm:text-md">
                         <li className="flex items-center gap-2 text-warmGray-50 font-mono">
                             <FaCalendarAlt className="text-amber-500" />
                             <span className="text-gray-400">Date:</span> {date}
@@ -127,7 +127,7 @@ function ConfirmationContent() {
                         </li>
                     </ul>
                     <hr className="my-6 border-t border-amber-400 opacity-30 font-mono" />
-                    <ul className="space-y-1.5 text-md font-mono">
+                    <ul className="space-y-1.5 text-sm sm:text-md font-mono">
                         <li className="flex items-center gap-2 text-warmGray-50">
                             <FaMoneyBillWave className="text-amber-500" />
                             <span className="text-gray-400">Total:</span>{" "}
@@ -144,7 +144,7 @@ function ConfirmationContent() {
                 {/* Booking Form */}
                 <div className="bg-gray-800 rounded-xl p-6">
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                        <h2 className="text-2xl font-bold mb-4 text-white">Your Booking Information</h2>
+                        <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Your Booking Information</h2>
 
                         <div className="flex gap-4">
                             <div className="w-1/2">
