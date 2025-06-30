@@ -45,7 +45,7 @@ export default function HowItWorks() {
                                 className="w-16 h-16 rounded-full bg-main text-white flex items-center justify-center text-2xl font-bold mb-4">
                                 {idx + 1}
                             </div>
-                            <h2 className={`text-lg mb-2 text-gray-700 ${forum_splash.className}`} style={{fontWeight: 600}}>{title}</h2>
+                            <h2 className={`text-xl sm:text-2xl mb-2 text-gray-700 ${forum_splash.className}`} style={{fontWeight: 600}}>{title}</h2>
                             <p className="text-gray-700 text-sm">{description}</p>
                         </div>
                     ))}
