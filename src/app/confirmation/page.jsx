@@ -67,6 +67,11 @@ export default function ConfirmationPage() {
 
     };
 
+    // if (!data || !menuData) {
+    //     return <div className="text-white p-4">Missing reservation data. Please try again.</div>;
+    // }
+
+
     return (
         <div
             className="min-h-screen bg-cover bg-center flex items-center justify-center p-6 bg-gray-800"
@@ -207,24 +212,24 @@ export default function ConfirmationPage() {
                 </div>
             </div>
 
-            <div id="pdf-menu" className="hidden">
-                <h1>{menuData.title}</h1>
-                <p>{menuData.fullDescription}</p>
+            {/*<div id="pdf-menu" className="hidden">*/}
+            {/*    <h1>{menuData.title}</h1>*/}
+            {/*    <p>{menuData.fullDescription}</p>*/}
 
-                {menuData && JSON.parse(decodeURIComponent(menuData)).menu.map((section, index) => (
-                    <div key={index}>
-                        <h2>{section.category}</h2>
-                        <ul>
-                            {section.items.map((item, i) => (
-                                <li key={i}>
-                                    <strong>{item.name}</strong> — {item.description} ({item.price})
-                                    {item.badge && <span> 🌟 {item.badge}</span>}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
+            {/*    {menuData && JSON.parse(decodeURIComponent(menuData)).menu.map((section, index) => (*/}
+            {/*        <div key={index}>*/}
+            {/*            <h2>{section.category}</h2>*/}
+            {/*            <ul>*/}
+            {/*                {section.items.map((item, i) => (*/}
+            {/*                    <li key={i}>*/}
+            {/*                        <strong>{item.name}</strong> — {item.description} ({item.price})*/}
+            {/*                        {item.badge && <span> 🌟 {item.badge}</span>}*/}
+            {/*                    </li>*/}
+            {/*                ))}*/}
+            {/*            </ul>*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
 
         </div>
     );
