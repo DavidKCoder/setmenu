@@ -10,7 +10,7 @@ export default function Hero() {
 
     return (
         <div
-            className="w-full h-auto sm:h-screen bg-fixed bg-center bg-cover py-12 sm:p-0 xl:p-0"
+            className="w-full h-auto sm:h-screen bg-center bg-cover py-12 sm:p-0 xl:p-0"
             style={{ backgroundImage: urlImage }}
         >
             <div className="relative inset-0 bg-black/40 px-6 py-10 top-24 flex items-start justify-start">
