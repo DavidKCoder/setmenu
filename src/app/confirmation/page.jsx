@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useRouter, useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { FaCalendarAlt, FaMoneyBillWave, FaUsers, FaUtensils } from "react-icons/fa";
@@ -8,13 +10,23 @@ import { IoVideocam } from "react-icons/io5";
 import { LuNotebookText } from "react-icons/lu";
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
 
 export default function ConfirmationPage() {
     const router = useRouter();
     const params = useSearchParams();
     const data = params.get("data");
     const menuData = params.get("variantData");
+
+    console.log("menuData", !data, !menuData);
+    // Guard against missing query params
+    if (!data || !menuData) {
+        return (
+            <div className="text-white p-8 text-center">
+                Missing or invalid reservation details. Please start over.
+            </div>
+        );
+    }
 
     let parsed = {};
     let parsedMenu = {};
@@ -24,6 +36,11 @@ export default function ConfirmationPage() {
         parsedMenu = JSON.parse(decodeURIComponent(menuData));
     } catch (e) {
         console.error("Failed to parse query data", e);
+        return (
+            <div className="text-white p-8 text-center">
+                Failed to load reservation details. Please try again.
+            </div>
+        );
     }
 
     const { date, restaurant, eventType, people, location } = parsed;
@@ -37,21 +54,21 @@ export default function ConfirmationPage() {
     } = useForm();
 
     const generatePDF = async () => {
-        const element = document.getElementById("pdf-menu"); // Hidden printable div
-        const opt = {
-            margin: 0.5,
-            filename: "Menu.pdf",
-            image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-        };
-        return await html2pdf().set(opt).from(element).outputPdf("blob");
+        // const element = document.getElementById("pdf-menu");
+        // const opt = {
+        //     margin: 0.5,
+        //     filename: "Menu.pdf",
+        //     image: { type: "jpeg", quality: 0.98 },
+        //     html2canvas: { scale: 2 },
+        //     jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+        // };
+        // return await html2pdf().set(opt).from(element).outputPdf("blob");
     };
 
     const onSubmit = async (formData) => {
-        const blob = await generatePDF();
-        const buffer = await blob.arrayBuffer();
-        const base64PDF = Buffer.from(buffer).toString("base64");
+        // const blob = await generatePDF();
+        // const buffer = await blob.arrayBuffer();
+        // const base64PDF = Buffer.from(buffer).toString("base64");
 
         try {
             // await fetch("/api/sendReservationEmail", {
@@ -59,18 +76,11 @@ export default function ConfirmationPage() {
             //     headers: { "Content-Type": "application/json" },
             //     body: JSON.stringify({ email: formData.email, name: formData.name, menuDetails: base64PDF }),
             // });
-            // console.log("formData", formData);
             router.push("/confirmation/success");
         } catch (error) {
             alert("Error sending", error);
         }
-
     };
-
-    // if (!data || !menuData) {
-    //     return <div className="text-white p-4">Missing reservation data. Please try again.</div>;
-    // }
-
 
     return (
         <div
@@ -81,7 +91,6 @@ export default function ConfirmationPage() {
         >
             <div
                 className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-8 px-6 grid md:grid-cols-2 gap-8 text-black">
-
                 {/* Event Info */}
                 <div className="rounded-xl py-6 px-2">
                     <h2 className="text-2xl font-bold mb-4 text-white">Event Summary</h2>
@@ -141,7 +150,6 @@ export default function ConfirmationPage() {
                                 />
                                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                             </div>
-
                             <div className="w-1/2">
                                 <input
                                     {...register("surname", { required: "Last name is required" })}
@@ -175,22 +183,28 @@ export default function ConfirmationPage() {
                                 name="phone"
                                 control={control}
                                 rules={{
-                                    validate: (value) => isValidPhoneNumber(value?.toString()),
+                                    validate: (value) => {
+                                        if (!value || typeof value !== "string") {
+                                            return "Phone number is required";
+                                        }
+                                        return isValidPhoneNumber(value) || "Phone number is not valid";
+                                    },
                                 }}
-                                render={({ field: { onChange, value } }) => {
-                                    return <PhoneInput
+                                render={({ field: { onChange, value } }) => (
+                                    <PhoneInput
                                         international
                                         defaultCountry="AM"
                                         value={value}
                                         onChange={onChange}
-                                        id="phone"
-                                        name="phone"
                                         className="w-full rounded-lg bg-white/20 backdrop-blur-md text-black placeholder-white/70"
-                                    />;
-                                }}
+                                    />
+                                )}
                             />
-                            {errors.phone &&
-                                <p className="text-red-500 text-sm mt-1">{errors.phone.message || "Phone number is not valid"}</p>}
+                            {errors.phone && (
+                                <p className="text-red-500 text-sm mt-1">
+                                    {errors.phone.message || "Phone number is not valid"}
+                                </p>
+                            )}
                         </div>
 
                         <div>
@@ -212,25 +226,25 @@ export default function ConfirmationPage() {
                 </div>
             </div>
 
-            {/*<div id="pdf-menu" className="hidden">*/}
-            {/*    <h1>{menuData.title}</h1>*/}
-            {/*    <p>{menuData.fullDescription}</p>*/}
+            {/* Hidden PDF content */}
+            <div id="pdf-menu" className="hidden">
+                <h1>{parsedMenu.title}</h1>
+                <p>{parsedMenu.fullDescription}</p>
 
-            {/*    {menuData && JSON.parse(decodeURIComponent(menuData)).menu.map((section, index) => (*/}
-            {/*        <div key={index}>*/}
-            {/*            <h2>{section.category}</h2>*/}
-            {/*            <ul>*/}
-            {/*                {section.items.map((item, i) => (*/}
-            {/*                    <li key={i}>*/}
-            {/*                        <strong>{item.name}</strong> — {item.description} ({item.price})*/}
-            {/*                        {item.badge && <span> 🌟 {item.badge}</span>}*/}
-            {/*                    </li>*/}
-            {/*                ))}*/}
-            {/*            </ul>*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
-
+                {parsedMenu.menu?.map((section, index) => (
+                    <div key={index}>
+                        <h2>{section.category}</h2>
+                        <ul>
+                            {section.items.map((item, i) => (
+                                <li key={i}>
+                                    <strong>{item.name}</strong> — {item.description} ({item.price})
+                                    {item.badge && <span> 🌟 {item.badge}</span>}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
