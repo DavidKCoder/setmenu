@@ -54,12 +54,12 @@ export default function ConfirmationPage() {
         const base64PDF = Buffer.from(buffer).toString("base64");
 
         try {
-            await fetch("/api/sendReservationEmail", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: formData.email, name: formData.name, menuDetails: base64PDF }),
-            });
-            console.log("formData", formData);
+            // await fetch("/api/sendReservationEmail", {
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     body: JSON.stringify({ email: formData.email, name: formData.name, menuDetails: base64PDF }),
+            // });
+            // console.log("formData", formData);
             router.push("/confirmation/success");
         } catch (error) {
             alert("Error sending", error);
