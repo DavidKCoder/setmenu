@@ -40,12 +40,8 @@ export default function PopularRestaurants() {
                 <div className="flex-grow border-t border-gray-300" />
             </div>
             <div
-                className={`absolute whitespace-nowrap uppercase opacity-10 font-medium text-gray-400 tracking-wide ${forum_splash.className} z-0 pointer-events-none`}
-                style={{
-                    top: -100,
-                    right: 400,
-                    fontSize: 250
-                }}
+                className={`absolute whitespace-nowrap pt-5 -top-24 right-40 sm:right-96 md:right-96 lg:right-96 uppercase opacity-10 font-medium text-gray-400 tracking-wide ${forum_splash.className} z-0 pointer-events-none`}
+                style={{ fontSize: 250 }}
             >
                 RESTAURANTS
             </div>

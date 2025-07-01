@@ -52,7 +52,8 @@ export default function NavBar() {
                 {/* Logo */}
                 <Link href="/" passHref>
                     <div className="flex items-center text-sm gap-2 cursor-pointer">
-                        <Image src="/logo.webp" alt="logo" width="35" height="35" className="object-cover w-6 h-6 sm:w-10 sm:h-10" />
+                        <Image src="/logo.webp" alt="logo" width="35" height="35"
+                               className="object-cover w-6 h-6 sm:w-10 sm:h-10" />
                         <div className="text-xl sm:text-3xl font-bold text-white select-none">SetMenu</div>
                     </div>
                 </Link>
@@ -63,7 +64,7 @@ export default function NavBar() {
                         {navItems.map(({ label, href }) => (
                             <li key={label}>
                                 <a href={href} className="cursor-pointer hover:text-main capitalize">
-                                    {label}
+                                    {t(label)}
                                 </a>
                             </li>
                         ))}
@@ -102,7 +103,9 @@ export default function NavBar() {
                                 className="cursor-pointer hover:text-emerald-400"
                                 onClick={() => setIsOpen(false)}
                             >
-                                <a href={href}>{label}</a>
+                                <a href={href} className="capitalize">
+                                    {t(label)}
+                                </a>
                             </li>
                         ))}
                     </ul>

@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { HiOutlineClock } from "react-icons/hi";
 import { dayMap } from "@/constants/dayMap";
 import { BsBookmarkStar, BsBookmarkStarFill } from "react-icons/bs";
+import { MdOutlineFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 
 export default function RestaurantCard({ restaurant }) {
     const today = dayMap[new Date().getDay()];
@@ -53,8 +54,8 @@ export default function RestaurantCard({ restaurant }) {
                         addToFavorite();
                     }}>
                         {isFavorite ?
-                            <BsBookmarkStarFill className="text-yellow-500 text-2xl" /> :
-                            <BsBookmarkStar className="text-gray-200 text-2xl" />}
+                            <MdOutlineFavorite className="text-red-500 text-2xl" /> :
+                            <MdOutlineFavoriteBorder className="text-gray-200 text-2xl" />}
                     </button>
                 </div>
                 <div

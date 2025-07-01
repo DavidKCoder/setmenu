@@ -11,7 +11,7 @@ export default function Stats() {
                 style={{ backgroundImage: "url('/stats_cover.jpg')" }}
             >
                 <div className="bg-white/80 backdrop-blur-md rounded-xl mx-auto max-w-7xl px-6 py-16 lg:px-8">
-                    <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center sm:grid-cols-3 lg:grid-cols-3">
+                    <dl className="grid grid-cols-3 sm:grid-cols-3 gap-x-8 gap-y-16 text-center">
                         <div className="mx-auto flex max-w-xs flex-col gap-y-4">
                             <dt className="text-xl leading-7 text-white">Restaurants Listed</dt>
                             <dd className={`order-first text-4xl font-bold tracking-tight text-white sm:text-6xl italic ${splash.className}`}>

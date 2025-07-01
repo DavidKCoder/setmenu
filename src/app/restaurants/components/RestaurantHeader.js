@@ -12,7 +12,6 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
 
     const dropdownRef = useRef(null);
 
-    // Close dropdown on outside click
     useEffect(() => {
         function handleClickOutside(event) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -47,7 +46,7 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
 
     return (
         <>
-            <div className="flex gap-5 items-center overflow-hidden mb-4 px-3 bg-orange-50 h-40 rounded-xl">
+            <div className="flex h-28 sm:h-40 gap-5 items-center overflow-hidden mb-4 px-3 bg-orange-50 rounded-xl">
                 <img className="w-15 rounded-full"
                      src={`https://ui-avatars.com/api/?color=fbfefb&background=e9c0a4&name=${name}`}
                      alt="Rounded avatar" />

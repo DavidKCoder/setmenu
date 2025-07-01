@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import { addDays } from "date-fns";
+import { addDays, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { usePathname } from "next/dist/client/components/navigation";
@@ -20,7 +20,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
     const eventType = searchParams.get("event");
     const location = searchParams.get("locationFilter");
 
-    const [search, setSearch] = useState(name || "");
+    const [restaurantName, setRestaurantName] = useState(name || "");
     const [eventFilter, setEventFilter] = useState(eventType || "");
     const [locationFilter, setLocationFilter] = useState(location || "");
     const [selectedDate, setSelectedDate] = useState(eventDate ? new Date(eventDate) : null);
@@ -41,7 +41,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
     const handleSearch = () => {
         const filtered = restaurants.filter((restaurant) => {
-            const matchesName = restaurant.name.toLowerCase().includes(search.toLowerCase());
+            const matchesName = restaurant.name.toLowerCase().includes(restaurantName.toLowerCase());
             const matchesEvent = eventFilter ? restaurant.categories?.includes(eventFilter) : true;
             const matchesLocation = locationFilter ? restaurant.location === locationFilter : true;
 
@@ -52,7 +52,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             const params = new URLSearchParams();
 
-            if (search) params.append("name", search);
+            if (restaurantName) params.append("name", restaurantName);
             if (formatted) params.append("eventDate", formatted);
             if (eventFilter) params.append("event", eventFilter);
             if (locationFilter) params.append("locationFilter", locationFilter);
@@ -74,7 +74,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             <input
                 type="text"
-                placeholder="Search by name"
+                value={restaurantName}
+                placeholder={t("searchByName")}
+                onChange={(e) => setRestaurantName(e.target.value)}
                 className="border rounded px-4 py-2 w-full sm:col-span-2"
             />
 
@@ -84,10 +86,18 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     onChange={setSelectedDate}
                     minDate={new Date()}
                     placeholderText={`📅 ${t("filterDate")}`}
-                    className="w-full border border-gray-300 p-2 rounded"
+                    className="w-full border border-gray-300 p-2 rounded text-gray-400"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
                     highlightDates={[addDays(new Date(), 0)]}
+                    disabledKeyboardNavigation
+                    customInput={
+                        <button className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded">
+                            {selectedDate
+                                ? <span className="text-gray-700">{format(selectedDate, "yyyy-MM-dd")} </span>
+                                : `📅 ${t("filterDate")}`}
+                        </button>
+                    }
                 />
             </div>
 

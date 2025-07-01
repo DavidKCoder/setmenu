@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { forum_splash } from "@/app/fonts";
 
 export default function Testimonials() {
     const testimonials = [
@@ -29,7 +30,7 @@ export default function Testimonials() {
 
     return (
         <section className="py-16 px-6 bg-orange-50 text-black">
-            <h2 className="text-3xl font-semibold mb-10 text-center">What Our Clients Say</h2>
+            <h2 className={`text-3xl text-secondary font-semibold mb-10 text-center uppercase ${forum_splash.className}`}>What Our Clients Say</h2>
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
                 {testimonials.map((t, i) => (
                     <div

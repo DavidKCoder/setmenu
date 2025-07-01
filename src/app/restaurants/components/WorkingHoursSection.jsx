@@ -3,7 +3,7 @@ import { FaClock, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { dayMap } from "@/constants/dayMap";
 
 export default function WorkingHoursSection({ workingHours }) {
-    const [isOpen, setIsOpen] = useState(window?.innerWidth >= 500);
+    const [isOpen, setIsOpen] = useState(window?.innerWidth >= 500 || false);
 
     const today = dayMap[new Date().getDay()];
 
@@ -27,7 +27,7 @@ export default function WorkingHoursSection({ workingHours }) {
                     {Object.entries(workingHours).map(([day, time]) => {
                         const isToday = day === today;
 
-                        let isClosedNow = false;
+                        let isClosedNow;
 
                         if (time === "Closed") {
                             isClosedNow = true;
@@ -69,10 +69,10 @@ export default function WorkingHoursSection({ workingHours }) {
                             >
                                 <span className="w-32">{day}:</span>
                                 <span className="flex gap-2 items-center">
-                                <span className={time === "Closed" ? "text-amber-500" : ""}>{time}</span>
                                     {isToday && isClosedNow && time !== "Closed" && (
                                         <span className="text-red-500 text-xs">(Closed now)</span>
                                     )}
+                                    <span className={time === "Closed" ? "text-amber-500" : ""}>{time}</span>
                                 </span>
                             </li>
                         );
