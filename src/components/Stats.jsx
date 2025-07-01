@@ -7,7 +7,7 @@ export default function Stats() {
     return (
         <div className="bg-white py-10 sm:py-10">
             <div
-                className="bg-fixed bg-cover bg-center py-16 sm:py-16"
+                className="bg-cover bg-center py-16 sm:py-16"
                 style={{ backgroundImage: "url('/stats_cover.jpg')" }}
             >
                 <div className="bg-white/80 backdrop-blur-md rounded-xl mx-auto max-w-7xl px-6 py-16 lg:px-8">

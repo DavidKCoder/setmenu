@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { restaurants } from "@/constants/restaurants";
 import RestaurantCard from "@/app/restaurants/components/RestaurantCard";
-import { forum_splash, splash } from "@/app/fonts";
+import { forum_splash } from "@/app/fonts";
 import { useTranslation } from "next-i18next";
 
 const popularRestaurants = restaurants.slice(0, 5);
@@ -15,14 +15,22 @@ export default function PopularRestaurants() {
 
     useEffect(() => {
         const interval = setInterval(() => {
+            const scrollAmount = window.innerWidth + 8;
+
             if (carouselRef.current) {
-                carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
+                carouselRef.current.scrollBy({
+                    left: scrollAmount,
+                    behavior: "smooth"
+                });
+
                 if (
-                    carouselRef.current.scrollLeft +
-                    carouselRef.current.clientWidth >=
-                    carouselRef.current.scrollWidth - 200
+                    carouselRef.current.scrollLeft + carouselRef.current.clientWidth >=
+                    carouselRef.current.scrollWidth - scrollAmount
                 ) {
-                    carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+                    carouselRef.current.scrollTo({
+                        left: 0,
+                        behavior: "smooth"
+                    });
                 }
             }
         }, 3000);
@@ -31,7 +39,7 @@ export default function PopularRestaurants() {
     }, []);
 
     return (
-        <section className="relative py-16 px-6 bg-white text-black">
+        <section className="relative py-16 px-0 sm:px-6 bg-white text-black">
             <div className="flex items-center my-4">
                 <div className="flex-grow border-t border-gray-300" />
                 <h2 className={`mx-4 text-3xl text-gray-400 text-center font-semibold uppercase ${forum_splash.className}`}>
@@ -47,7 +55,7 @@ export default function PopularRestaurants() {
             </div>
             <div
                 ref={carouselRef}
-                className="relative z-10 flex gap-6 overflow-x-auto scroll-smooth no-scrollbar px-4 py-4"
+                className="relative z-10 flex gap-6 overflow-x-auto scroll-smooth no-scrollbar px-2 sm:px-4 py-4"
             >
                 {[...popularRestaurants, ...popularRestaurants].map((restaurant, i) => (
                     <div

@@ -107,6 +107,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                             placeholderText="Choose a date"
                             className="w-full border border-gray-300 p-2 rounded"
                             dateFormat="yyyy-MM-dd"
+                            disabledKeyboardNavigation
                             excludeDates={[addDays(new Date(), 0)]}
                             withPortal
                         />

@@ -8,9 +8,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import RestaurantSearchBar from "@/components/RestaurantSearchBar";
 import Image from "next/image";
 import { FaRegUserCircle } from "react-icons/fa";
-import { forum_splash, kids_splash } from "@/app/fonts";
+import { forum_splash } from "@/app/fonts";
+import { useTranslation } from "next-i18next";
 
 export default function AllRestaurantsPage() {
+    const { t } = useTranslation();
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
     return (
@@ -57,7 +59,8 @@ export default function AllRestaurantsPage() {
                         </Suspense>
                     </div>
                 </section>
-                <div className="ova-section relative h-40 sm:h-56 text-center flex flex-col items-center justify-center">
+                <div
+                    className="ova-section relative h-40 sm:h-56 text-center flex flex-col items-center justify-center">
                     <div
                         className={`text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
@@ -90,7 +93,19 @@ export default function AllRestaurantsPage() {
                             </Link>
                         ))
                     ) : (
-                        <p className="text-center col-span-full">No restaurants found.</p>
+                        <div
+                            className="col-span-full text-center flex flex-col items-center justify-center py-2 text-gray-500">
+                            <Image
+                                priority
+                                src="/no-search-results.svg"
+                                alt="No results"
+                                width={220}
+                                height={120}
+                                className="mb-4 opacity-80"
+                            />
+                            <p className="text-xl font-semibold">{t("noRestaurantsTitle")}</p>
+                            <p className="text-sm text-gray-400 mt-1">{t("noRestaurantsSubtitle")}</p>
+                        </div>
                     )}
                 </div>
             </section>

@@ -1,7 +1,6 @@
 {
   "title": "Find the Perfect Menu for Every Event",
   "subTitle": "Weddings, birthdays, corporate events - we will help you choose the best place for your event.",
-
   "categories": "categories",
   "story": "our Story",
   "stats": "statistics",
@@ -9,7 +8,6 @@
   "popularRestaurants": "popular restaurants",
   "testimonials": "testimonials",
   "FAQ": "FAQ",
-
   "searchByName": "Search by name",
   "filterDate": "Filter by date",
   "eventType": "Event Type",
@@ -22,13 +20,11 @@
   "holiday parties": "Holiday Parties",
   "casual gatherings": "Casual Gatherings",
   "kids": "Kids",
-
   "location": "location",
   "search": "search",
   "event planning": "event planning",
   "event categories": "event categories",
   "choose your event category": "choose your event category",
-
   "ourStory": "our story",
   "seeAll": "see all",
   "chooseMenu": "Choose Menu",
@@ -36,14 +32,10 @@
   "checkYourMenu": "Check Your Menu",
   "SetYourMenuDetails": "Set Your Menu Details",
   "perPerson": "per person",
-
   "chefWorking": "The chef is working on it… menu will be ready soon!",
   "comingSoon": "Coming Soon",
-
   "comingSoonMessage": "Meanwhile, you can <0>go back home</0> or <1>explore other restaurants</1>.",
-
   "eventDescription": "At SetMenu, we believe every event deserves amazing food. Born from a love of cuisine and celebration, we help you find the ideal menu — no matter the occasion. Our platform connects you with curated dishes, trusted local restaurants, and inspiration to make your event truly special.",
-
   "eventHeadlines": {
     "wedding": "Plan the Wedding Feast of Your Dreams",
     "birthday": "Celebrate Your Birthday at the Perfect Restaurant",
@@ -64,10 +56,20 @@
     "casual-gatherings": "Casual Dining Places",
     "kids": "Restaurants Kids Love"
   },
-
   "bestRestaurantsSubtitle": "Best restaurants for you & family",
-
   "noRestaurantsTitle": "Oops! No matching restaurants",
-  "noRestaurantsSubtitle": "Try adjusting your filters or search term."
-
+  "noRestaurantsSubtitle": "Try adjusting your filters or search term.",
+  "howItWorks": "How It Works",
+  "howSteps": {
+    "discoverTitle": "Discover Restaurants",
+    "discoverDescription": "Browse top-rated venues perfect for any occasion — birthdays, weddings, corporate events, and more.",
+    "selectTitle": "Select Your Event",
+    "selectDescription": "Pick your event type, date, and number of guests to see tailored recommendations.",
+    "exploreTitle": "Explore Menus",
+    "exploreDescription": "View curated menus, pricing, and unique dishes offered by each restaurant.",
+    "setTitle": "Set Your Menu",
+    "setDescription": "Customize your menu and reserve your event directly through SetMenu.",
+    "enjoyTitle": "Enjoy Your Event!",
+    "enjoyDescription": "Relax and enjoy a seamless dining experience for you and your guests."
+  }
 }
