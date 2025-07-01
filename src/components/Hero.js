@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 
 export default function Hero() {
     const { t } = useTranslation();
-    const urlImage = `url('/hero_bg.jpeg')`
+    const urlImage = `url('https://cdn0.weddingwire.com/article/3408/original/1280/jpg/18043-chart-house.jpeg')`
 
     return (
         <div

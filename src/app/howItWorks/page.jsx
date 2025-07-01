@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { forum_splash } from "@/app/fonts";
+import { forum_splash, oswald_splash, splash } from "@/app/fonts";
 
 export default function HowItWorks() {
     const { t } = useTranslation();
@@ -45,7 +45,7 @@ export default function HowItWorks() {
                             className="flex flex-col items-center text-center px-2"
                         >
                             <div
-                                className="w-16 h-16 rounded-full bg-main text-white flex items-center justify-center text-2xl font-bold mb-4">
+                                className={`w-16 h-16 rounded-full bg-main text-white flex items-center justify-center text-2xl font-bold mb-4 ${splash.className}`}>
                                 {idx + 1}
                             </div>
                             <h2

@@ -17,7 +17,7 @@ export default function Home() {
                 <Hero />
             </Suspense>
 
-            <section id="categories">
+            <section id="howitworks">
                 <HowItWorks />
             </section>
 
