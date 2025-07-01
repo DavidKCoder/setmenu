@@ -103,7 +103,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             <div className="relative w-full">
                 <select
-                    className={`border rounded px-2 py-2 w-full truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300 italic"}`}
+                    className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300 italic"}`}
                     value={eventFilter}
                     onChange={(e) => setEventFilter(e.target.value)}
                 >
@@ -131,7 +131,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             <div className="relative w-full">
                 <select
-                    className={`border rounded px-2 py-2 w-full truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300 italic"}`}
+                    className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300 italic"}`}
                     value={locationFilter}
                     onChange={(e) => setLocationFilter(e.target.value)}
                 >
