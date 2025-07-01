@@ -25,17 +25,17 @@ export default function Categories() {
                 CATEGORY
             </div>
             <div
-                className="relative z-10  max-w-6xl mx-auto grid grid-cols-1 sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
+                className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
                 {categories.map((category) => (
                     <Link href={`/categories/${category.slug}`} key={category.slug}>
                         <div
-                            className="category-card flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-teal-500 hover:text-white cursor-pointer transition text-center h-52">
+                            className="category-card flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-teal-500 hover:text-white cursor-pointer transition text-center h-auto sm:h-52">
                             <Image
                                 width={55}
                                 height={25}
                                 src={category.img}
                                 alt="category img"
-                                className="object-cover mb-4 transition-all duration-200"
+                                className="object-cover mb-2 sm:mb-4 transition-all duration-200"
                             />
                             <span
                                 className="text-lg font-medium capitalize">{`${t(category.name.toLowerCase())}`}</span>
