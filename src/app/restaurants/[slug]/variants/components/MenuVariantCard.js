@@ -14,22 +14,11 @@ export default function MenuVariantCard({ variant, onSelectVariant }) {
         <div
             className="bg-white hover:bg-gray-100 items-center [box-shadow:0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full max-w-2xl max-sm:max-w-sm rounded-lg overflow-hidden mx-auto border-2 border-black"
             style={{
-                backgroundImage: "url('https://i.pinimg.com/736x/61/83/28/618328270f9bec8c01ac4928b815460a.jpg')",
+                backgroundImage: "url('https://i.pinimg.com/736x/f6/c1/4e/f6c14e3c08de5e1aad81c2e7f009eb74.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
         >
-            {/*<div className="">*/}
-            {/*    <Image*/}
-            {/*        width={250}*/}
-            {/*        height={150}*/}
-            {/*        sizes="100vw"*/}
-            {/*        className="w-full h-full object-cover"*/}
-            {/*        src={variant.image}*/}
-            {/*        alt={variant.title}*/}
-            {/*    />*/}
-            {/*</div>*/}
-
             <div className="px-5 py-4 flex flex-col justify-between">
                 <h3 className={`text-xl text-slate-900 mt-1 border-l-4 border-main pl-2  uppercase ${forum_splash.className}`}>
                     {variant.title}
@@ -52,7 +41,7 @@ export default function MenuVariantCard({ variant, onSelectVariant }) {
                     className="flex flex-wrap items-center text-center cursor-pointer border border-gray-300 rounded-lg w-full mt-2 p-1">
                     <button
                         type="button"
-                        className="px-3 py-2.5 w-full flex items-center justify-center cursor-pointer text-white text-sm tracking-wider font-medium border-none rounded-md outline-none bg-cyan-600 hover:bg-red-600 active:bg-red-600"
+                        className="bg-custom-blue hover:bg-custom-deepOcean active:bg-red-600 px-3 py-2.5 w-full flex items-center justify-center cursor-pointer text-white text-sm tracking-wider font-medium border-none rounded-md outline-none"
                         onClick={() => onSelectVariant(variant.id)}
                     >
                         <BiDish size={22} />

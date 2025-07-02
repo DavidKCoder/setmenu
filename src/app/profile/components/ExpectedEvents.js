@@ -1,0 +1,165 @@
+"use client";
+
+import { useState } from "react";
+import { FaCalendarAlt } from "react-icons/fa";
+import { Dialog } from "@headlessui/react";
+import Image from "next/image";
+
+export default function ExpectedEvents() {
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const upcomingEvents = [
+        {
+            id: 1,
+            name: "Birthday",
+            date: "2025-07-10",
+            venue: "Ocean View Restaurant",
+            location: "123 Seaside Blvd, LA",
+            phone: "+1 234 567 890",
+            guests: 12,
+            eventType: "Birthday Party",
+            image: "/stats_cover.jpg",
+            menu: "VIP Choice",
+            totalAmount: 1200000,
+        },
+        {
+            id: 2,
+            name: "Corporate Lunch",
+            date: "2025-07-25",
+            venue: "Skyline Dine",
+            location: "456 Sky Ave, NY",
+            phone: "+1 987 654 321",
+            guests: 25,
+            eventType: "Corporate Event",
+            image: "/new_bg.jpeg",
+            menu: "Classic",
+            totalAmount: 450000,
+        },
+    ];
+
+    return (
+        <>
+            <div className="bg-white rounded-xl p-4 mb-8 shadow">
+                <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-base font-bold text-gray-800">Expected Events</h2>
+                    <FaCalendarAlt className="text-gray-400" />
+                </div>
+                {upcomingEvents.length > 0 ? (
+                    <ul className="space-y-3">
+                        {upcomingEvents.map((event) => (
+                            <li
+                                key={event.id}
+                                className="flex justify-between items-center border-b pb-2 last:border-b-0"
+                            >
+                                <div>
+                                    <p className="text-gray-800 font-medium">{event.name}</p>
+                                    <p className="text-sm text-gray-500">
+                                        {event.date} · {event.venue}
+                                    </p>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedEvent(event)}
+                                    className="text-amber-500 hover:underline text-sm"
+                                >
+                                    View
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="text-gray-500 text-sm">No upcoming events planned.</p>
+                )}
+            </div>
+
+            {/* Modal */}
+            <Dialog
+                open={!!selectedEvent}
+                onClose={() => setSelectedEvent(null)}
+                className="relative z-50"
+            >
+                <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
+
+                <div className="fixed inset-0 flex items-center justify-center">
+                    <Dialog.Panel
+                        className="w-11/12 sm:w-full max-w-md rounded-lg bg-white px-6 py-4 shadow-lg space-y-1.5">
+                        <Dialog.Title className="text-lg font-bold text-gray-800">
+                            Event Details
+                        </Dialog.Title>
+
+                        {selectedEvent && (
+                            <>
+                                <div className="w-full h-48 relative rounded overflow-hidden mb-4 border-2">
+                                    <Image
+                                        src={selectedEvent.image}
+                                        alt={selectedEvent.venue}
+                                        fill
+                                        className="object-cover p-0.5"
+                                    />
+                                </div>
+                                <p>
+                                    <span className="font-semibold text-gray-700">Event:</span>{" "}
+                                    {selectedEvent.name}
+                                </p>
+                                <p>
+                                    <span className="font-semibold text-gray-700">Date:</span>{" "}
+                                    {selectedEvent.date}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Restaurant:
+                                  </span>{" "}
+                                    {selectedEvent.venue}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Location:
+                                  </span>{" "}
+                                    {selectedEvent.location}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Phone:
+                                  </span>{" "}
+                                    {selectedEvent.phone}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Guests:
+                                  </span>{" "}
+                                    {selectedEvent.guests}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Event Type:
+                                  </span>{" "}
+                                    {selectedEvent.eventType}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Total Amount:
+                                  </span>{" "}
+                                    {selectedEvent.totalAmount} amd
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Menu:
+                                  </span>{" "}
+                                    {selectedEvent.menu}
+                                </p>
+
+                                <div className="flex justify-end mt-4">
+                                    <button
+                                        onClick={() => setSelectedEvent(null)}
+                                        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </>
+                        )}
+                    </Dialog.Panel>
+                </div>
+            </Dialog>
+        </>
+    );
+}

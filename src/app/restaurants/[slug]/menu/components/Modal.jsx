@@ -60,13 +60,15 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                         </label>
                         <div className="relative w-full">
                             <select
-                                className="block w-full border border-gray-300 p-2 rounded bg-white appearance-none"
+                                className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventType ? "text-gray-800" : "text-gray-300"}`}
                                 value={eventType}
                                 onChange={e => setEventType(e.target.value)}
                             >
-                                <option value="">-- Choose --</option>
+                                <option value="" className="text-gray-400 italic" disabled>
+                                    {t("eventType")}...
+                                </option>
                                 {categories.map((option, index) => (
-                                    <option key={index} value={option}>{option}</option>
+                                    <option key={index} value={option} className="text-gray-800">{option}</option>
                                 ))}
                             </select>
                             <div
@@ -109,15 +111,13 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                             dateFormat="yyyy-MM-dd"
                             disabledKeyboardNavigation
                             excludeDates={[addDays(new Date(), 0)]}
-                            withPortal
                         />
                         {errors.eventDate && <p className="text-red-500 text-sm mt-1">{errors.eventDate}</p>}
                     </div>
 
                     <button
                         onClick={handleSubmit}
-                        className="w-full items-center bg-main hover:bg-cyan-600 text-white gap-2 px-6 py-3 rounded-xl text-lg shadow"
-                    >
+                        className="w-full items-center bg-main hover:bg-cyan-600 text-white gap-2 px-4 py-2 rounded-xl text-lg shadow">
                         Continue
                     </button>
                 </div>

@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 import { forum_splash, kids_splash } from "@/app/fonts";
+import Logo from "@/components/Logo";
 
 export default function CategoryPage({ params }) {
     const { slug } = use(params);
@@ -30,28 +31,7 @@ export default function CategoryPage({ params }) {
     return (
         <>
             <div className="bg-orange-50 mx-auto flex justify-between text-right py-2 px-2">
-                <Link href="/" passHref>
-                    <div className="flex items-center text-sm gap-2">
-                        <Image
-                            src="/logo.webp"
-                            alt="logo"
-                            width="20"
-                            height="20"
-                            className="object-cover"
-                        />
-                        <div className="text-lg font-bold text-gray-300 hover:text-gray-400">SetMenu</div>
-                    </div>
-                </Link>
-                <div className="flex items-center text-sm">
-                    <div className="text-gray-400 px-1">{" | "}</div>
-                    <Link href="/login" passHref>
-                        <div
-                            className="flex items-center justify-center gap-2 uppercase text-gray-400 tracking-wide text-sm hover:text-amber-500 cursor-pointer">
-                            <FaRegUserCircle />
-                            Log In
-                        </div>
-                    </Link>
-                </div>
+                <Logo />
             </div>
             <section className="bg-white text-black">
                 <section

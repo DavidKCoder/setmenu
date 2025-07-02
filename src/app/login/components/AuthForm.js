@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaEnvelope, FaUserPlus, FaSignInAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { forum_splash } from "@/app/fonts";
 
 export default function AuthForm({ redirect }) {
     const router = useRouter();
@@ -35,7 +36,9 @@ export default function AuthForm({ redirect }) {
         <div className="min-h-screen flex">
             {/* Left Side - Auth Form */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
-                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+                <div className="block sm:hidden absolute bg-cover w-full h-screen z-20"
+                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}></div>
+                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-50">
                     <div className="text-center mb-8">
                         <div
                             className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full mb-4">
@@ -210,13 +213,16 @@ export default function AuthForm({ redirect }) {
 
             {/* Right Side */}
             <div className="hidden lg:block lg:w-1/2 bg-cover bg-center"
-                 style={{ backgroundImage: `url('/story_1.jpg')` }}>
+                 style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}>
                 <div
                     className="h-full bg-black bg-opacity-50 flex items-center justify-center text-white px-12 text-center">
                     <div>
-                        <h2 className="text-4xl font-bold mb-6">Your Perfect Event Starts Here</h2>
-                        <p className="text-xl">Find the perfect menu for any event — fast, easy, and tailored to your
-                            taste.</p>
+                        <h2 className={`text-4xl font-bold mb-6 uppercase ${forum_splash.className}`}>
+                            Your Perfect Event Starts Here
+                        </h2>
+                        <p className="text-xl">
+                            Find the perfect menu for any event — fast, easy, and tailored to your taste.
+                        </p>
                     </div>
                 </div>
             </div>

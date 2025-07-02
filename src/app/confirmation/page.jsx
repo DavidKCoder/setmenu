@@ -12,7 +12,6 @@ import { IoVideocam } from "react-icons/io5";
 import { LuNotebookText } from "react-icons/lu";
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-// import html2pdf from "html2pdf.js";
 
 function ConfirmationContent() {
     const router = useRouter();
@@ -25,31 +24,7 @@ function ConfirmationContent() {
     const location = params.get("location");
     const pricePerPerson = params.get("price_per_person");
 
-    // if (!data || !menuData) {
-    //     return (
-    //         <div className="text-white p-8 text-center">
-    //             Missing or invalid reservation details. Please start over.
-    //         </div>
-    //     );
-    // }
-
-    let parsed = {};
     let parsedMenu = {};
-
-    // try {
-    //     parsed = JSON.parse(decodeURIComponent(data));
-    //     parsedMenu = JSON.parse(decodeURIComponent(menuData));
-    // } catch (e) {
-    //     console.error("Failed to parse query data", e);
-    //     return (
-    //         <div className="text-white p-8 text-center">
-    //             Failed to load reservation details. Please try again.
-    //         </div>
-    //     );
-    // }
-
-    // const { date, restaurant, eventType, people, location } = parsed;
-    // const { pricePerPerson } = parsedMenu;
 
     const {
         register,
@@ -58,29 +33,8 @@ function ConfirmationContent() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const generatePDF = async () => {
-        // const element = document.getElementById("pdf-menu");
-        // const opt = {
-        //     margin: 0.5,
-        //     filename: "Menu.pdf",
-        //     image: { type: "jpeg", quality: 0.98 },
-        //     html2canvas: { scale: 2 },
-        //     jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-        // };
-        // return await html2pdf().set(opt).from(element).outputPdf("blob");
-    };
-
-    const onSubmit = async (formData) => {
-        // const blob = await generatePDF();
-        // const buffer = await blob.arrayBuffer();
-        // const base64PDF = Buffer.from(buffer).toString("base64");
-
+    const onSubmit = async () => {
         try {
-            // await fetch("/api/sendReservationEmail", {
-            //     method: "POST",
-            //     headers: { "Content-Type": "application/json" },
-            //     body: JSON.stringify({ email: formData.email, name: formData.name, menuDetails: base64PDF }),
-            // });
             router.push("/confirmation/success");
         } catch (error) {
             alert("Error sending", error);

@@ -9,6 +9,7 @@ import Link from "next/link";
 import { forum_splash } from "@/app/fonts";
 import { useTranslation } from "next-i18next";
 import ComingSoonSection from "@/app/restaurants/[slug]/variants/components/ComingSoonSection";
+import Logo from "@/components/Logo";
 
 export default function MenuVariantSelector({ params }) {
     const router = useRouter();
@@ -40,18 +41,7 @@ export default function MenuVariantSelector({ params }) {
             />
             <div
                 className="w-full items-center bg-white border rounded-xl gap-6 max-w-5xl mx-auto px-6 my-2 relative py-8 bg-opacity-80 text-black">
-                <Link href="/" passHref className="hidden sm:block md:block lg:block xl:block">
-                    <div className="absolute flex items-center gap-2">
-                        <Image
-                            src="/logo.webp"
-                            alt="SetMenu logo"
-                            width="20"
-                            height="20"
-                            className="object-cover"
-                        />
-                        <div className="text-lg font-bold text-gray-800">SetMenu</div>
-                    </div>
-                </Link>
+                <Logo />
                 <h1 className={`text-3xl  text-center uppercase underline ${forum_splash.className}`}
                     style={{ textDecorationColor: "#E9C0A4", textUnderlineOffset: 4, textDecorationThickness: 3 }}>
                     {restaurant.name} Menu

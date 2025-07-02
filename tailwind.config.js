@@ -10,6 +10,17 @@ module.exports = {
                 secondary: '#C8A96A'
             },
             colors: {
+                custom: {
+                    beige: "#CFA47E",
+                    cream: "#E7D1BE",
+                    sand: "#E5DDD0",
+                    olive: "#80744A",
+                    forest: "#414224",
+                    black: "#151513",
+                    blue: "#BCC1C4",
+                    sky: "#A9B5C2",
+                    deepOcean: "#3C5160",
+                },
                 main: '#E9C0A4',
                 secondary: '#C8A96A',
                 background: {

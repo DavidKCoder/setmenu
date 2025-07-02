@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { addDays, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
-import { AiOutlineFileSearch } from "react-icons/ai";
 import { usePathname } from "next/dist/client/components/navigation";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "next-i18next";
+import { FiSearch } from "react-icons/fi";
 
 export default function RestaurantSearchBar({ restaurants, onResults }) {
     const router = useRouter();
@@ -157,7 +157,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 className="w-full px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
                 onClick={handleSearch}
             >
-                <span className="text-lg text-amber-500"><AiOutlineFileSearch /></span>
+                <span className="text-lg text-amber-500"><FiSearch /></span>
                 {t("search")}
             </button>
         </div>
