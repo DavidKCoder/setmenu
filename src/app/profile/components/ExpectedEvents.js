@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { FaCalendarAlt } from "react-icons/fa";
 import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
+import MyDatePicker from "@/app/profile/components/MyDatePicker";
 
 export default function ExpectedEvents() {
     const [selectedEvent, setSelectedEvent] = useState(null);
@@ -53,7 +53,7 @@ export default function ExpectedEvents() {
         {
             id: 3,
             name: "Wedding",
-            date: "2025-09-25",
+            date: "2025-07-27",
             venue: "Gyumri",
             location: "Gyumri",
             phone: "+374 987 654 321",
@@ -66,13 +66,17 @@ export default function ExpectedEvents() {
         },
     ];
 
+    const excludedDates = upcomingEvents.map(event => ({
+        date: new Date(event.date),
+        message: `${event.name} at ${event.venue}`,
+    }));
+
+    const highlightDates = excludedDates.map(item => item.date);
+
     return (
         <>
             <div className="bg-white rounded-xl p-4 mb-8 shadow">
-                <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-base font-bold text-gray-800">Expected Events</h2>
-                    <FaCalendarAlt className="text-gray-400" />
-                </div>
+                <MyDatePicker excludedDates={excludedDates} highlightDates={highlightDates} />
                 {upcomingEvents.length > 0 ? (
                     <ul className="space-y-3">
                         {upcomingEvents.map((event) => (
