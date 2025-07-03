@@ -1,11 +1,13 @@
 import { forum_splash } from "@/app/fonts";
 import DatePicker from "react-datepicker";
-import { addDays } from "date-fns";
+import { addDays, format } from "date-fns";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "next-i18next";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdArrowDropDown } from "react-icons/md";
+import { PiCalendarDots } from "react-icons/pi";
+import { FaUsers } from "react-icons/fa";
 
 export default function Modal({ name, showModal, setShowModal, categories, location, price }) {
     const { t } = useTranslation();
@@ -86,16 +88,25 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                         <label className={`block mb-2 font-medium ${forum_splash.className}`}>
                             Set person:
                         </label>
-                        <input
-                            type="number"
-                            min="2"
-                            max="400"
-                            className="w-full border border-gray-300 p-2 rounded bg-white"
-                            value={peopleCount}
-                            onChange={e => setPeopleCount(e.target.value)}
-                        />
-                        {errors.peopleCount && <p className="text-red-500 text-sm mt-1">{errors.peopleCount}</p>}
+
+                        <div className="relative">
+                            <FaUsers className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+
+                            <input
+                                type="number"
+                                min="2"
+                                max="400"
+                                className="w-full pl-9 border border-gray-300 p-2 rounded bg-white"
+                                value={peopleCount}
+                                onChange={e => setPeopleCount(e.target.value)}
+                            />
+                        </div>
+
+                        {errors.peopleCount && (
+                            <p className="text-red-500 text-sm mt-1">{errors.peopleCount}</p>
+                        )}
                     </div>
+
 
                     {/* Date Picker */}
                     <div className="mb-6">
@@ -111,6 +122,15 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                             dateFormat="yyyy-MM-dd"
                             disabledKeyboardNavigation
                             excludeDates={[addDays(new Date(), 0)]}
+                            customInput={
+                                <button
+                                    className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded">
+                                    {eventDate
+                                        ? <span className="text-gray-700">{format(eventDate, "yyyy-MM-dd")} </span>
+                                        :
+                                        <span className="flex items-center gap-2"><PiCalendarDots size={20} /> Choose a date</span>}
+                                </button>
+                            }
                         />
                         {errors.eventDate && <p className="text-red-500 text-sm mt-1">{errors.eventDate}</p>}
                     </div>
