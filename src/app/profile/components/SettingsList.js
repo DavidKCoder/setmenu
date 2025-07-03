@@ -20,7 +20,11 @@ export default function SettingsList() {
 
             {/* Second block */}
             <div className="bg-white rounded-xl divide-y divide-gray-200 shadow">
-                <SettingsRow icon={<FaInfoCircle />} label="About application" />
+                <SettingsRow
+                    icon={<FaInfoCircle />}
+                    label="About application"
+                    href="/about"
+                />
                 <SettingsRow icon={<FaQuestionCircle />} label="Help/FAQ" />
                 <SettingsRow
                     icon={<FaTrash />}
@@ -32,9 +36,11 @@ export default function SettingsList() {
     );
 }
 
-function SettingsRow({ icon, label, toggle, textColor }) {
-    return (
-        <div className="flex items-center justify-between px-4 py-4">
+import Link from "next/link";
+
+function SettingsRow({ icon, label, toggle, textColor, href }) {
+    const content = (
+        <div className="flex items-center justify-between px-4 py-4 hover:bg-gray-50 cursor-pointer">
             <div className="flex items-center gap-3">
                 <span className="text-gray-500 text-lg">
                     {icon}
@@ -50,4 +56,11 @@ function SettingsRow({ icon, label, toggle, textColor }) {
             )}
         </div>
     );
+
+    return href ? (
+        <Link href={href} className="block">
+            {content}
+        </Link>
+    ) : content;
 }
+

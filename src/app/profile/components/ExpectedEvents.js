@@ -4,9 +4,22 @@ import { useState } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Dialog } from "@headlessui/react";
 import Image from "next/image";
+import { GoDotFill } from "react-icons/go";
 
 export default function ExpectedEvents() {
     const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const enumStatus = {
+        1: "pending",
+        2: "confirmed",
+        3: "ongoing",
+    };
+
+    const statusStyles = {
+        1: "text-amber-500 ring-yellow-600",
+        2: "text-green-500 ring-green-500",
+        3: "text-blue-500 ring-blue-500",
+    };
 
     const upcomingEvents = [
         {
@@ -20,6 +33,7 @@ export default function ExpectedEvents() {
             eventType: "Birthday Party",
             image: "/stats_cover.jpg",
             menu: "VIP Choice",
+            status: 1,
             totalAmount: 1200000,
         },
         {
@@ -33,7 +47,22 @@ export default function ExpectedEvents() {
             eventType: "Corporate Event",
             image: "/new_bg.jpeg",
             menu: "Classic",
+            status: 2,
             totalAmount: 450000,
+        },
+        {
+            id: 3,
+            name: "Wedding",
+            date: "2025-09-25",
+            venue: "Gyumri",
+            location: "Gyumri",
+            phone: "+374 987 654 321",
+            guests: 250,
+            eventType: "Wedding",
+            image: "/new_bg.jpeg",
+            menu: "Standard",
+            status: 3,
+            totalAmount: 2500000,
         },
     ];
 
@@ -52,9 +81,21 @@ export default function ExpectedEvents() {
                                 className="flex justify-between items-center border-b pb-2 last:border-b-0"
                             >
                                 <div>
-                                    <p className="text-gray-800 font-medium">{event.name}</p>
+                                    <p className="text-gray-800 font-medium">
+                                        {event.name}
+                                        <span
+                                            className={`inline-flex bg-gray-50 items-center rounded-md px-2 py-0.5 ml-2 text-xs font-medium text-amber-500 ring-1 ring-inset ${statusStyles[event.status]}`}>
+                                            <span className="relative flex items-center h-2.5 w-2.5 mr-1">
+                                              <span
+                                                  className={`animate-ping absolute bg-gray-300 inline-flex h-full w-full rounded-full opacity-75 ${statusStyles[event.status]}`}></span>
+                                                <GoDotFill className={`relative ${statusStyles[event.status]}`} />
+                                              </span>
+                                            <span
+                                                className={`${statusStyles[event.status]}`}>{enumStatus[event.status]}</span>
+                                        </span>
+                                    </p>
                                     <p className="text-sm text-gray-500">
-                                        {event.date} · {event.venue}
+                                        {event.date} — {event.venue}
                                     </p>
                                 </div>
                                 <button

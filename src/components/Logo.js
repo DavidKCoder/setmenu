@@ -22,7 +22,7 @@ export default function Logo({ size = 20, textColor = "text-gray-300" }) {
                     </div>
                 </div>
             </Link>
-            <div className="flex items-center text-gray-100 p-1 bg-custom-beige rounded-full">
+            <div className="flex items-center text-gray-100 bg-custom-beige rounded-full">
                 <Link href="/profile" passHref>
                     <PiUserCircleGearFill size={30} />
                 </Link>
