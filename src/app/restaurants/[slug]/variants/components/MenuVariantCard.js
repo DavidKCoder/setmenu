@@ -45,7 +45,7 @@ export default function MenuVariantCard({ variant, onSelectVariant }) {
             <button
                 type="button"
                 onClick={() => onSelectVariant(variant.id)}
-                className={`w-full flex justify-center items-center gap-2 rounded-full px-4 py-3 text-sm font-bold uppercase transition text-white bg-main hover:bg-custom-beige`}
+                className={`w-full flex justify-center items-center gap-2 rounded-lg px-4 py-3 text-sm font-bold uppercase transition text-white bg-cyan-600 hover:bg-custom-beige`}
             >
                 <BiDish size={18} />
                 {t("checkMenu")}
