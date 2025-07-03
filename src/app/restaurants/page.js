@@ -30,7 +30,7 @@ export default function AllRestaurantsPage() {
                         style={{ fontWeight: 600 }}>
                         All Restaurants
                     </h1>
-                    <div className="relative max-w-6xl mx-auto">
+                    <div className="flex justify-center items-center sm:mt-20">
                         <Suspense fallback={<div>Loading search...</div>}>
                             <RestaurantSearchBar
                                 restaurants={restaurants}
