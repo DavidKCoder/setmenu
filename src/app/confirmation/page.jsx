@@ -6,12 +6,9 @@ export const dynamic = "force-dynamic";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
-import { FaCalendarAlt, FaMoneyBillWave, FaUsers, FaUtensils } from "react-icons/fa";
-import { MdLocationOn, MdRestaurantMenu } from "react-icons/md";
-import { IoVideocam } from "react-icons/io5";
-import { LuNotebookText } from "react-icons/lu";
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import { EventInfo } from "@/app/confirmation/components/EventInfo";
 
 function ConfirmationContent() {
     const router = useRouter();
@@ -41,6 +38,7 @@ function ConfirmationContent() {
         }
     };
 
+
     return (
         <div
             className="min-h-screen bg-cover bg-center flex items-center justify-center p-2 sm:p-6 bg-gray-800"
@@ -49,50 +47,18 @@ function ConfirmationContent() {
             }}
         >
             <div
-                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-1 sm:py-8 px-2.5 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
+                className="glass-card w-full max-w-6xl rounded-2xl shadow-lg py-3 sm:py-8 px-2.5 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-black">
 
                 {/* Event Info */}
-                <div className="rounded-xl py-6 px-2">
-                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Event Summary</h2>
-                    <ul className="space-y-1.5 text-sm sm:text-md">
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono">
-                            <FaCalendarAlt className="text-amber-500" />
-                            <span className="text-gray-400">Date:</span> {date}
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono">
-                            <MdRestaurantMenu className="text-amber-500" />
-                            <span className="text-gray-400">Restaurant:</span> {restaurantName}
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono">
-                            <MdLocationOn className="text-amber-500" />
-                            <span className="text-gray-400">Location:</span> {location}
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono">
-                            <FaUsers className="text-amber-500" />
-                            <span className="text-gray-400">Guests:</span> {people}
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono capitalize">
-                            <FaUtensils className="text-amber-500" />
-                            <span className="text-gray-400">Event Type:</span> {eventType}
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50 font-mono">
-                            <LuNotebookText className="text-amber-500" />
-                            <span className="text-gray-400">Menu:</span> Classic Choice
-                        </li>
-                    </ul>
-                    <hr className="my-6 border-t border-amber-400 opacity-30 font-mono" />
-                    <ul className="space-y-1.5 text-sm sm:text-md font-mono">
-                        <li className="flex items-center gap-2 text-warmGray-50">
-                            <FaMoneyBillWave className="text-amber-500" />
-                            <span className="text-gray-400">Total:</span>{" "}
-                            {(+people * +pricePerPerson).toLocaleString("de-DE")} AMD
-                        </li>
-                        <li className="flex items-center gap-2 text-warmGray-50">
-                            <IoVideocam className="text-amber-500" />
-                            <span className="text-gray-400">Extra options:</span> Անվճար DJ / Հանդիսավա / Ֆոտո
-                            նկարահանում
-                        </li>
-                    </ul>
+                <div className="hidden sm:block rounded-xl py-6 px-2">
+                    <EventInfo
+                        date={date}
+                        restaurantName={restaurantName}
+                        people={people}
+                        location={location}
+                        eventType={eventType}
+                        pricePerPerson={pricePerPerson}
+                    />
                 </div>
 
                 {/* Booking Form */}
@@ -183,6 +149,18 @@ function ConfirmationContent() {
                             {isSubmitting ? "Processing..." : "Submit Reservation"}
                         </button>
                     </form>
+                </div>
+
+                {/* Event Info */}
+                <div className="block sm:hidden pl-4">
+                    <EventInfo
+                        date={date}
+                        restaurantName={restaurantName}
+                        people={people}
+                        location={location}
+                        eventType={eventType}
+                        pricePerPerson={pricePerPerson}
+                    />
                 </div>
             </div>
 
