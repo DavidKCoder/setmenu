@@ -6,8 +6,10 @@ import { PiUserCircleGearFill } from "react-icons/pi";
 import React from "react";
 
 export default function Logo({ size = 20, textColor = "text-gray-300" }) {
+    const userName = "David Karapetyan";
+
     return (
-        <>
+        <div className="w-full flex justify-between items-center">
             <Link href="/" passHref>
                 <div className="flex items-center text-sm gap-2 cursor-pointer">
                     <Image
@@ -22,11 +24,12 @@ export default function Logo({ size = 20, textColor = "text-gray-300" }) {
                     </div>
                 </div>
             </Link>
-            <div className="flex items-center text-gray-100 bg-custom-beige rounded-full">
-                <Link href="/profile" passHref>
-                    <PiUserCircleGearFill size={30} />
-                </Link>
-            </div>
-        </>
+            <Link href="/profile" passHref>
+                {/*<PiUserCircleGearFill size={30} />*/}
+                <img className="w-8 sm:w-10 rounded-full border-custom-beige border-2"
+                     src={`https://ui-avatars.com/api/?color=fbfefb&background=e9c0a4&name=${userName}`}
+                     alt="Rounded avatar" />
+            </Link>
+        </div>
     );
 }
