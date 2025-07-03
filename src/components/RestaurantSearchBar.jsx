@@ -8,6 +8,7 @@ import { usePathname } from "next/dist/client/components/navigation";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "next-i18next";
 import { FiSearch } from "react-icons/fi";
+import { FaCalendarAlt } from "react-icons/fa";
 
 export default function RestaurantSearchBar({ restaurants, onResults }) {
     const router = useRouter();
@@ -99,7 +100,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                         <button className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
                             {selectedDate
                                 ? <span className="text-gray-700">{format(selectedDate, "yyyy-MM-dd")} </span>
-                                : `${t("filterDate")}`}
+                                : <span className="flex items-center"><FaCalendarAlt className="text-main mr-1" />
+                                    {t("filterDate")}
+                                </span>}
                         </button>
                     }
                 />
