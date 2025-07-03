@@ -85,6 +85,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             <div className="relative w-full col-span-2 col-start-5 sm:col-auto">
                 <DatePicker
+                    popperPlacement="left"
                     selected={selectedDate}
                     onChange={setSelectedDate}
                     minDate={new Date()}
