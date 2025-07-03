@@ -70,38 +70,41 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
     return (
         <div
-            className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 md:flex gap-4 py-4 px-4 rounded-md items-center justify-center mb-8 bg-orange-300 md:w-auto">
+            className="w-11/12 md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 p-4 rounded-md items-center justify-between mb-8 bg-orange-300">
 
-            <input
-                type="text"
-                value={restaurantName}
-                placeholder={t("searchByName")}
-                onChange={(e) => setRestaurantName(e.target.value)}
-                className="border rounded px-4 py-2 w-full sm:col-span-2"
-            />
+            <div className="w-full col-span-4 sm:col-auto">
+                <input
+                    type="text"
+                    value={restaurantName}
+                    placeholder={t("searchByName")}
+                    onChange={(e) => setRestaurantName(e.target.value)}
+                    className="border rounded px-4 py-2 w-full sm:col-span-2"
+                />
+            </div>
 
-            <div className="w-full">
+
+            <div className="relative w-full col-span-2 col-start-5 sm:col-auto">
                 <DatePicker
                     selected={selectedDate}
                     onChange={setSelectedDate}
                     minDate={new Date()}
-                    placeholderText={`📅 ${t("filterDate")}`}
+                    // placeholderText={`📅 ${t("filterDate")}`}
                     className="w-full border border-gray-300 p-2 rounded text-gray-400"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
                     highlightDates={[addDays(new Date(), 0)]}
                     disabledKeyboardNavigation
                     customInput={
-                        <button className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded">
+                        <button className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
                             {selectedDate
                                 ? <span className="text-gray-700">{format(selectedDate, "yyyy-MM-dd")} </span>
-                                : `📅 ${t("filterDate")}`}
+                                : `${t("filterDate")}`}
                         </button>
                     }
                 />
             </div>
 
-            <div className="relative w-full">
+            <div className="relative w-full col-span-3 sm:col-auto">
                 <select
                     className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={eventFilter}
@@ -129,7 +132,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 )}
             </div>
 
-            <div className="relative w-full">
+            <div className="relative w-full col-span-3 sm:col-auto">
                 <select
                     className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={locationFilter}
@@ -153,13 +156,17 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 )}
             </div>
 
-            <button
-                className="w-full px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
-                onClick={handleSearch}
-            >
-                <span className="text-lg text-amber-500"><FiSearch /></span>
-                {t("search")}
-            </button>
+            <div className="col-span-2 col-start-3 row-start-3 flex justify-center sm:col-auto">
+                <button
+                    className="px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                    onClick={handleSearch}
+                >
+                    <span className="text-lg text-amber-500">
+                      <FiSearch />
+                    </span>
+                    {t("search")}
+                </button>
+            </div>
         </div>
     );
 }

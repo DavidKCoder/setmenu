@@ -7,7 +7,7 @@ import NavBar from "@/components/NavBar";
 import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import { Suspense } from "react";
-import HowItWorks from "@/app/howItWorks/page";
+import HowItWorks from "@/components/HowItWorks";
 
 export default function Home() {
     return (

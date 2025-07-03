@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { forum_splash, oswald_splash, splash } from "@/app/fonts";
+import { forum_splash, splash } from "@/app/fonts";
 
 export default function HowItWorks() {
     const { t } = useTranslation();
@@ -34,11 +34,11 @@ export default function HowItWorks() {
         <main className="min-h-96 bg-orange-50 py-8 text-black px-4">
             <div className="max-w-5xl mx-auto text-center">
                 <h1
-                    className={`text-4xl md:text-5xl font-extrabold mb-12 uppercase tracking-widest text-main ${forum_splash.className}`}
+                    className={`text-4xl md:text-5xl font-extrabold mb-6 sm:mb-12 uppercase tracking-widest text-main ${forum_splash.className}`}
                 >
                     {t("howItWorks")}
                 </h1>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-10">
                     {steps.map(({ title, description }, idx) => (
                         <div
                             key={idx}

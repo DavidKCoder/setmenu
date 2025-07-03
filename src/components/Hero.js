@@ -11,7 +11,7 @@ export default function Hero() {
     return (
         <div
             className="w-full h-auto sm:h-screen bg-center bg-cover py-12 sm:p-0 xl:p-0"
-            style={{ backgroundImage: urlImage }}
+            style={{ backgroundImage: urlImage, maxHeight: 800 }}
         >
             <div className="relative inset-0 bg-black/40 px-6 py-10 top-24 flex items-start justify-start">
                 <div className="max-w-xl space-y-6">
@@ -23,7 +23,7 @@ export default function Hero() {
                     </p>
                 </div>
             </div>
-            <div className="flex justify-center items-center mt-16 sm:mt-20 ">
+            <div className="flex justify-center items-center mt-16 sm:mt-20">
                 <RestaurantSearchBar
                     restaurants={restaurants}
                     onResults={() => {

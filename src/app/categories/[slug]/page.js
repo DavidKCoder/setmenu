@@ -43,7 +43,7 @@ export default function CategoryPage({ params }) {
                         {slug.replace("-", " ")} Restaurants
                     </h1>
 
-                    <div className="relative max-w-6xl mx-auto">
+                    <div className="relative flex justify-center items-center sm:mt-20">
                         <RestaurantSearchBar
                             restaurants={specificRestaurants}
                             onResults={setFilteredRestaurants}
