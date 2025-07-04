@@ -220,7 +220,7 @@ export default function AuthForm({ redirect }) {
                 <div
                     className="h-full bg-black bg-opacity-50 flex items-center justify-center text-white px-12 text-center">
                     <div>
-                        <h2 className={`text-4xl font-bold mb-6 uppercase ${forum_splash.className}`}>
+                        <h2 className={`text-4xl font-bold pb-6 uppercase ${forum_splash.className}`}>
                             Your Perfect Event Starts Here
                         </h2>
                         <p className="text-xl">
