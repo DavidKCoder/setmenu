@@ -35,10 +35,10 @@ export default function AuthForm({ redirect }) {
     return (
         <div className="min-h-screen flex">
             {/* Left Side - Auth Form */}
-            <div className="w-full lg:w-1/2 flex items-center justify-center ">
+            <div className="w-full lg:w-1/2 flex items-center justify-center">
                 <div className="block sm:hidden absolute bg-cover w-full h-screen z-20 "
-                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')`, top: 0, bottom: 0 }}></div>
-                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-50 m-6">
+                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')`, display: "inline-flex" }}></div>
+                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl z-50 m-6 py-4">
                     <div className="text-center">
                         <div
                             className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full">
@@ -52,7 +52,7 @@ export default function AuthForm({ redirect }) {
                             {isLogin ? "Please sign in to continue" : "Get started with your account"}
                         </p>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-black space-y-4">
+                    <form onSubmit={handleSubmit(onSubmit)} className="text-black space-y-4 px-8">
                         {!isLogin && (
                             <>
                                 {/* Name Field */}
