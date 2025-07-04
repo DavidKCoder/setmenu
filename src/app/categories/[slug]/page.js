@@ -6,7 +6,6 @@ import RestaurantCard from "@/app/restaurants/components/RestaurantCard";
 import RestaurantSearchBar from "@/components/RestaurantSearchBar";
 import React, { useMemo, use, useState } from "react";
 import Image from "next/image";
-import { FaRegUserCircle } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 import { forum_splash, kids_splash } from "@/app/fonts";
 import Logo from "@/components/Logo";
@@ -51,7 +50,7 @@ export default function CategoryPage({ params }) {
                     </div>
                 </section>
 
-                <div className="ova-section relative h-40 sm:h-56 text-center flex flex-col items-center justify-center">
+                <div className="ova-section relative h-48 sm:h-56 text-center flex flex-col items-center justify-center">
                     <div
                         className={`text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}

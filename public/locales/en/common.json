@@ -71,5 +71,32 @@
     "setDescription": "Customize your menu and reserve your event directly through SetMenu.",
     "enjoyTitle": "Enjoy Your Event!",
     "enjoyDescription": "Relax and enjoy a seamless dining experience for you and your guests."
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Contact us for a quote, help or to join the team.",
+    "addressLabel": "Address",
+    "address": "Armenia / Yerevan",
+    "emailLabel": "Email",
+    "email": "setmenu@gmail.com",
+    "phoneLabel": "Phone",
+    "phone": "+374 55 753272",
+    "sendMessage": "Send message",
+    "nameLabel": "Name",
+    "emailFieldLabel": "Email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write something...",
+    "sendButton": "Send",
+    "followUs": "Follow us",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
   }
 }

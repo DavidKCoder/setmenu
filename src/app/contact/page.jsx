@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
 export default function ContactPage() {
+    const { t } = useTranslation();
+
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row max-w-5xl w-full">
-
                 {/* Left Side Image */}
                 <div className="relative w-full md:w-1/2 h-72 md:h-auto">
                     <Image
@@ -19,50 +22,60 @@ export default function ContactPage() {
 
                 {/* Right Side Content */}
                 <div className="w-full md:w-1/2 p-8">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Contact us</h1>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                        {t("contact.title")}
+                    </h1>
                     <p className="text-gray-600 text-sm mb-6">
-                        Contact us for a quote, help or to join the team.
+                        {t("contact.subtitle")}
                     </p>
 
                     {/* Contact Info */}
                     <div className="mb-8 space-y-1 text-sm text-gray-700">
                         <p>
-                            <span className="font-semibold">Address</span><br />
-                            Armenia / Yerevan
+                            <span className="font-semibold">{t("contact.addressLabel")}</span><br />
+                            {t("contact.address")}
                         </p>
                         <p>
-                            <span className="font-semibold">Email</span><br />
-                            setmenu@gmail.com
+                            <span className="font-semibold">{t("contact.emailLabel")}</span><br />
+                            {t("contact.email")}
                         </p>
                         <p>
-                            <span className="font-semibold">Phone</span><br />
-                            +374 55 753272
+                            <span className="font-semibold">{t("contact.phoneLabel")}</span><br />
+                            {t("contact.phone")}
                         </p>
                     </div>
 
                     {/* Form */}
-                    <h2 className="text-lg font-semibold text-gray-800 mb-4">Get a quote</h2>
+                    <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                        {t("contact.sendMessage")}
+                    </h2>
                     <form className="space-y-4">
                         <div>
-                            <label className="block text-xs font-semibold text-gray-500">Name</label>
+                            <label className="block text-xs font-semibold text-gray-500">
+                                {t("contact.nameLabel")}
+                            </label>
                             <input
                                 type="text"
-                                defaultValue="Owen Goodwin"
+                                defaultValue=""
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-gray-700 text-gray-700 py-1"
                             />
                         </div>
                         <div>
-                            <label className="block text-xs font-semibold text-gray-500">Email</label>
+                            <label className="block text-xs font-semibold text-gray-500">
+                                {t("contact.emailFieldLabel")}
+                            </label>
                             <input
                                 type="email"
-                                defaultValue="owen.g@hello.com"
+                                defaultValue=""
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-gray-700 text-gray-700 py-1"
                             />
                         </div>
                         <div>
-                            <label className="block text-xs font-semibold text-gray-500">Message</label>
+                            <label className="block text-xs font-semibold text-gray-500">
+                                {t("contact.messageLabel")}
+                            </label>
                             <textarea
-                                defaultValue="Write something..."
+                                defaultValue={t("contact.messagePlaceholder")}
                                 rows={5}
                                 maxLength={200}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-gray-700 text-gray-700 py-1"
@@ -70,23 +83,56 @@ export default function ContactPage() {
                         </div>
                         <button
                             type="submit"
-                            className="border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white font-semibold px-4 py-2 transition-colors duration-300"
+                            className="border border-gray-700 rounded-md text-gray-700 hover:bg-gray-700 hover:text-white font-semibold px-4 py-2 transition-colors duration-300"
                         >
-                            Send Message
+                            {t("contact.sendButton")}
                         </button>
                     </form>
 
                     {/* Social Links */}
                     <div className="mt-8">
-                        <p className="text-sm font-semibold text-gray-700 mb-2">Follow us</p>
-                        <div className="flex space-x-4 text-gray-500 text-sm">
-                            <a href="/contact" className="hover:text-gray-700">Facebook</a>
-                            <a href="/contact" className="hover:text-gray-700">Twitter</a>
-                            <a href="/contact" className="hover:text-gray-700">Instagram</a>
-                            <a href="/contact" className="hover:text-gray-700">LinkedIn</a>
+                        <p className="text-sm font-semibold text-gray-700 mb-2">
+                            {t("contact.followUs")}
+                        </p>
+                        <div className="flex flex-wrap text-black text-sm gap-4">
+                            <a
+                                href="https://facebook.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:text-gray-700"
+                            >
+                                <FaFacebookF size={16} className="mr-2" />
+                                <span>{t("contact.facebook")}</span>
+                            </a>
+                            <a
+                                href="https://twitter.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:text-gray-700"
+                            >
+                                <FaTwitter size={16} className="mr-2" />
+                                <span>{t("contact.twitter")}</span>
+                            </a>
+                            <a
+                                href="https://instagram.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:text-gray-700"
+                            >
+                                <FaInstagram size={16} className="mr-2" />
+                                <span>{t("contact.instagram")}</span>
+                            </a>
+                            <a
+                                href="https://linkedin.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:text-gray-700"
+                            >
+                                <FaLinkedinIn size={16} className="mr-2" />
+                                <span>{t("contact.linkedin")}</span>
+                            </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

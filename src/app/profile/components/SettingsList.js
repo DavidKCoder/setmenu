@@ -22,14 +22,15 @@ export default function SettingsList() {
             <div className="bg-white rounded-xl divide-y divide-gray-200 shadow">
                 <SettingsRow
                     icon={<FaInfoCircle />}
-                    label="About application"
+                    label="About Us"
                     href="/about"
                 />
-                <SettingsRow icon={<FaQuestionCircle />} label="Help/FAQ" />
+                <SettingsRow icon={<FaQuestionCircle />} label="Help" />
                 <SettingsRow
-                    icon={<FaTrash />}
+                    icon={<FaTrash className="text-red-500" />}
                     label="Deactivate my account"
                     textColor="text-red-500"
+                    href="/contact"
                 />
             </div>
         </div>

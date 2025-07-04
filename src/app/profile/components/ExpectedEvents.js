@@ -5,21 +5,25 @@ import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import MyDatePicker from "@/app/profile/components/MyDatePicker";
+import { format } from "date-fns";
+
+const enumStatus = {
+    1: "pending",
+    2: "confirmed",
+    3: "ongoing",
+};
+
+const statusStyles = {
+    1: "text-amber-500 ring-yellow-600",
+    2: "text-green-500 ring-green-500",
+    3: "text-blue-500 ring-blue-500",
+};
+
+const today = new Date();
+const currentDate = format(today, "yyyy-MM-dd");
 
 export default function ExpectedEvents() {
     const [selectedEvent, setSelectedEvent] = useState(null);
-
-    const enumStatus = {
-        1: "pending",
-        2: "confirmed",
-        3: "ongoing",
-    };
-
-    const statusStyles = {
-        1: "text-amber-500 ring-yellow-600",
-        2: "text-green-500 ring-green-500",
-        3: "text-blue-500 ring-blue-500",
-    };
 
     const upcomingEvents = [
         {
@@ -53,7 +57,7 @@ export default function ExpectedEvents() {
         {
             id: 3,
             name: "Wedding",
-            date: "2025-07-27",
+            date: currentDate,
             venue: "Gyumri",
             location: "Gyumri",
             phone: "+374 987 654 321",
@@ -181,15 +185,15 @@ export default function ExpectedEvents() {
                                 </p>
                                 <p>
                                   <span className="font-semibold text-gray-700">
-                                    Total Amount:
-                                  </span>{" "}
-                                    {selectedEvent.totalAmount} amd
-                                </p>
-                                <p>
-                                  <span className="font-semibold text-gray-700">
                                     Menu:
                                   </span>{" "}
                                     {selectedEvent.menu}
+                                </p>
+                                <p>
+                                  <span className="font-semibold text-gray-700">
+                                    Total Amount:
+                                  </span>{" "}
+                                    {selectedEvent.totalAmount} amd
                                 </p>
 
                                 <div className="flex justify-end mt-4">

@@ -9,8 +9,6 @@ import RestaurantSearchBar from "@/components/RestaurantSearchBar";
 import Image from "next/image";
 import { forum_splash } from "@/app/fonts";
 import { useTranslation } from "next-i18next";
-import { PiUserCircleGearFill } from "react-icons/pi";
-import Logo from "@/components/Logo";
 
 export default function AllRestaurantsPage() {
     const { t } = useTranslation();
@@ -18,9 +16,6 @@ export default function AllRestaurantsPage() {
 
     return (
         <>
-            <div className="bg-orange-50 mx-auto flex justify-between text-right py-2 px-2">
-                <Logo />
-            </div>
             <section className="bg-white text-black">
                 <section
                     className="relative w-full bg-center bg-cover grid items-center h-auto md:h-96 lg:h-96 xl:h-96"

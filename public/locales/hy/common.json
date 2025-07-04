@@ -73,5 +73,32 @@
     "setDescription": "Անհատականացրեք ձեր մենյուն և ամրագրեք ձեր միջոցառումը անմիջապես SetMenu-ի միջոցով։",
     "enjoyTitle": "Վայելեք ձեր միջոցառումը!",
     "enjoyDescription": "Հանգստացեք և վայելեք հիանալի ճաշի փորձը ձեր և ձեր հյուրերի համար։"
+  },
+  "footer": {
+    "allRightsReserved": "Բոլոր իրավունքները պաշտպանված են։",
+    "about": "Մեր մասին",
+    "contact": "Կապ",
+    "privacy": "Գաղտնիության քաղաքականություն"
+  },
+  "contact": {
+    "title": "Կապ մեզ հետ",
+    "subtitle": "Կապվեք մեզ հետ գնանշման, օգնության կամ թիմին միանալու համար։",
+    "addressLabel": "Հասցե",
+    "address": "Հայաստան / Երևան",
+    "emailLabel": "Էլ. հասցե",
+    "email": "setmenu@gmail.com",
+    "phoneLabel": "Հեռախոս",
+    "phone": "+374 55 753272",
+    "sendMessage": "Ուղարկել հաղորդագրություն",
+    "nameLabel": "Անուն",
+    "emailFieldLabel": "Էլ. հասցե",
+    "messageLabel": "Հաղորդագրություն",
+    "messagePlaceholder": "Գրեք ինչ-որ բան...",
+    "sendButton": "Ուղարկել",
+    "followUs": "Հետևեք մեզ",
+    "facebook": "Ֆեյսբուք",
+    "twitter": "Թվիթեր",
+    "instagram": "Ինստագրամ",
+    "linkedin": "Լինքդին"
   }
 }

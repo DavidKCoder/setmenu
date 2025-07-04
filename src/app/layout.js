@@ -2,7 +2,8 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 import Providers from "@/app/providers";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import React from "react";
 
 export const metadata = {
     title: "SetMenu",
