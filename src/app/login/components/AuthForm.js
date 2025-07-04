@@ -35,10 +35,10 @@ export default function AuthForm({ redirect }) {
     return (
         <div className="min-h-screen flex">
             {/* Left Side - Auth Form */}
-            <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
-                <div className="block sm:hidden absolute bg-cover w-full h-screen z-20"
-                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}></div>
-                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-50">
+            <div className="w-full lg:w-1/2 flex items-center justify-center ">
+                <div className="block sm:hidden absolute bg-cover w-full h-screen z-20 "
+                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')`, top: 0, bottom: 0 }}></div>
+                <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-50 m-6">
                     <div className="text-center mb-8">
                         <div
                             className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full mb-4">
@@ -52,24 +52,24 @@ export default function AuthForm({ redirect }) {
                             {isLogin ? "Please sign in to continue" : "Get started with your account"}
                         </p>
                     </div>
-
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-black">
+                    <form onSubmit={handleSubmit(onSubmit)} className="text-black space-y-4">
                         {!isLogin && (
                             <>
                                 {/* Name Field */}
-                                <div className="mb-4">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">Name</label>
                                     <input
                                         {...register("name", { required: "Name is required" })}
                                         className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:${errors.name ? "ring-red-500" : "ring-cyan-600"}`}
                                         placeholder="John"
                                     />
-                                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                                    {errors.name &&
+                                        <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                                 </div>
 
                                 {/* Surname Field */}
-                                <div className="mb-4">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Surname</label>
+                                <divs>
+                                    <label className="block text-sm font-medium text-gray-700">Surname</label>
                                     <input
                                         {...register("surname", { required: "Surname is required" })}
                                         className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:${errors.surname ? "ring-red-500" : "ring-cyan-600"}`}
@@ -77,11 +77,12 @@ export default function AuthForm({ redirect }) {
                                     />
                                     {errors.surname &&
                                         <p className="text-red-500 text-sm mt-1">{errors.surname.message}</p>}
-                                </div>
+                                </divs>
 
                                 {/* Phone Number Field */}
-                                <div className="mb-4">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">Phone
+                                        Number</label>
                                     <input
                                         {...register("phone", {
                                             required: "Phone number is required",
@@ -99,8 +100,8 @@ export default function AuthForm({ redirect }) {
                             </>
                         )}
 
-                        <div className="mb-6">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <div className="">
+                            <label className="block text-sm font-medium text-gray-700">Email Address</label>
                             <div className="relative">
                                 <input
                                     type="email"
@@ -116,8 +117,8 @@ export default function AuthForm({ redirect }) {
                             {errors.email && <p className="text-sm text-red-600">{errors.email.message}</p>}
                         </div>
 
-                        <div className="mb-6">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div className="">
+                            <label className="block text-sm font-medium text-gray-700">Password</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -138,7 +139,9 @@ export default function AuthForm({ redirect }) {
 
                         {!isLogin && (
                             <div className="mb-6">
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                                <label className="block text-sm font-medium text-gray-700">
+                                    Confirm Password
+                                </label>
                                 <div className="relative">
                                     <input
                                         type={showConfirmPassword ? "text" : "password"}
@@ -207,8 +210,8 @@ export default function AuthForm({ redirect }) {
                             </button>
                         </p>
                     </form>
-
                 </div>
+
             </div>
 
             {/* Right Side */}
