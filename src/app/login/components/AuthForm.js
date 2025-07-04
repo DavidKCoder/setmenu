@@ -48,7 +48,7 @@ export default function AuthForm({ redirect }) {
                         <h2 className="text-2xl font-bold text-gray-800">
                             {isLogin ? "Welcome Back!" : "Create Account"}
                         </h2>
-                        <p className="text-gray-600 mt-2">
+                        <p className="text-gray-600">
                             {isLogin ? "Please sign in to continue" : "Get started with your account"}
                         </p>
                     </div>
@@ -64,7 +64,7 @@ export default function AuthForm({ redirect }) {
                                         placeholder="John"
                                     />
                                     {errors.name &&
-                                        <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                                        <p className="text-red-500 text-sm">{errors.name.message}</p>}
                                 </div>
 
                                 {/* Surname Field */}
@@ -76,7 +76,7 @@ export default function AuthForm({ redirect }) {
                                         placeholder="Doe"
                                     />
                                     {errors.surname &&
-                                        <p className="text-red-500 text-sm mt-1">{errors.surname.message}</p>}
+                                        <p className="text-red-500 text-sm">{errors.surname.message}</p>}
                                 </div>
 
                                 {/* Phone Number Field */}
@@ -95,7 +95,7 @@ export default function AuthForm({ redirect }) {
                                         placeholder="+374 xx xxxxxx"
                                     />
                                     {errors.phone &&
-                                        <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+                                        <p className="text-red-500 text-sm">{errors.phone.message}</p>}
                                 </div>
                             </>
                         )}
@@ -199,7 +199,7 @@ export default function AuthForm({ redirect }) {
                             <span>{isLogin ? "Sign In" : "Sign Up"} with Google</span>
                         </a>
 
-                        <p className="mt-6 text-center text-gray-600">
+                        <p className="text-center text-gray-600">
                             {isLogin ? "Don't have an account?" : "Already have an account?"}
                             <button
                                 type="button"
@@ -220,7 +220,7 @@ export default function AuthForm({ redirect }) {
                 <div
                     className="h-full bg-black bg-opacity-50 flex items-center justify-center text-white px-12 text-center">
                     <div>
-                        <h2 className={`text-4xl font-bold pb-6 uppercase ${forum_splash.className}`}>
+                        <h2 className={`text-4xl font-bold mb-6 uppercase ${forum_splash.className}`}>
                             Your Perfect Event Starts Here
                         </h2>
                         <p className="text-xl">
