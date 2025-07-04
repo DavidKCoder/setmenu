@@ -39,9 +39,9 @@ export default function AuthForm({ redirect }) {
                 <div className="block sm:hidden absolute bg-cover w-full h-screen z-20 "
                      style={{ backgroundImage: `url('/auth/auth_screen.jpg')`, top: 0, bottom: 0 }}></div>
                 <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 z-50 m-6">
-                    <div className="text-center mb-8">
+                    <div className="text-center">
                         <div
-                            className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full mb-4">
+                            className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full">
                             {isLogin ? <FaSignInAlt className="text-cyan-600 text-lg" /> :
                                 <FaUserPlus className="text-cyan-600 text-lg" />}
                         </div>
@@ -68,7 +68,7 @@ export default function AuthForm({ redirect }) {
                                 </div>
 
                                 {/* Surname Field */}
-                                <divs>
+                                <div>
                                     <label className="block text-sm font-medium text-gray-700">Surname</label>
                                     <input
                                         {...register("surname", { required: "Surname is required" })}
@@ -77,7 +77,7 @@ export default function AuthForm({ redirect }) {
                                     />
                                     {errors.surname &&
                                         <p className="text-red-500 text-sm mt-1">{errors.surname.message}</p>}
-                                </divs>
+                                </div>
 
                                 {/* Phone Number Field */}
                                 <div>
@@ -138,7 +138,7 @@ export default function AuthForm({ redirect }) {
                         </div>
 
                         {!isLogin && (
-                            <div className="mb-6">
+                            <div>
                                 <label className="block text-sm font-medium text-gray-700">
                                     Confirm Password
                                 </label>
