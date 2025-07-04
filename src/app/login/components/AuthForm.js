@@ -52,7 +52,7 @@ export default function AuthForm({ redirect }) {
                             {isLogin ? "Please sign in to continue" : "Get started with your account"}
                         </p>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-black space-y-4 px-8">
+                    <form onSubmit={handleSubmit(onSubmit)} className="text-black space-y-4 px-4">
                         {!isLogin && (
                             <>
                                 {/* Name Field */}
@@ -112,7 +112,7 @@ export default function AuthForm({ redirect }) {
                                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:${errors.email ? "ring-red-500" : "ring-cyan-600"}`}
                                     placeholder="you@example.com"
                                 />
-                                <FaEnvelope className="absolute right-2 top-4 text-gray-400" />
+                                <FaEnvelope className="absolute right-2 top-3 text-gray-400" />
                             </div>
                             {errors.email && <p className="text-sm text-red-600">{errors.email.message}</p>}
                         </div>

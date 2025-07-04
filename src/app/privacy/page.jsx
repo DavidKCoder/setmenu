@@ -57,8 +57,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold mt-8 mb-2">7. Contact Us</h2>
             <p>
                 If you have any questions about this Privacy Policy, please contact us at:{" "}
-                <a href="mailto:support@yourapp.com" className="text-blue-600 underline">
-                    support@yourapp.com
+                <a href="mailto:support@setmenu.com" className="text-blue-600 underline">
+                    support@setmenu.com
                 </a>
             </p>
         </div>

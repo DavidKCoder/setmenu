@@ -25,27 +25,39 @@ export default function ProfileSection() {
 
             {isOpen && (
                 <div className="pl-2 pb-4 space-y-3 min-w-32 sm:w-2/4">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-gray-500">
                         <input
+                            readOnly={true}
+                            disabled={true}
                             type="text"
                             placeholder="First Name"
+                            defaultValue="Alfred"
                             className="w-full border border-gray-300 rounded p-2"
                         />
                         <input
+                            readOnly={true}
+                            disabled={true}
                             type="text"
                             placeholder="Last Name"
+                            defaultValue="Daniel"
                             className="w-full border border-gray-300 rounded p-2"
                         />
                     </div>
                     <input
+                        readOnly={true}
+                        disabled={true}
                         type="email"
                         placeholder="Email Address"
-                        className="w-full border border-gray-300 rounded p-2"
+                        defaultValue="test@gmail.com"
+                        className="w-full border border-gray-300 rounded p-2 text-gray-500"
                     />
                     <input
+                        readOnly={true}
+                        disabled={true}
                         type="phone"
                         placeholder="Phone Number"
-                        className="w-full border border-gray-300 rounded p-2"
+                        defaultValue="+374 55 753272"
+                        className="w-full border border-gray-300 rounded p-2 text-gray-500"
                     />
                 </div>
             )}

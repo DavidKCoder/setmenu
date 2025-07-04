@@ -25,12 +25,17 @@ export default function SettingsList() {
                     label="About Us"
                     href="/about"
                 />
-                <SettingsRow icon={<FaQuestionCircle />} label="Help" />
+
+                <SettingsRow
+                    icon={<FaQuestionCircle />}
+                    label="Help"
+                    href="/contact"
+                />
+
                 <SettingsRow
                     icon={<FaTrash className="text-red-500" />}
                     label="Deactivate my account"
                     textColor="text-red-500"
-                    href="/contact"
                 />
             </div>
         </div>
