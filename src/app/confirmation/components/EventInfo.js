@@ -3,7 +3,7 @@ import { MdLocationOn, MdRestaurantMenu } from "react-icons/md";
 import { LuNotebookText } from "react-icons/lu";
 import { IoVideocam } from "react-icons/io5";
 
-export const EventInfo = ({date, restaurantName, people, location, eventType, pricePerPerson}) => {
+export const EventInfo = ({ date, restaurantName, people, menuVariant, location, eventType, pricePerPerson }) => {
     return (
         <>
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">Event Summary</h2>
@@ -30,7 +30,7 @@ export const EventInfo = ({date, restaurantName, people, location, eventType, pr
                 </li>
                 <li className="flex items-center gap-2 text-gray-50 font-mono">
                     <LuNotebookText className="text-amber-500" />
-                    <span className="text-gray-400">Menu:</span> Classic Choice
+                    <span className="text-gray-400">Menu:</span> {menuVariant}
                 </li>
             </ul>
             <hr className="my-6 border-t border-amber-400 opacity-30 font-mono" />

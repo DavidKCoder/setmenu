@@ -37,7 +37,7 @@ export default function EventDetails({ selectedEvent, setSelectedEvent }) {
                             </div>
                             <div className="rounded border-2 p-3 space-y-1">
                                 <p>
-                                    <span className="font-semibold text-gray-700">Event:</span>{" "}
+                                    <span className="font-semibold text-gray-700">Event Type:</span>{" "}
                                     {selectedEvent.name}
                                 </p>
                                 <p>
@@ -67,12 +67,6 @@ export default function EventDetails({ selectedEvent, setSelectedEvent }) {
                                     Guests:
                                   </span>{" "}
                                     {selectedEvent.guests}
-                                </p>
-                                <p>
-                                  <span className="font-semibold text-gray-700">
-                                    Event Type:
-                                  </span>{" "}
-                                    {selectedEvent.eventType}
                                 </p>
                                 <p>
                                   <span className="font-semibold text-gray-700">

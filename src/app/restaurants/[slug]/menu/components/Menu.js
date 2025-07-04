@@ -96,10 +96,10 @@ export default function Menu({ restaurant, selectedVariant }) {
                 </div>
                 <div className="mt-12">
                     <button
-                        className="w-full bg-main hover:bg-cyan-500 text-white py-2 text-lg font-semibold rounded-xl transition"
+                        className="w-full bg-main hover:bg-cyan-500 text-white py-2 text-lg font-semibold rounded-xl transition capitalize"
                         onClick={() => setShowModal(!showModal)}
                     >
-                        Set Your Menu
+                        continue
                     </button>
                 </div>
             </main>
@@ -111,6 +111,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                     setShowModal={setShowModal}
                     location={restaurant.location}
                     categories={restaurant.categories}
+                    selectedVariant={selectedVariant}
                 />}
         </>
     );

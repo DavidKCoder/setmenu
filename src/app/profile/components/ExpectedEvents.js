@@ -1,7 +1,7 @@
 "use client";
 
 import { format } from "date-fns";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoDotFill } from "react-icons/go";
 import MyDatePicker from "@/app/profile/components/MyDatePicker";
 import EventDetails from "@/app/profile/components/EventDetails";
@@ -34,7 +34,6 @@ export default function ExpectedEvents() {
             phone: "+1 234 567 890",
             guests: 12,
             eventType: "Birthday Party",
-            image: "/stats_cover.jpg",
             menu: "VIP Choice",
             status: 1,
             totalAmount: 1200000,
@@ -48,7 +47,6 @@ export default function ExpectedEvents() {
             phone: "+1 987 654 321",
             guests: 25,
             eventType: "Corporate Event",
-            image: "/new_bg.jpeg",
             menu: "Classic",
             status: 2,
             totalAmount: 450000,
@@ -62,7 +60,6 @@ export default function ExpectedEvents() {
             phone: "+374 987 654 321",
             guests: 250,
             eventType: "Wedding",
-            image: "/new_bg.jpeg",
             menu: "Standard",
             status: 3,
             totalAmount: 2500000,
@@ -75,6 +72,11 @@ export default function ExpectedEvents() {
     }));
 
     const highlightDates = excludedDates.map(item => item.date);
+
+    useEffect(() => {
+        const reservationData = localStorage.getItem("reservationData");
+        console.log("reservationData", JSON.parse(reservationData));
+    }, []);
 
     return (
         <>

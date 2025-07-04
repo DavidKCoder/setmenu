@@ -9,7 +9,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { PiCalendarDots } from "react-icons/pi";
 import { FaUsers } from "react-icons/fa";
 
-export default function Modal({ name, showModal, setShowModal, categories, location, price }) {
+export default function Modal({ name, showModal, setShowModal, categories, location, price, selectedVariant }) {
     const { t } = useTranslation();
     const router = useRouter();
 
@@ -31,7 +31,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
         const formattedDate = eventDate.toISOString().split("T")[0];
 
-        const confirmationUrl = `/confirmation/?restaurant_name=${name}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
+        const confirmationUrl = `/confirmation/?restaurant_name=${name}&menu_variant=${selectedVariant.title}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
 
         router.push(confirmationUrl);
 
@@ -143,7 +143,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                         onClick={handleSubmit}
                         className="w-full items-center bg-main hover:bg-cyan-600 text-white gap-2 px-4 py-2 rounded-xl text-lg shadow"
                     >
-                        {isLoading ? "Loading..." : "Continue"}
+                        {isLoading ? "Loading..." : "Set"}
                     </button>
                 </div>
             </div>

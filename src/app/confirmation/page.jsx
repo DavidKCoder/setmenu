@@ -16,6 +16,7 @@ function ConfirmationContent() {
 
     const restaurantName = params.get("restaurant_name");
     const eventType = params.get("eventType");
+    const menuVariant = params.get("menu_variant");
     const people = params.get("people");
     const date = params.get("date");
     const location = params.get("location");
@@ -32,6 +33,18 @@ function ConfirmationContent() {
 
     const onSubmit = async () => {
         try {
+            const reservationData = {
+                restaurantName,
+                eventType,
+                menuVariant,
+                people,
+                date,
+                location,
+                pricePerPerson,
+            };
+
+            localStorage.setItem("reservationData", JSON.stringify(reservationData));
+
             router.push("/confirmation/success");
         } catch (error) {
             alert("Error sending", error);
@@ -54,6 +67,7 @@ function ConfirmationContent() {
                     <EventInfo
                         date={date}
                         restaurantName={restaurantName}
+                        menuVariant={menuVariant}
                         people={people}
                         location={location}
                         eventType={eventType}
@@ -156,6 +170,7 @@ function ConfirmationContent() {
                     <EventInfo
                         date={date}
                         restaurantName={restaurantName}
+                        menuVariant={menuVariant}
                         people={people}
                         location={location}
                         eventType={eventType}
