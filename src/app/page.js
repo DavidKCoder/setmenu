@@ -8,10 +8,11 @@ import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import { Suspense } from "react";
 import HowItWorks from "@/components/HowItWorks";
+import {unstable_ViewTransition as ViewTransition} from 'react';
 
 export default function Home() {
     return (
-        <>
+        <ViewTransition>
             <NavBar />
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
                 <Hero />
@@ -44,6 +45,6 @@ export default function Home() {
             <section id="faq">
                 <FAQ />
             </section>
-        </>
+        </ViewTransition>
     );
 }

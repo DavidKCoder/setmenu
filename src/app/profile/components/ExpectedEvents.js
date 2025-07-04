@@ -58,7 +58,7 @@ export default function ExpectedEvents() {
             id: 3,
             name: "Wedding",
             date: currentDate,
-            venue: "Gyumri",
+            venue: "Gyumri Prime Hall",
             location: "Gyumri",
             phone: "+374 987 654 321",
             guests: 250,
