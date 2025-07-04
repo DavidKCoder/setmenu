@@ -56,7 +56,7 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                     </div>
 
                     <div
-                        className={`absolute whitespace-nowrap uppercase opacity-20 font-medium text-gray-400 tracking-wide ${forum_splash.className} z-0 pointer-events-none animate-fadeIn`}
+                        className={`absolute whitespace-nowrap uppercase opacity-10 font-medium text-gray-400 tracking-wide ${forum_splash.className} z-0 pointer-events-none animate-fadeIn`}
                         style={{ fontSize: 160 }}
                     >
                         {name}
