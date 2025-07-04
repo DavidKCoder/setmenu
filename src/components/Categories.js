@@ -29,7 +29,7 @@ export default function Categories() {
                 {categories.map((category) => (
                     <Link href={`/categories/${category.slug}`} key={category.slug}>
                         <div
-                            className="category-card flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-teal-500 hover:text-white cursor-pointer transition text-center h-auto sm:h-52">
+                            className="category-card flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-custom-blue hover:text-white cursor-pointer transition text-center h-auto sm:h-52">
                             <Image
                                 width={55}
                                 height={25}

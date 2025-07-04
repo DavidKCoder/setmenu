@@ -1,4 +1,4 @@
-import { forum_splash } from "@/app/fonts";
+import { forum_splash, oswald_splash } from "@/app/fonts";
 import DatePicker from "react-datepicker";
 import { addDays, format } from "date-fns";
 import React, { useState } from "react";
@@ -17,23 +17,26 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
     const [peopleCount, setPeopleCount] = useState("2");
     const [eventDate, setEventDate] = useState(null);
     const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        setIsLoading(true);
         const newErrors = {};
         if (!eventType) newErrors.eventType = "Please select an event type.";
         if (!peopleCount || Number(peopleCount) < 1) newErrors.peopleCount = "Enter a valid number of people.";
         if (!eventDate) newErrors.eventDate = "Please choose a date.";
 
         setErrors(newErrors);
-        if (Object.keys(newErrors).length > 0) return;
+        if (Object.keys(newErrors).length > 0) return setIsLoading(false);
 
         const formattedDate = eventDate.toISOString().split("T")[0];
-
-        console.log("slug", name, eventType, peopleCount, formattedDate);
 
         const confirmationUrl = `/confirmation/?restaurant_name=${name}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
 
         router.push(confirmationUrl);
+
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsLoading(false);
     };
 
 
@@ -47,7 +50,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                         &times;
                     </button>
 
-                    <h2 className={`text-2xl font-bold mb-4 text-center underline ${forum_splash.className}`}
+                    <h2 className={`text-2xl font-medium mb-4 text-center underline ${oswald_splash.className}`}
                         style={{
                             textDecorationColor: "#E9C0A4",
                             textDecorationThickness: 1,
@@ -57,7 +60,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                     </h2>
 
                     <div className="mb-4 w-full">
-                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>
+                        <label className={`block mb-2 text-sm sm:text-base`}>
                             Set Event Type:
                         </label>
                         <div className="relative w-full">
@@ -85,7 +88,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
 
                     <div className="mb-6">
-                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>
+                        <label className={`block mb-2 text-sm sm:text-base`}>
                             Set person:
                         </label>
 
@@ -110,7 +113,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
                     {/* Date Picker */}
                     <div className="mb-6">
-                        <label className={`block mb-2 font-medium ${forum_splash.className}`}>
+                        <label className={`block mb-2 text-sm sm:text-base`}>
                             Set Date:
                         </label>
                         <DatePicker
@@ -136,9 +139,11 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                     </div>
 
                     <button
+                        disabled={isLoading}
                         onClick={handleSubmit}
-                        className="w-full items-center bg-main hover:bg-cyan-600 text-white gap-2 px-4 py-2 rounded-xl text-lg shadow">
-                        Continue
+                        className="w-full items-center bg-main hover:bg-cyan-600 text-white gap-2 px-4 py-2 rounded-xl text-lg shadow"
+                    >
+                        {isLoading ? "Loading..." : "Continue"}
                     </button>
                 </div>
             </div>

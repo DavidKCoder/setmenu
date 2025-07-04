@@ -30,8 +30,8 @@ export default function ComingSoonSection() {
                     <Trans
                         i18nKey="comingSoonMessage"
                         components={[
-                            <Link key="0" href="/" className="text-rose-500 underline" />,
-                            <Link key="1" href="/restaurants" className="text-rose-500 underline" />,
+                            <Link key="0" href="/" className="text-red-500 underline" />,
+                            <Link key="1" href="/restaurants" className="text-red-500 underline" />,
                         ]}
                     />
                 </p>
