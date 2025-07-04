@@ -37,7 +37,7 @@ export default function AuthForm({ redirect }) {
             {/* Left Side - Auth Form */}
             <div className="w-full lg:w-1/2 flex items-center justify-center">
                 <div className="block sm:hidden absolute bg-cover w-full h-screen z-20 "
-                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')`, display: "inline-flex" }}></div>
+                     style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}></div>
                 <div className="w-full max-w-md bg-white rounded-2xl shadow-xl z-50 m-6 py-4">
                     <div className="text-center">
                         <div
@@ -211,7 +211,6 @@ export default function AuthForm({ redirect }) {
                         </p>
                     </form>
                 </div>
-
             </div>
 
             {/* Right Side */}

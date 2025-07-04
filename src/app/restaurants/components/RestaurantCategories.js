@@ -9,7 +9,9 @@ export default function RestaurantCategories({ categories }) {
             <div className="flex flex-wrap gap-2">
                 {categories.map((cat, index) => (
                     <span key={index}
-                          className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">
+                          className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium
+                          bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500 hover:bg-main hover:text-white"
+                    >
                     <span className="size-1.5 inline-block rounded-full w-1 h-1 bg-blue-800 dark:bg-blue-500" />
                         {cat}
                 </span>

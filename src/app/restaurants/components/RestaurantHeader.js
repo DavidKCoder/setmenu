@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaMoneyBillWave, FaStar, FaUtensils } from "react-icons/fa";
+import { FaMapMarkerAlt, FaMoneyBillWave, FaUtensils } from "react-icons/fa";
 import { IoShareOutline } from "react-icons/io5";
 import { BsLink45Deg } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
@@ -63,14 +63,13 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                     </div>
                 </div>
 
-
             </div>
             <div className="flex flex-wrap items-center justify-between gap-6 mb-6 text-gray-700">
                 <div className="flex flex-wrap items-center gap-2">
                     <RestaurantRating rating={rating} />
-                    <span className="flex items-center gap-1"><FaUtensils /> {cuisine}</span>
-                    <span className="flex items-center gap-1"><FaMapMarkerAlt /> {location}</span>
-                    <span className="flex items-center gap-1"><FaMoneyBillWave /> {price}</span>
+                    <span className="flex items-center gap-1"><FaUtensils className="text-cyan-600" /> {cuisine}</span>
+                    <span className="flex items-center gap-1"><FaMapMarkerAlt
+                        className="text-cyan-600" /> {location}</span>
                 </div>
 
                 {/* Dropdown section*/}
@@ -88,10 +87,10 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
 
                             <div
                                 className={`
-              absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 
-              divide-y divide-gray-100 rounded-md shadow-lg z-50 transition-all duration-300 transform
-              ${open ? "opacity-100 visible scale-100 translate-y-0" : "opacity-0 invisible scale-95 -translate-y-2"}
-            `}
+                                  absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 
+                                  divide-y divide-gray-100 rounded-md shadow-lg z-50 transition-all duration-300 transform
+                                  ${open ? "opacity-100 visible scale-100 translate-y-0" : "opacity-0 invisible scale-95 -translate-y-2"}
+                                `}
                                 role="menu"
                             >
                                 <button
@@ -109,8 +108,8 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                                 >
                                     <BsLink45Deg className="text-lg" />
                                     <span className="text-right sm:text-left">
-                {copied ? "Link copied!" : "Copy link"}
-              </span>
+                                        {copied ? "Link copied!" : "Copy link"}
+                                      </span>
                                 </button>
                             </div>
                         </div>

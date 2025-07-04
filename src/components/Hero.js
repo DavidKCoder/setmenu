@@ -18,10 +18,10 @@ export default function Hero() {
 
             {/* Text Content */}
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-12 sm:px-8 sm:py-20">
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white max-w-2xl">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white max-w-2xl uppercase">
                     {t("title")}
                 </h1>
-                <p className="text-white text-base sm:text-lg md:text-xl font-light mt-4 max-w-xl">
+                <p className="text-white text-base sm:text-lg md:text-xl mt-4 max-w-xl font-bold">
                     {t("subTitle")}
                 </p>
             </div>

@@ -20,7 +20,7 @@ export default function NotFound() {
                 <p className="mb-4 text-3xl tracking-tight font-bold md:text-4xl dark:text-white">
                     Something's missing.
                 </p>
-                <p className="mb-4 text-lg font-light text-white">
+                <p className="mb-4 text-lg font-light text-white bg-custom-black rounded-md p-1.5">
                     Sorry, we can't find that page. You'll find lots to explore on the home page.
                 </p>
                 <Link
