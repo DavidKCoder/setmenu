@@ -9,6 +9,7 @@ import { Controller, useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { EventInfo } from "@/app/confirmation/components/EventInfo";
+import emailjs from "@emailjs/browser";
 
 function ConfirmationContent() {
     const router = useRouter();
@@ -31,7 +32,7 @@ function ConfirmationContent() {
         formState: { errors, isSubmitting },
     } = useForm();
 
-    const onSubmit = async () => {
+    const onSubmit = async (data) => {
         try {
             const reservationData = {
                 restaurantName,
@@ -43,11 +44,48 @@ function ConfirmationContent() {
                 pricePerPerson,
             };
 
-            localStorage.setItem("reservationData", JSON.stringify(reservationData));
+            const formattedDate = (date) => new Date(date).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+            });
+
+            const templateParams = {
+                    from_name: "SetMenu App",
+                    to_email: data.email,
+                    from_email: reservationData.restaurantName || "noreply@setmenu.app",
+                    subject: "New Reservation Details",
+                    restaurant_name: reservationData.restaurantName || "",
+                    event_type: reservationData.eventType || "",
+                    menu_variant: reservationData.menuVariant || "",
+                    people: reservationData.people || "",
+                    date: reservationData.date
+                        ? formattedDate(reservationData.date)
+                        : "",
+                    location: reservationData.location || "",
+                    price_per_person: reservationData.pricePerPerson
+                        ? `${Number(reservationData.pricePerPerson).toLocaleString("de-DE")} AMD`
+                        : "",
+                    total_price: `${(reservationData.pricePerPerson * reservationData.people).toLocaleString("de-DE")} AMD`,
+                }
+            ;
+
+
+            const result = await emailjs.send(
+                "service_setmenu",
+                "template_ui8ynee",
+                templateParams,
+                "yGh6YUHUz1YEnKQYM",
+            );
+
+            console.log("Email successfully sent!", result.text);
+            alert("Reservation email sent successfully!");
 
             router.push("/confirmation/success");
+
         } catch (error) {
-            alert("Error sending", error);
+            console.error("Error sending email:", error);
+            alert("Error sending email. Check console for details.");
         }
     };
 
