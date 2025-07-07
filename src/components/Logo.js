@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { PiUserCircleGearFill } from "react-icons/pi";
 import React from "react";
 
 export default function Logo({ size = 20, textColor = "text-gray-300" }) {
