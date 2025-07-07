@@ -2,8 +2,11 @@
 
 import CountUp from "react-countup";
 import { forum_splash, splash } from "@/app/fonts";
+import { useTranslation } from "next-i18next";
 
 export default function Stats() {
+    const { t } = useTranslation();
+
     return (
         <div className="bg-white py-10 sm:py-10">
             <div
@@ -15,24 +18,24 @@ export default function Stats() {
                 <div className="bg-white/80 backdrop-blur-md rounded-xl mx-auto max-w-7xl px-6 py-16 lg:px-8">
                     <dl className="grid grid-cols-3 sm:grid-cols-3 gap-x-8 gap-y-16 text-center">
                         <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>Restaurants
-                                Listed
+                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>
+                                {t("restaurantsListed")}
                             </dt>
                             <dd className={`order-first text-4xl font-bold tracking-tight text-white sm:text-6xl italic ${splash.className}`}>
                                 <CountUp end={50} duration={2.5} separator="," suffix="+" enableScrollSpy />
                             </dd>
                         </div>
                         <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>Menus
-                                Available
+                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>
+                                {t("menusAvailable")}
                             </dt>
                             <dd className={`order-first text-4xl font-bold tracking-tight text-white sm:text-6xl italic ${splash.className}`}>
                                 <CountUp end={100} duration={2.5} separator="," suffix="+" enableScrollSpy />
                             </dd>
                         </div>
                         <div className="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>Monthly
-                                Users
+                            <dt className={`text-xl leading-7 text-white p-1 uppercase ${forum_splash.className}`}>
+                                {t("monthlyUsers")}
                             </dt>
                             <dd className={`order-first text-4xl font-bold tracking-tight text-white sm:text-6xl italic ${splash.className}`}>
                                 <CountUp end={2500} duration={2.5} separator="," suffix="+" enableScrollSpy />

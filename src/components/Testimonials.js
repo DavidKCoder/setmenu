@@ -4,10 +4,10 @@ import Image from "next/image";
 import { forum_splash } from "@/app/fonts";
 import { useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Link from "next/link";
-import RestaurantCard from "@/app/restaurants/components/RestaurantCard";
+import { useTranslation } from "next-i18next";
 
 export default function Testimonials() {
+    const { t } = useTranslation();
     const testimonials = [
         {
             name: "Emily R.",
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 <h2
                     className={`mx-4 text-3xl text-gray-400 text-center font-semibold uppercase ${forum_splash.className}`}
                 >
-                    What Our Client says
+                    {t("whatOurClientSays")}
                 </h2>
                 <div className="flex-grow border-t border-gray-300" />
             </div>

@@ -56,6 +56,14 @@
     "casual-gatherings": "Casual Dining Places",
     "kids": "Restaurants Kids Love"
   },
+  "Elegant menus tailored for your special day.": "Elegant menus tailored for your special day.",
+  "Fun and festive meals for all ages.": "Fun and festive meals for all ages.",
+  "Romantic dining experiences to celebrate love.": "Romantic dining experiences to celebrate love.",
+  "Celebrate the beginning of forever with great food.": "Celebrate the beginning of forever with great food.",
+  "Professional and refined catering for business events.": "Professional and refined catering for business events.",
+  "Festive menus to match your holiday spirit.": "Festive menus to match your holiday spirit.",
+  "Relaxed and flavorful menus for get-togethers.": "Relaxed and flavorful menus for get-togethers.",
+  "Tasty treats and meals kids will love.": "Tasty treats and meals kids will love.",
   "bestRestaurantsSubtitle": "Best restaurants for you & family",
   "noRestaurantsTitle": "Oops! No matching restaurants",
   "noRestaurantsSubtitle": "Try adjusting your filters or search term.",
@@ -72,14 +80,9 @@
     "enjoyTitle": "Enjoy Your Event!",
     "enjoyDescription": "Relax and enjoy a seamless dining experience for you and your guests."
   },
-  "footer": {
-    "allRightsReserved": "All rights reserved.",
-    "about": "About",
-    "contact": "Contact",
-    "privacy": "Privacy Policy"
-  },
   "contact": {
     "title": "Contact us",
+    "contact": "Contact",
     "subtitle": "Contact us for a quote, help or to join the team.",
     "addressLabel": "Address",
     "address": "Armenia / Yerevan",
@@ -98,5 +101,58 @@
     "twitter": "Twitter",
     "instagram": "Instagram",
     "linkedin": "LinkedIn"
+  },
+  "restaurantsListed": "Restaurants Listed",
+  "menusAvailable": "Menus Available",
+  "monthlyUsers": "Monthly Users",
+  "whatOurClientSays": "What Our Client Says",
+  "faq_title": "Frequently asked questions",
+  "faqs": [
+    {
+      "question": "How do I reserve a menu for an event?",
+      "answer": "Choose a restaurant, select your event type, guest count, and preferred date. You’ll then be shown ready-made menu options. Select one and proceed to confirm your reservation."
+    },
+    {
+      "question": "Can I customize the menu after selection?",
+      "answer": "Most menus are pre-set by restaurants for convenience, but some offer flexibility. You can contact the restaurant directly for custom arrangements after reservation."
+    },
+    {
+      "question": "Is there any cost to use this platform?",
+      "answer": "No, using the platform is completely free for users. You only pay for the menu you choose, directly to the restaurant."
+    },
+    {
+      "question": "How do I know if a restaurant is available on my selected date?",
+      "answer": "When choosing a date, unavailable dates are automatically filtered. You’ll only see restaurants that can accept your reservation on that date."
+    },
+    {
+      "question": "How far in advance can I book an event?",
+      "answer": "You can book up to 6 months in advance. It’s recommended to reserve early, especially for weekends or holidays."
+    },
+    {
+      "question": "What happens after I make a reservation?",
+      "answer": "You’ll receive a confirmation email with your reservation details. The restaurant will also be notified and may contact you to confirm final details if needed."
+    }
+  ],
+  "about": {
+    "title": "About Us",
+    "hero": "At SetMenu, we’re dedicated to bringing people together through great food and unforgettable moments. Our mission is to help you discover the perfect restaurant for any occasion, effortlessly.",
+    "mission_heading": "Our Mission",
+    "mission_paragraph_1": "At <1>SetMenu</1>, our mission is to empower people to celebrate life’s moments with ease and elegance. We aim to bridge the gap between diners and restaurants by providing a transparent, user-friendly, and delightful experience.",
+    "mission_paragraph_2": "We believe in creating unforgettable dining experiences for every event. From intimate gatherings to grand celebrations, our mission is to connect people through exceptional cuisine and impeccable service.",
+    "mission_paragraph_3": "From first search to final booking — we’re here to make every event unforgettable. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat."
+  },
+  "footer": {
+    "description": "Plan perfect events and explore top restaurants with <1>SetMenu</1>.",
+    "product": "Product",
+    "features": "Features",
+    "mobileApp": "Mobile App",
+    "comingSoon": "(Coming soon...)",
+    "support": "Support",
+    "about": "About Us",
+    "help": "Help Center",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "email": "support@setmenu.app",
+    "copyright": "All rights reserved."
   }
 }

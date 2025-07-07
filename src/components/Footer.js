@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
-import React from "react";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useTranslation, Trans } from "next-i18next";
 
 export default function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer className="bg-custom-black text-white py-10 px-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -24,53 +26,36 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-sm text-gray-400">
-                            Plan perfect events and explore top restaurants with <span
-                            className="text-main">SetMenu</span>.
+                            <Trans i18nKey="footer.description" components={{ 1: <span className="text-main" /> }} />
                         </p>
                     </div>
                     <div className="flex space-x-4 mt-4 text-gray-400">
-                        <a href="#" className="hover:text-white">
-                            <FaFacebookF />
-                        </a>
-                        <a href="#" className="hover:text-white">
-                            <FaInstagram />
-                        </a>
-                        <a href="#" className="hover:text-white">
-                            <FaLinkedin />
-                        </a>
+                        <a href="#" className="hover:text-white"><FaFacebookF /></a>
+                        <a href="#" className="hover:text-white"><FaInstagram /></a>
+                        <a href="#" className="hover:text-white"><FaLinkedin /></a>
                     </div>
                 </div>
 
                 {/* Middle - Product Links */}
                 <div>
-                    <h4 className="text-white font-bold mb-3 text-sm">Product</h4>
+                    <h4 className="text-white font-bold mb-3 text-sm">{t("footer.product")}</h4>
                     <ul className="space-y-2 text-sm text-gray-400">
+                        <li><Link href="#" className="hover:text-white">{t("footer.features")}</Link></li>
                         <li>
-                            <Link href="#" className="hover:text-white">Features</Link>
-                        </li>
-                        <li>
-                            <span className="hover:text-white">Mobile App</span>
-                            <span className="hover:text-white text-xs italic"> (Coming soon...) </span>
+                            <span className="hover:text-white">{t("footer.mobileApp")}</span>
+                            <span className="hover:text-white text-xs italic"> {t("footer.comingSoon")} </span>
                         </li>
                     </ul>
                 </div>
 
                 {/* Right - Support Links */}
                 <div>
-                    <h4 className="text-white font-bold mb-3 text-sm">Support</h4>
+                    <h4 className="text-white font-bold mb-3 text-sm">{t("footer.support")}</h4>
                     <ul className="space-y-2 text-sm text-gray-400">
-                        <li>
-                            <Link href="/about" className="hover:text-white">About Us</Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="hover:text-white">Help Center</Link>
-                        </li>
-                        <li>
-                            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-                        </li>
-                        <li>
-                            <Link href="#" className="hover:text-white">Terms of Service</Link>
-                        </li>
+                        <li><Link href="/about" className="hover:text-white">{t("footer.about")}</Link></li>
+                        <li><Link href="/contact" className="hover:text-white">{t("footer.help")}</Link></li>
+                        <li><Link href="/privacy" className="hover:text-white">{t("footer.privacy")}</Link></li>
+                        <li><Link href="#" className="hover:text-white">{t("footer.terms")}</Link></li>
                     </ul>
                 </div>
             </div>
@@ -81,11 +66,9 @@ export default function Footer() {
             {/* Bottom - Email + copyright */}
             <div
                 className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-                <a href="mailto:support@setmoney.app" className="hover:text-white">
-                    support@setmenu.app
-                </a>
+                <a href={`mailto:${t("footer.email")}`} className="hover:text-white">{t("footer.email")}</a>
                 <p className="text-gray-500 text-xs">
-                    &copy; {new Date().getFullYear()} SetMenu. All rights reserved.
+                    &copy; {new Date().getFullYear()} SetMenu. {t("footer.copyright")}
                 </p>
             </div>
         </footer>
