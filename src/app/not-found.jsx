@@ -7,7 +7,7 @@ export default function NotFound() {
         <section
             className="h-screen dark:bg-gray-900 bg-cover bg-center relative flex items-center justify-center"
             style={{
-                backgroundImage: `url('https://images.pexels.com/photos/28059309/pexels-photo-28059309.jpeg')`,
+                backgroundImage: `url('/404/img.jpeg')`,
             }}
         >
             {/* dark overlay on top of background */}

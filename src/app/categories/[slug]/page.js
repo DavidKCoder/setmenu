@@ -9,13 +9,21 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { forum_splash, kids_splash } from "@/app/fonts";
 import Logo from "@/components/Logo";
+import { categories } from "@/constants/categories";
+import { notFound } from "next/navigation";
 
 export default function CategoryPage({ params }) {
     const { slug } = use(params);
+    const category = categories.find(cat => cat.slug === slug);
+
+    if (!category) {
+        notFound();
+    }
+
     const { t } = useTranslation();
 
     const isKids = slug === "kids";
-    const urlImage = isKids ? `url('/restaurants//kids_cafe.jpg')` : `url('https://images.pexels.com/photos/27626757/pexels-photo-27626757.png')`;
+    const urlImage = isKids ? `url('/restaurants/kids_cafe.jpg')` : `url('https://images.pexels.com/photos/27626757/pexels-photo-27626757.png')`;
 
     const specificRestaurants = useMemo(() => {
         return restaurants.filter((res) => res.categories?.includes(slug));
@@ -50,7 +58,8 @@ export default function CategoryPage({ params }) {
                     </div>
                 </section>
 
-                <div className="ova-section relative h-48 sm:h-56 text-center flex flex-col items-center justify-center">
+                <div
+                    className="ova-section relative h-48 sm:h-56 text-center flex flex-col items-center justify-center">
                     <div
                         className={`text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
