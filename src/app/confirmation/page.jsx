@@ -51,25 +51,24 @@ function ConfirmationContent() {
             });
 
             const templateParams = {
-                    from_name: "SetMenu App",
-                    to_email: data.email,
-                    from_email: reservationData.restaurantName || "noreply@setmenu.app",
-                    subject: "New Reservation Details",
-                    restaurant_name: reservationData.restaurantName || "",
-                    event_type: reservationData.eventType || "",
-                    menu_variant: reservationData.menuVariant || "",
-                    people: reservationData.people || "",
-                    date: reservationData.date
-                        ? formattedDate(reservationData.date)
-                        : "",
-                    location: reservationData.location || "",
-                    price_per_person: reservationData.pricePerPerson
-                        ? `${Number(reservationData.pricePerPerson).toLocaleString("de-DE")} AMD`
-                        : "",
-                    total_price: `${(reservationData.pricePerPerson * reservationData.people).toLocaleString("de-DE")} AMD`,
-                }
-            ;
-
+                from_name: "SetMenu App",
+                to_email: data.email,
+                from_email: reservationData.restaurantName || "noreply@setmenu.app",
+                subject: "New Reservation Details",
+                restaurant_name: reservationData.restaurantName || "",
+                event_type: reservationData.eventType || "",
+                menu_variant: reservationData.menuVariant || "",
+                people: reservationData.people || "",
+                date: reservationData.date
+                    ? formattedDate(reservationData.date)
+                    : "",
+                location: reservationData.location || "",
+                price_per_person: reservationData.pricePerPerson
+                    ? `${Number(reservationData.pricePerPerson).toLocaleString("de-DE")} AMD`
+                    : "",
+                total_price: `${(reservationData.pricePerPerson * reservationData.people).toLocaleString("de-DE")} AMD`,
+                note: data.note || "",
+            };
 
             const result = await emailjs.send(
                 "service_setmenu",
@@ -79,7 +78,6 @@ function ConfirmationContent() {
             );
 
             console.log("Email successfully sent!", result.text);
-            alert("Reservation email sent successfully!");
 
             router.push("/confirmation/success");
 
