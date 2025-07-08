@@ -11,7 +11,7 @@ export default function ComingSoonSection() {
         <section
             className="relative grid w-full h-screen items-center bg-white text-black my-auto"
             style={{
-                backgroundImage: "url('https://images.pexels.com/photos/19403350/pexels-photo-19403350.jpeg')",
+                backgroundImage: "url('/no_menu.jpeg')",
                 backgroundSize: "cover",
             }}
         >
