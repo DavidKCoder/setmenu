@@ -31,7 +31,7 @@ export default function ProfileSection() {
                             disabled={true}
                             type="text"
                             placeholder="First Name"
-                            defaultValue="Alfred"
+                            defaultValue="David"
                             className="w-full border border-gray-300 rounded p-2"
                         />
                         <input
@@ -39,7 +39,7 @@ export default function ProfileSection() {
                             disabled={true}
                             type="text"
                             placeholder="Last Name"
-                            defaultValue="Daniel"
+                            defaultValue="Karapetyan"
                             className="w-full border border-gray-300 rounded p-2"
                         />
                     </div>

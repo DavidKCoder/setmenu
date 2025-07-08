@@ -9,7 +9,7 @@ import EventDetails from "@/app/profile/components/EventDetails";
 const enumStatus = {
     1: "pending",
     2: "confirmed",
-    3: "ongoing",
+    3: "finished",
 };
 
 const statusStyles = {
@@ -18,17 +18,39 @@ const statusStyles = {
     3: "text-blue-500 ring-blue-500",
 };
 
-const today = new Date();
-const currentDate = format(today, "yyyy-MM-dd");
+const borderColor = {
+    1: "border-amber-500",
+    2: "border-green-500",
+    3: "border-blue-500",
+};
+
+const weekDay = new Date().setDate(new Date().getDate() - 14);
+const acceptedDate = format(weekDay, "yyyy-MM-dd");
+
+const inAnticipation = new Date().setDate(new Date().getDate() + 2);
+const pendingDate = format(inAnticipation, "yyyy-MM-dd");
 
 export default function ExpectedEvents() {
     const [selectedEvent, setSelectedEvent] = useState(null);
 
     const upcomingEvents = [
         {
+            id: 3,
+            name: "Wedding",
+            date: acceptedDate,
+            venue: "Gyumri Prime Hall",
+            location: "Gyumri",
+            phone: "+374 987 654 321",
+            guests: 250,
+            eventType: "Wedding",
+            menu: "Standard",
+            status: 3,
+            totalAmount: 2500000,
+        },
+        {
             id: 1,
             name: "Birthday",
-            date: "2025-07-10",
+            date: pendingDate,
             venue: "Ocean View VIP Restaurant",
             location: "123 Seaside Blvd, LA",
             phone: "+1 234 567 890",
@@ -41,7 +63,7 @@ export default function ExpectedEvents() {
         {
             id: 2,
             name: "Corporate Lunch",
-            date: "2025-07-25",
+            date: "2025-12-25",
             venue: "Skyline Dine",
             location: "456 Sky Ave, NY",
             phone: "+1 987 654 321",
@@ -50,19 +72,6 @@ export default function ExpectedEvents() {
             menu: "Classic",
             status: 2,
             totalAmount: 450000,
-        },
-        {
-            id: 3,
-            name: "Wedding",
-            date: currentDate,
-            venue: "Gyumri Prime Hall",
-            location: "Gyumri",
-            phone: "+374 987 654 321",
-            guests: 250,
-            eventType: "Wedding",
-            menu: "Standard",
-            status: 3,
-            totalAmount: 2500000,
         },
     ];
 
@@ -89,14 +98,14 @@ export default function ExpectedEvents() {
                                 key={event.id}
                                 className="flex justify-between items-center border-b pb-2 last:border-b-0"
                             >
-                                <div>
+                                <div className={`border-l-4 pl-2 ${borderColor[event.status]}`}>
                                     <p className="text-gray-800 font-medium">
                                         {event.name}
                                         <span
                                             className={`inline-flex bg-gray-50 items-center rounded-md px-2 py-0.5 ml-2 text-xs font-medium text-amber-500 ring-1 ring-inset ${statusStyles[event.status]}`}>
                                             <span className="relative flex items-center h-2.5 w-2.5 mr-1">
                                               <span
-                                                  className={`animate-ping absolute bg-gray-300 inline-flex h-full w-full rounded-full opacity-75 ${statusStyles[event.status]}`}></span>
+                                                  className={`${event.status !== 3 ? "animate-ping bg-gray-300" : ""} absolute inline-flex h-full w-full rounded-full opacity-75 ${statusStyles[event.status]}`}></span>
                                                 <GoDotFill className={`relative ${statusStyles[event.status]}`} />
                                               </span>
                                             <span

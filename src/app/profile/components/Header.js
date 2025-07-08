@@ -8,7 +8,7 @@ export default function Header() {
             <button className="text-gray-500" onClick={router.back}>
                 <IoReturnUpBack />
             </button>
-            <h1 className="text-lg font-semibold text-gray-800">Profile</h1>
+            <h1 className="text-lg font-semibold text-gray-800">Settings</h1>
             <div className="w-6" />
         </div>
 

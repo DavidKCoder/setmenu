@@ -13,7 +13,7 @@ export default function ContactPage() {
                 {/* Left Side Image */}
                 <div className="relative w-full md:w-1/2 h-72 md:h-auto">
                     <Image
-                        src="https://images.pexels.com/photos/18399568/pexels-photo-18399568.jpeg"
+                        src="/contact/contact_as_bg.jpeg"
                         alt="Office Desk"
                         fill
                         className="object-cover"

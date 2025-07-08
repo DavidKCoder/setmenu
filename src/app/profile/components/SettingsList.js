@@ -10,11 +10,12 @@ export default function SettingsList() {
             <div className="bg-white rounded-xl divide-y divide-gray-200 shadow">
                 <ProfileSection />
                 <PasswordSection />
-                <SettingsRow icon={<FaBell />} label="Notifications" toggle />
+                <SettingsRow icon={<FaBell />} label="Notifications" toggle disabled />
                 <SettingsRow
                     icon={<FaMoon />}
                     label="Dark mode"
                     toggle
+                    disabled
                 />
             </div>
 
@@ -44,7 +45,7 @@ export default function SettingsList() {
 
 import Link from "next/link";
 
-function SettingsRow({ icon, label, toggle, textColor, href }) {
+function SettingsRow({ icon, label, toggle, textColor, href, disabled }) {
     const content = (
         <div className="flex items-center justify-between px-4 py-4 hover:bg-gray-50 cursor-pointer">
             <div className="flex items-center gap-3">
@@ -52,11 +53,11 @@ function SettingsRow({ icon, label, toggle, textColor, href }) {
                     {icon}
                 </span>
                 <span className={`text-sm font-medium ${textColor || "text-gray-800"}`}>
-                    {label}
+                    {label} <span className={`${toggle ? "italic text-xs text-main" : ""}`}>{toggle ? "Coming soon." : ""}</span>
                 </span>
             </div>
             {toggle ? (
-                <ToggleSwitch />
+                <ToggleSwitch disabled={disabled}/>
             ) : (
                 <FaChevronRight className="text-gray-400" />
             )}

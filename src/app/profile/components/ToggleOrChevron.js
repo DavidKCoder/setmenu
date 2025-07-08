@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ToggleSwitch() {
+export default function ToggleSwitch({ disabled }) {
     const [toggle, setToggle] = useState(false);
 
     return (
@@ -12,6 +12,7 @@ export default function ToggleSwitch() {
                 className="sr-only peer"
                 checked={toggle}
                 onChange={() => setToggle(!toggle)}
+                disabled={disabled}
             />
             <div
                 className={`w-11 h-6 rounded-full relative transition-colors duration-300 ${
