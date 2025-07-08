@@ -31,16 +31,17 @@ export default function FeedbackModal() {
     const onSubmit = async (data) => {
         setLoading(true);
 
+        console.log('process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,', process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,);
         try {
             const result = await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_TEMPLATE_ID,
+                "service_62wtutn",
+                "feedback_notification",
                 {
                     stars: data.stars,
                     message: data.message,
                     email: data.email,
                 },
-                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,
+                "KI5BKd8QifZuhNcHK",
             );
 
             console.log(result.text);
