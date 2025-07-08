@@ -109,6 +109,7 @@ export default function AuthForm({ redirect }) {
                                         required: "Email is required",
                                         pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" },
                                     })}
+                                    defaultValue="test@gmail.com"
                                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:${errors.email ? "ring-red-500" : "ring-cyan-600"}`}
                                     placeholder="you@example.com"
                                 />
@@ -126,6 +127,7 @@ export default function AuthForm({ redirect }) {
                                         required: "Password is required",
                                         minLength: { value: 8, message: "Minimum 8 characters" },
                                     })}
+                                    defaultValue="A123456789"
                                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:${errors.password ? "ring-red-500" : "ring-cyan-600"}`}
                                     placeholder="••••••••"
                                 />

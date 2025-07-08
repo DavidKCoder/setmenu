@@ -98,10 +98,26 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                             <input
                                 type="number"
                                 min="2"
-                                max="400"
+                                max="500"
                                 className="w-full pl-9 border border-gray-300 p-2 rounded bg-white"
-                                value={peopleCount}
-                                onChange={e => setPeopleCount(e.target.value)}
+                                value={peopleCount === "" ? "" : String(peopleCount)}
+                                onChange={e => {
+                                    const val = e.target.value;
+
+                                    if (val === "") {
+                                        setPeopleCount("");
+                                        return;
+                                    }
+
+                                    const num = Number(val);
+                                    if (isNaN(num)) {
+                                        setPeopleCount("");
+                                        return;
+                                    }
+
+                                    const clamped = Math.min(Math.max(num, 2), 500).toString();
+                                    setPeopleCount(clamped);
+                                }}
                             />
                         </div>
 

@@ -1,10 +1,10 @@
 export const restaurants = [
     {
-        slug: "sakura-sushi",
-        name: "Sakura Sushi",
+        slug: "bellagio",
+        name: "Bellagio",
         rating: 4.9,
         cuisine: "Japanese",
-        location: "10 Ayas St, Yerevan 0082",
+        location: "2 Myasnikyan Ave, Yerevan",
         price: "$$$",
         phone: "+234 123 456 7890",
         workingHours: {
@@ -374,7 +374,319 @@ export const restaurants = [
             "Family-friendly",
         ],
         categories: ["anniversary", "birthday", "wedding"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
         bookedDates: [
             "2025-08-14",
             "2025-07-18",
@@ -403,7 +715,319 @@ export const restaurants = [
         about: "Authentic Indian food with rich spices and vibrant flavors. Great for both meat lovers and vegetarians.",
         features: ["Halal", "Vegan options", "Free Wi-Fi", "Takeout available"],
         categories: ["birthday", "corporate"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
         bookedDates: [
             "2025-06-21",
             "2025-06-18",
@@ -432,7 +1056,319 @@ export const restaurants = [
         about: "Fine French dining with an elegant setting, perfect for romantic dinners and special occasions.",
         features: ["Accepts Credit Cards", "Fine dining", "Gluten-free options", "Live music", "Parking available"],
         categories: ["birthday", "wedding", "anniversary"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
         bookedDates: [
             "2025-06-21",
             "2025-06-18",
@@ -461,7 +1397,319 @@ export const restaurants = [
         about: "Fresh seafood with stunning ocean views. Our grilled fish and prawns are crowd favorites.",
         features: ["Waterfront", "Seafood only", "Casual", "Family-friendly"],
         categories: ["birthday", "wedding"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
     },
     {
         slug: "kids-rock",
@@ -485,7 +1733,324 @@ export const restaurants = [
         about: "Burgers, fries, and milkshakes in a casual setting. Best spot for late-night cravings.",
         features: ["Open late", "Takeout", "Student discounts", "Outdoor seating", "Parking available"],
         categories: ["birthday", "wedding", "kids"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+        bookedDates: [
+            "2025-06-21",
+            "2025-06-18",
+            "2025-07-01",
+        ],
     },
     {
         slug: "kith-kin",
@@ -850,7 +2415,324 @@ export const restaurants = [
         about: "Enjoy the spirit of Mexico with authentic tacos, burritos, and margaritas.",
         features: ["Spicy food", "Happy hour", "Live music", "Kid-friendly"],
         categories: ["birthday", "engagement", "kids"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+        bookedDates: [
+            "2025-06-21",
+            "2025-06-18",
+            "2025-07-01",
+        ],
     },
     {
         slug: "green-bowl",
@@ -922,6 +2804,323 @@ export const restaurants = [
         about: "Cozy coffee shop with excellent pastries, specialty brews, and Wi-Fi.",
         features: ["Free Wi-Fi", "Co-working", "Pastries", "Espresso bar", "Parking available"],
         categories: ["birthday", "wedding", "anniversary", "engagement", "holiday parties"],
-        menuVariants: [],
+        menuVariants: [
+            {
+                id: "budget",
+                title: "Essential Plan",
+                image: "/menu/variants/3.jpg",
+                description: "Simple and delicious dishes for cost-effective events.",
+                fullDescription: "Our Budget Menu features crowd-pleasing dishes made with fresh ingredients, designed for affordability without compromising on taste. Perfect for casual gatherings, office events, and small celebrations.",
+                priceRange: "$1000–$3000",
+                pricePerPerson: 8000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        image: "/story_3.jpg",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                                badge: "best selling",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        image: "/menu/salad.jpg",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        image: "/menu/hot.jpg",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        image: "/menu/variants/3.jpg",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "unlimited",
+                                badge: "unlimited",
+
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "standard",
+                title: "Classic Choice",
+                image: "/menu/variants/2.jpg",
+                description: "A balanced choice of taste and value.",
+                fullDescription: "The Standard Menu offers a well-rounded selection of appetizers, main courses, and desserts—ideal for weddings, corporate events, and birthday parties. Enjoy great taste with reasonable pricing.",
+                priceRange: "$3000–$6000",
+                pricePerPerson: 15000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "premium",
+                title: "Gourmet Experience",
+                image: "/menu/variants/1.jpg",
+                description: "Exquisite dishes for special occasions.",
+                fullDescription: "Elevate your event with our Premium Menu featuring gourmet dishes crafted with high-quality ingredients. Best suited for upscale celebrations, galas, and VIP receptions.",
+                priceRange: "$6000–$12000",
+                pricePerPerson: 25000,
+                menu: [
+                    {
+                        category: "Appetizers",
+                        items: [
+                            {
+                                name: "Garlic Bread",
+                                description: "Toasted baguette with garlic butter and herbs",
+                                price: "$1500",
+                            },
+                            {
+                                name: "Spring Rolls",
+                                description: "Vegetable-filled crispy rolls served with sweet chili sauce",
+                                price: "$1800",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Salads",
+                        items: [
+                            {
+                                name: "Caesar Salad",
+                                description: "Romaine lettuce, parmesan, croutons, Caesar dressing",
+                                price: "$3000",
+                            },
+                            {
+                                name: "Greek Salad",
+                                description: "Cucumber, tomato, olives, feta cheese, olive oil dressing",
+                                price: "$3200",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Hot",
+                        items: [
+                            {
+                                name: "Spicy Chicken Wings",
+                                description: "Grilled wings tossed in a hot pepper sauce",
+                                price: "$3500",
+                            },
+                            {
+                                name: "Grilled Plantains",
+                                description: "Served hot with pepper sauce and peanuts",
+                                price: "$2000",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Second Courses",
+                        items: [
+                            {
+                                name: "Grilled Tilapia",
+                                description: "Whole grilled fish served with jollof rice and sauce",
+                                price: "$6000",
+                            },
+                            {
+                                name: "Beef Stir-Fry",
+                                description: "Sautéed beef with bell peppers and onions, served with rice",
+                                price: "$5500",
+                            },
+                        ],
+                    },
+                    {
+                        category: "Drinks",
+                        items: [
+                            {
+                                name: "Chapman",
+                                description: "Nigerian cocktail with Fanta, Angostura bitters, and grenadine",
+                                price: "$1200",
+                            },
+                            {
+                                name: "Bottled Water",
+                                description: "500ml chilled bottled water",
+                                price: "$500",
+                            },
+                            {
+                                name: "Zobo",
+                                description: "Hibiscus drink with ginger and pineapple essence",
+                                price: "$1000",
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+        bookedDates: [
+            "2025-06-21",
+            "2025-06-18",
+            "2025-07-01",
+        ],
     },
 ];
