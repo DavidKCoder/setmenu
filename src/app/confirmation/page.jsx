@@ -71,10 +71,10 @@ function ConfirmationContent() {
             };
 
             const result = await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                "service_62wtutn",
+                "template_aqsu84f",
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,
+                "KI5BKd8QifZuhNcHK",
             );
 
             console.log("Email successfully sent!", result.text);
