@@ -71,10 +71,10 @@ function ConfirmationContent() {
             };
 
             const result = await emailjs.send(
-                "service_setmenu",
-                "template_ui8ynee",
+                "service_62wtutn",
+                "template_aqsu84f",
                 templateParams,
-                "yGh6YUHUz1YEnKQYM",
+                "KI5BKd8QifZuhNcHK",
             );
 
             console.log("Email successfully sent!", result.text);
