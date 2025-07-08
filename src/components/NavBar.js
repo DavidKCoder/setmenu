@@ -7,6 +7,7 @@ import Image from "next/image";
 import { US, RU, AM } from "country-flag-icons/react/3x2";
 import LanguageSelect from "@/components/LanguageSelect";
 import { useTranslation } from "next-i18next";
+import BetaNoticeModal from "@/components/BetaNoticeModal";
 
 const languages = [
     { code: "en", label: "English", FlagIcon: US },
@@ -21,6 +22,8 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     const [language, setLanguage] = useState(currentLanguage);
     const dropdownRef = useRef(null);
+
+    const [showBetaModal, setShowBetaModal] = useState(true);
 
     const navItems = [
         { label: t("categories"), href: "#categories" },
@@ -110,6 +113,8 @@ export default function NavBar() {
                     </ul>
                 </div>
             )}
+
+            {showBetaModal && <BetaNoticeModal onClose={() => setShowBetaModal(false)} />}
         </nav>
     );
 }

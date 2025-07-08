@@ -1,9 +1,9 @@
+import React from "react";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 import Providers from "@/app/providers";
 import { Analytics } from "@vercel/analytics/next";
-import React from "react";
 
 export const metadata = {
     title: "SetMenu - Find the Perfect Menu for Any Event",
@@ -15,7 +15,7 @@ export const metadata = {
         siteName: "SetMenu",
         images: [
             {
-                url: "https://setmenu.vercel.app/og-image.png", // replace with your real image
+                url: "https://setmenu.vercel.app/og-image.png",
                 width: 1200,
                 height: 630,
             },
@@ -30,7 +30,6 @@ export const metadata = {
         images: ["https://setmenu.vercel.app/og-image.png"],
     },
 };
-
 
 export default function RootLayout({ children }) {
     return (
