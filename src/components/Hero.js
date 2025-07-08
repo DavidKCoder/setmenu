@@ -6,10 +6,10 @@ import { useTranslation } from "next-i18next";
 
 export default function Hero() {
     const { t } = useTranslation();
-    // const url = `url('https://images.pexels.com/photos/16120242/pexels-photo-16120242.jpeg')`;
+    const url = `url('https://images.pexels.com/photos/16120242/pexels-photo-16120242.jpeg')`;
     // const url = `url('https://cdn0.weddingwire.com/article/3408/original/1280/jpg/18043-chart-house.jpeg')`;
 
-    const urlImage = `url('https://images.pexels.com/photos/32179371/pexels-photo-32179371.jpeg')`;
+    const urlImage = url;
 
     return (
         <div
