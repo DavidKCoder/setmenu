@@ -31,7 +31,7 @@ export default function Hero() {
             </div>
 
             {/* Search Bar */}
-            <div className="relative z-10 flex justify-center px-4 pb-10 sm:pb-20">
+            <div className="relative z-10 flex justify-center pb-10 sm:pb-20">
                 <RestaurantSearchBar
                     restaurants={restaurants}
                     onResults={() => {
