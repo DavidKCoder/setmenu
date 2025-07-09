@@ -39,10 +39,13 @@ export default function ContactPage() {
                             <span className="font-semibold">{t("contact.emailLabel")}</span><br />
                             {t("contact.email")}
                         </p>
-                        <p>
-                            <span className="font-semibold">{t("contact.phoneLabel")}</span><br />
-                            {t("contact.phone")}
-                        </p>
+                        <div className="space-y-1">
+                            <span className="font-semibold">{t("contact.phoneLabel")}</span>
+                            <br />
+                            <button onClick={() => window.open("tel:+374 55 753272")}>+374 55 753272</button>
+                            <br />
+                            <button onClick={() => window.open("tel:+374 77 770342")}>+374 77 770342</button>
+                        </div>
                     </div>
 
                     {/* Form */}
@@ -90,49 +93,49 @@ export default function ContactPage() {
                     </form>
 
                     {/* Social Links */}
-                    <div className="mt-8">
-                        <p className="text-sm font-semibold text-gray-700 mb-2">
-                            {t("contact.followUs")}
-                        </p>
-                        <div className="flex flex-wrap text-black text-sm gap-4">
-                            <a
-                                href="https://facebook.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center hover:text-gray-700"
-                            >
-                                <FaFacebookF size={16} className="mr-2" />
-                                <span>{t("contact.facebook")}</span>
-                            </a>
-                            <a
-                                href="https://twitter.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center hover:text-gray-700"
-                            >
-                                <FaTwitter size={16} className="mr-2" />
-                                <span>{t("contact.twitter")}</span>
-                            </a>
-                            <a
-                                href="https://instagram.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center hover:text-gray-700"
-                            >
-                                <FaInstagram size={16} className="mr-2" />
-                                <span>{t("contact.instagram")}</span>
-                            </a>
-                            <a
-                                href="https://linkedin.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center hover:text-gray-700"
-                            >
-                                <FaLinkedinIn size={16} className="mr-2" />
-                                <span>{t("contact.linkedin")}</span>
-                            </a>
-                        </div>
-                    </div>
+                    {/*<div className="mt-8">*/}
+                    {/*    <p className="text-sm font-semibold text-gray-700 mb-2">*/}
+                    {/*        {t("contact.followUs")}*/}
+                    {/*    </p>*/}
+                    {/*    <div className="flex flex-wrap text-black text-sm gap-4">*/}
+                    {/*        <a*/}
+                    {/*            href="https://facebook.com/"*/}
+                    {/*            target="_blank"*/}
+                    {/*            rel="noopener noreferrer"*/}
+                    {/*            className="flex items-center hover:text-gray-700"*/}
+                    {/*        >*/}
+                    {/*            <FaFacebookF size={16} className="mr-2" />*/}
+                    {/*            <span>{t("contact.facebook")}</span>*/}
+                    {/*        </a>*/}
+                    {/*        <a*/}
+                    {/*            href="https://twitter.com/"*/}
+                    {/*            target="_blank"*/}
+                    {/*            rel="noopener noreferrer"*/}
+                    {/*            className="flex items-center hover:text-gray-700"*/}
+                    {/*        >*/}
+                    {/*            <FaTwitter size={16} className="mr-2" />*/}
+                    {/*            <span>{t("contact.twitter")}</span>*/}
+                    {/*        </a>*/}
+                    {/*        <a*/}
+                    {/*            href="https://instagram.com/"*/}
+                    {/*            target="_blank"*/}
+                    {/*            rel="noopener noreferrer"*/}
+                    {/*            className="flex items-center hover:text-gray-700"*/}
+                    {/*        >*/}
+                    {/*            <FaInstagram size={16} className="mr-2" />*/}
+                    {/*            <span>{t("contact.instagram")}</span>*/}
+                    {/*        </a>*/}
+                    {/*        <a*/}
+                    {/*            href="https://linkedin.com/"*/}
+                    {/*            target="_blank"*/}
+                    {/*            rel="noopener noreferrer"*/}
+                    {/*            className="flex items-center hover:text-gray-700"*/}
+                    {/*        >*/}
+                    {/*            <FaLinkedinIn size={16} className="mr-2" />*/}
+                    {/*            <span>{t("contact.linkedin")}</span>*/}
+                    {/*        </a>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </div>
