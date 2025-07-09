@@ -64,8 +64,6 @@ export default function RestaurantDetails({ about, features, workingHours, locat
                         <FaTwitter className="hover:text-cyan-800 transition" size={20} />
                     </a>
                 </div>
-
-
             </div>
         </div>
     );

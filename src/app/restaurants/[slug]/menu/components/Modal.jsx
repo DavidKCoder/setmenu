@@ -31,7 +31,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
         const formattedDate = eventDate.toISOString().split("T")[0];
 
-        const confirmationUrl = `/confirmation/?restaurant_name=${name}&menu_variant=${selectedVariant.title}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
+        const confirmationUrl = `/confirmation/?restaurant_name=${encodeURIComponent(name)}&menu_variant=${selectedVariant.title}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
 
         router.push(confirmationUrl);
 
