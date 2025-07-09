@@ -13,16 +13,16 @@ export default function HowItWorks() {
             description: t("howSteps.discoverDescription"),
         },
         {
+            title: t("howSteps.selectTitle"),
+            description: t("howSteps.selectDescription"),
+        },
+        {
             title: t("howSteps.exploreTitle"),
             description: t("howSteps.exploreDescription"),
         },
         {
             title: t("howSteps.setTitle"),
             description: t("howSteps.setDescription"),
-        },
-        {
-            title: t("howSteps.selectTitle"),
-            description: t("howSteps.selectDescription"),
         },
         {
             title: t("howSteps.enjoyTitle"),
