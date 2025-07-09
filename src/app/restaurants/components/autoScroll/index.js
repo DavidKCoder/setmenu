@@ -4,7 +4,7 @@ export function KeenAutoScroll(speed = 2) {
         function next() {
             slider.moveToIdx(slider?.track.details?.abs + 1, true);
             raf = requestAnimationFrame(() => {
-                setTimeout(next, speed * 1000);
+                setTimeout(next, speed * 2000);
             });
         }
 
