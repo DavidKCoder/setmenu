@@ -22,6 +22,7 @@ export default function FeedbackModal() {
         defaultValues: {
             stars: 0,
             message: "",
+            name: "",
             email: "",
         },
     });
@@ -31,14 +32,14 @@ export default function FeedbackModal() {
     const onSubmit = async (data) => {
         setLoading(true);
 
-        console.log('process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,', process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_PUBLIC_KEY,);
         try {
             const result = await emailjs.send(
                 "service_62wtutn",
                 "feedback_notification",
                 {
-                    stars: data.stars,
+                    stars: data.stars || 5,
                     message: data.message,
+                    name: data.name,
                     email: data.email,
                 },
                 "KI5BKd8QifZuhNcHK",
@@ -110,6 +111,18 @@ export default function FeedbackModal() {
                     />
                     {errors.message && (
                         <p className="text-red-500 text-xs">{errors.message.message}</p>
+                    )}
+
+                    <input
+                        type="name"
+                        {...register("name", {
+                            required: "Name is required.",
+                        })}
+                        placeholder="Your name"
+                        className="p-2 rounded border border-gray-300 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    />
+                    {errors.name && (
+                        <p className="text-red-500 text-xs">{errors.name.message}</p>
                     )}
 
                     <input
