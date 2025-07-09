@@ -1,10 +1,10 @@
-import { FaClock, FaMapMarkerAlt, FaPhone, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { LuCircleCheckBig } from "react-icons/lu";
 import WorkingHoursSection from "@/app/restaurants/components/WorkingHoursSection";
 import React from "react";
 
-export default function RestaurantDetails({ about, features, workingHours, location, phone }) {
+export default function RestaurantDetails({ about, features, workingHours, location, phone, email }) {
     return (
         <div className="grid md:grid-cols-2 gap-8 mb-6 sm:mb-12 px-2">
             <div>
@@ -26,15 +26,27 @@ export default function RestaurantDetails({ about, features, workingHours, locat
                 <WorkingHoursSection workingHours={workingHours} />
                 <div className="flex items-center gap-3 text-gray-800">
                     <FaMapMarkerAlt className="text-cyan-600" />
-                    <span>{location}</span>
+                    <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                    >
+                        {location}
+                    </a>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
                     <FaPhone className="text-cyan-600" />
-                    <span>{phone}</span>
+                    <a href={`tel:${phone}`} className="hover:underline">
+                        {phone}
+                    </a>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
                     <MdEmail className="text-cyan-600" />
-                    <span>restaurant.email@email.com</span>
+                    <span className="cursor-pointer hover:underline"
+                          onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, "_blank")}>
+                        {email}
+                    </span>
                 </div>
 
                 {/* Social Icons */}

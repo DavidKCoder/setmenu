@@ -27,6 +27,7 @@ export default function RestaurantPage({ params }) {
                 workingHours={restaurant.workingHours}
                 location={restaurant.location}
                 phone={restaurant.phone}
+                email={restaurant.email}
             />
             <RestaurantCategories categories={restaurant.categories} />
             <RestaurantMenuBtn slug={restaurant.slug} categories={restaurant.categories} />

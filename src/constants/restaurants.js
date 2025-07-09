@@ -7,6 +7,7 @@ export const restaurants = [
         location: "2 Myasnikyan Ave, Yerevan",
         price: "$$$",
         phone: "+234 123 456 7890",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -355,6 +356,7 @@ export const restaurants = [
         location: "6H3F+24V Ереван",
         price: "$$",
         phone: "+234 987 654 3210",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -701,6 +703,7 @@ export const restaurants = [
         location: "88 Curry Street, Lagos",
         price: "$$",
         phone: "+234 111 222 3333",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -1042,6 +1045,7 @@ export const restaurants = [
         location: "29 Paris Crescent, Abuja",
         price: "$$$",
         phone: "+234 444 555 6666",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -1383,6 +1387,7 @@ export const restaurants = [
         location: "Seaside Boulevard, Victoria Island",
         price: "$$$",
         phone: "+234 777 888 9999",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -1719,6 +1724,7 @@ export const restaurants = [
         location: "Fast Lane, Ikeja",
         price: "$",
         phone: "+234 121 121 1212",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -2060,6 +2066,7 @@ export const restaurants = [
         location: "Baghramyan 19/1 Yerevan, Armenia",
         price: "$",
         phone: "+234 121 121 1212",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 11:00 PM",
             Tuesday: "10:00 AM – 11:00 PM",
@@ -2401,6 +2408,7 @@ export const restaurants = [
         location: "10 Cinco Street, Lekki",
         price: "$$",
         phone: "+234 345 678 9012",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -2742,6 +2750,7 @@ export const restaurants = [
         location: "Nature Plaza, Yaba",
         price: "$$",
         phone: "+234 555 123 4567",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -2766,6 +2775,7 @@ export const restaurants = [
         location: "BBQ Avenue, Surulere",
         price: "$$",
         phone: "+234 789 789 7890",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",
@@ -2790,6 +2800,7 @@ export const restaurants = [
         location: "Cafe Corner, Lekki Phase 1",
         price: "$",
         phone: "+234 234 234 2345",
+        email: "restaurant.email@email.com",
         workingHours: {
             Monday: "10:00 AM – 10:00 PM",
             Tuesday: "10:00 AM – 10:00 PM",

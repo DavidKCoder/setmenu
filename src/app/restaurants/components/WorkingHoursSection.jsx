@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaClock, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { dayMap } from "@/constants/dayMap";
 
 export default function WorkingHoursSection({ workingHours }) {
-    const [isOpen, setIsOpen] = useState(window?.innerWidth >= 500 || false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setIsOpen(window.innerWidth >= 500);
+        }
+    }, []);
 
     const today = dayMap[new Date().getDay()];
 
