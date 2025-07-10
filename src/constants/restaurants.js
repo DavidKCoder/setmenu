@@ -2063,7 +2063,7 @@ export const restaurants = [
         name: "Kith & Kin",
         rating: 5,
         cuisine: "American",
-        location: "Baghramyan 19/1 Yerevan, Armenia",
+        location: "Baghramyan 19/1",
         price: "$",
         phone: "+234 121 121 1212",
         email: "restaurant.email@email.com",

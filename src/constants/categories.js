@@ -43,7 +43,7 @@ export const categories = [
     },
     {
         name: "Kids",
-        img: "/categories/kids.png",
+        img: "/categories/kids-icon.png",
         slug: "kids",
         description: "Tasty treats and meals kids will love.",
     },

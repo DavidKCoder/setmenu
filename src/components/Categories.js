@@ -30,7 +30,7 @@ export default function Categories() {
                 {categories.map((category) => (
                     <Link href={`/categories/${category.slug}`} key={category.slug}>
                         <div
-                            className="category-card flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-custom-blue hover:text-white cursor-pointer transition text-center h-full"
+                            className={`${category.slug !== "kids" ? "category-card" : ""} flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-custom-blue hover:text-white cursor-pointer transition text-center h-full`}
                         >
                             <Image
                                 width={55}
