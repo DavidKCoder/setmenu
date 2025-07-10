@@ -84,7 +84,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
     return (
         <div
-            className="w-full md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 rounded-md items-center justify-between mb-8 mx-2 sm:mx-0 bg-orange-300 py-4 px-2">
+            className="w-full md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 rounded-md items-center justify-between mx-2 sm:mx-0 bg-orange-300 py-4 px-2">
 
             <div className="relative w-full col-span-4 sm:col-auto">
                 <input

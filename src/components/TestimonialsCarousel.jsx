@@ -14,7 +14,7 @@ const TestimonialsCarousel = ({ testimonials }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex === totalSlides - 1 ? 0 : prevIndex + 1));
-        }, 3000); // Slide every 3 seconds
+        }, 4000);
         return () => clearInterval(interval);
     }, [currentIndex]);
 

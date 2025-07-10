@@ -34,7 +34,7 @@ export default function HowItWorks() {
         <main className="min-h-96 bg-orange-50 py-8 text-black px-4">
             <div className="max-w-5xl mx-auto text-center">
                 <h1
-                    className={`text-4xl md:text-5xl font-extrabold mb-6 sm:mb-12 uppercase tracking-widest text-main ${forum_splash.className}`}
+                    className={`text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-12 uppercase tracking-widest text-main ${forum_splash.className}`}
                 >
                     {t("howItWorks")}
                 </h1>
@@ -45,16 +45,16 @@ export default function HowItWorks() {
                             className="flex flex-col items-center text-center px-2"
                         >
                             <div
-                                className={`w-16 h-16 rounded-full bg-main text-white flex items-center justify-center text-2xl font-bold mb-4 ${splash.className}`}>
+                                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-main text-white flex items-center justify-center text-xl sm:text-2xl font-bold mb-4 ${splash.className}`}>
                                 {idx + 1}
                             </div>
                             <h2
-                                className={`text-xl sm:text-2xl mb-2 text-gray-700 ${forum_splash.className}`}
+                                className={`text-lg sm:text-2xl mb-2 text-gray-700 ${forum_splash.className}`}
                                 style={{ fontWeight: 600 }}
                             >
                                 {title}
                             </h2>
-                            <p className="text-gray-700 text-sm">{description}</p>
+                            <p className="text-gray-700 text-xs sm:text-sm">{description}</p>
                         </div>
                     ))}
                 </div>

@@ -42,7 +42,7 @@ export default function CategoryPage({ params }) {
             </div>
             <section className="bg-white text-black">
                 <section
-                    className="relative w-full bg-center bg-cover grid items-center h-auto md:h-96 lg:h-96 xl:h-96"
+                    className="relative w-full bg-center bg-cover grid items-center py-2 sm:py-0 h-auto md:h-96 lg:h-96 xl:h-96"
                     style={{ backgroundImage: urlImage }}
                 >
                     <h1 className={`relative text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl py-8 sm:py-8 md:py-0 lg:py-0 xl:py-0 text-white text-center uppercase tracking-widest ${isKids ? kids_splash.className : forum_splash.className}`}
