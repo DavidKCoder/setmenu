@@ -97,6 +97,8 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
                             <input
                                 type="number"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
                                 min="2"
                                 max="500"
                                 className="w-full pl-9 border border-gray-300 p-2 rounded bg-white"
