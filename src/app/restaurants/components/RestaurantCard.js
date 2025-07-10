@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { HiOutlineClock } from "react-icons/hi";
 import { dayMap } from "@/constants/dayMap";
-import { BsBookmarkStar, BsBookmarkStarFill } from "react-icons/bs";
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 
 export default function RestaurantCard({ restaurant }) {
@@ -34,7 +33,7 @@ export default function RestaurantCard({ restaurant }) {
 
     return (
         <div
-            className="bg-white rounded-xl shadow overflow-hidden w-[300px] transition-transform duration-200 hover:scale-105 hover:shadow-lg">
+            className="bg-white h-full flex-shrink-0 overflow-hidden rounded-xl shadow w-[300px] transition-transform duration-200 hover:scale-105 hover:shadow-lg">
             {/* Image with overlay and inner shadow */}
             <div className="relative h-48">
                 <div className="relative w-full h-full overflow-hidden rounded-t-xl">
@@ -97,7 +96,17 @@ export default function RestaurantCard({ restaurant }) {
                 </div>
                 <div className="flex justify-between items-center gap-2 text-gray-500 text-xs">
                     <div className="flex justify-between items-center">
-                        <span className="mx-1">{restaurant.about}</span>
+                        <span
+                            className="mx-1 block"
+                            style={{
+                                display: "-webkit-box",
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                                WebkitLineClamp: 3,
+                            }}
+                        >
+                            {restaurant.about}
+                        </span>
                     </div>
                 </div>
             </div>

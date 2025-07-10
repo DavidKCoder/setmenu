@@ -69,18 +69,32 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
         onResults(filtered);
     };
 
+    const ClearButton = ({ clearInput }) => {
+        return (
+            <button
+                onClick={clearInput}
+                type="button"
+                className="absolute text-3xl right-2 top-1 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600 bg-white"
+                aria-label="Clear filter"
+            >
+                &times;
+            </button>
+        );
+    };
+
     return (
         <div
-            className="w-full md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 p-4 rounded-md items-center justify-between mb-8 mx-2 sm:mx-0 bg-orange-300">
+            className="w-full md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 rounded-md items-center justify-between mb-8 mx-2 sm:mx-0 bg-orange-300 py-4 px-2">
 
-            <div className="w-full col-span-4 sm:col-auto">
+            <div className="relative w-full col-span-4 sm:col-auto">
                 <input
                     type="text"
                     value={restaurantName}
                     placeholder={t("searchByName")}
                     onChange={(e) => setRestaurantName(e.target.value)}
-                    className="border rounded px-4 py-2 w-full sm:col-span-2"
+                    className="border rounded px-4 py-2 w-full sm:col-span-2 truncate appearance-none"
                 />
+                {restaurantName && <ClearButton clearInput={() => setRestaurantName("")} />}
             </div>
 
 
@@ -97,9 +111,10 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     highlightDates={[addDays(new Date(), 0)]}
                     disabledKeyboardNavigation
                     customInput={
-                        <button className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
+                        <button
+                            className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
                             {selectedDate
-                                ? <span className="text-gray-700">{format(selectedDate, "yyyy-MM-dd")} </span>
+                                ? <span className="text-gray-700">{format(selectedDate, "MMMM d")} </span>
                                 : <span className="flex items-center"><FaCalendarAlt className="text-main mr-1" />
                                     {t("filterDate")}
                                 </span>}
@@ -124,17 +139,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     ))}
                 </select>
 
-                {eventFilter && (
-                    <button
-                        onClick={() => setEventFilter("")}
-                        type="button"
-                        className="absolute text-3xl right-2 top-1 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600"
-                        aria-label="Clear filter"
-                    >
-                        &times;
-                    </button>
-                )}
+                {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
             </div>
+
 
             <div className="relative w-full col-span-3 sm:col-auto">
                 <select
@@ -148,16 +155,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     ))}
                 </select>
 
-                {locationFilter && (
-                    <button
-                        onClick={() => setLocationFilter("")}
-                        type="button"
-                        className="absolute text-3xl right-2 top-1 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600"
-                        aria-label="Clear filter"
-                    >
-                        &times;
-                    </button>
-                )}
+                {locationFilter && <ClearButton clearInput={() => setLocationFilter("")} />}
             </div>
 
             <div className="col-span-2 col-start-3 row-start-3 flex justify-center sm:col-auto">

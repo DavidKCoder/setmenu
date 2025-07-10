@@ -1,57 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { restaurants } from "@/constants/restaurants";
-import RestaurantCard from "@/app/restaurants/components/RestaurantCard";
 import { forum_splash } from "@/app/fonts";
 import { useTranslation } from "next-i18next";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Carousel from "@/components/Carousel";
 
 const popularRestaurants = restaurants.slice(0, 5);
 
 export default function PopularRestaurants() {
     const { t } = useTranslation();
-    const carouselRef = useRef(null);
-
-    const scrollAmount = typeof window !== "undefined" ? window.innerWidth - 16 : 300;
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (carouselRef.current) {
-                carouselRef.current.scrollBy({
-                    left: scrollAmount,
-                    behavior: "smooth",
-                });
-
-                if (
-                    carouselRef.current.scrollLeft + carouselRef.current.clientWidth >=
-                    carouselRef.current.scrollWidth - scrollAmount
-                ) {
-                    carouselRef.current.scrollTo({
-                        left: 0,
-                        behavior: "smooth",
-                    });
-                }
-            }
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [scrollAmount]);
-
-    const scrollPrev = () => {
-        carouselRef.current?.scrollBy({
-            left: -scrollAmount,
-            behavior: "smooth",
-        });
-    };
-
-    const scrollNext = () => {
-        carouselRef.current?.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth",
-        });
-    };
 
     return (
         <section className="relative py-16 px-0 sm:px-6 bg-white text-black">
@@ -75,41 +33,8 @@ export default function PopularRestaurants() {
             </div>
 
             {/* Carousel wrapper */}
-            <div className="relative">
-                {/* Carousel container */}
-                <div
-                    ref={carouselRef}
-                    className="relative z-10 flex gap-6 overflow-x-auto scroll-smooth no-scrollbar px-2 sm:px-4 py-4"
-                >
-                    {[...popularRestaurants, ...popularRestaurants].map((restaurant, i) => (
-                        <div
-                            key={`${restaurant.name}-${i}`}
-                            className="w-full sm:w-1/2 md:w-1/3 flex-shrink-0 rounded-xl shadow hover:shadow-emerald-400 transition overflow-hidden"
-                        >
-                            <Link href={`/restaurants/${restaurant.slug}`} passHref>
-                                <RestaurantCard restaurant={restaurant} />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Prev Button */}
-                <button
-                    onClick={scrollPrev}
-                    className="hidden sm:flex absolute top-1/2 left-2 transform -translate-y-1/2 bg-main hover:bg-orange-300 text-white p-3 rounded-full z-20"
-                    aria-label="Scroll previous"
-                >
-                    <FaChevronLeft />
-                </button>
-
-                {/* Next Button */}
-                <button
-                    onClick={scrollNext}
-                    className="hidden sm:flex absolute top-1/2 right-2 transform -translate-y-1/2 bg-main hover:bg-orange-300 text-white p-3 rounded-full z-20"
-                    aria-label="Scroll next"
-                >
-                    <FaChevronRight />
-                </button>
+            <div className="bg-gray-100 flex justify-center items-center">
+                <Carousel popularRestaurants={popularRestaurants} />
             </div>
 
             {/* See All link */}
