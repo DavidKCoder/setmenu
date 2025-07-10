@@ -69,7 +69,16 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
                     <RestaurantRating rating={rating} />
                     <span className="flex items-center gap-1"><FaUtensils className="text-cyan-600" /> {cuisine}</span>
                     <span className="flex items-center gap-1"><FaMapMarkerAlt
-                        className="text-cyan-600" /> {location}</span>
+                        className="text-cyan-600" />
+                        <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                        >
+                        {location}
+                    </a>
+                    </span>
                 </div>
 
                 {/* Dropdown section*/}
