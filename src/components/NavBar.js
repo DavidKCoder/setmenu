@@ -27,9 +27,9 @@ export default function NavBar() {
 
     const navItems = [
         { label: t("categories"), href: "#categories" },
-        { label: t("popularRestaurants"), href: "#popular" },
+        { label: t("restaurants"), href: "/restaurants" },
         { label: t("footer.about"), href: "/about" },
-        { label: t("contact.contact"), href: "/about" },
+        { label: t("contact.contact"), href: "/contact" },
     ];
 
     useEffect(() => {
