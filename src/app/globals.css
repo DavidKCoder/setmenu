@@ -45,6 +45,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -58,6 +59,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .glass-card::before {
     content: '';
     position: absolute;
@@ -72,6 +74,7 @@ body {
             transparent
     );
 }
+
 .glass-card::after {
     content: '';
     position: absolute;
@@ -96,16 +99,18 @@ body {
 .custom-scrollbar::-webkit-scrollbar {
     width: 5px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: darkgray;
     border-radius: 3px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
 }
 
 .dropdown:focus-within .dropdown-menu {
-    opacity:1;
+    opacity: 1;
     transform: translate(0) scale(1);
     visibility: visible;
 }
@@ -119,3 +124,4 @@ body {
         /*color-scheme: dark;*/
     }
 }
+

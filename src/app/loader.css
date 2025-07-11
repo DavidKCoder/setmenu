@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Fill the viewport */
+    background: white; /* Or any page background color */
+}
+
+.loader {
+    width: fit-content;
+    font-size: 45px;
+    font-family: "Oswald", monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0000;
+    -webkit-text-stroke: 1px #b6b6b6;
+    --g: conic-gradient(#E9C0A4 0 0) no-repeat text;
+    background: var(--g) 0,
+    var(--g) 1ch,
+    var(--g) 2ch,
+    var(--g) 3ch,
+    var(--g) 4ch,
+    var(--g) 5ch,
+    var(--g) 6ch;
+    animation: l18-0 2s linear infinite alternate,
+    l18-1 4s linear infinite;
+}
+
+.loader:before {
+    content: "SETMENU";
+}
+
+@keyframes l18-0 {
+    0% {
+        background-size: 1ch 0, 1ch 0, 1ch 0, 1ch 0, 1ch 0, 1ch 0, 1ch 0
+    }
+    14.28% {
+        background-size: 1ch 100%, 1ch 50%, 1ch 0, 1ch 0, 1ch 0, 1ch 0, 1ch 0
+    }
+    28.57% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 50%, 1ch 0, 1ch 0, 1ch 0, 1ch 0
+    }
+    42.85% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 100%, 1ch 50%, 1ch 0, 1ch 0, 1ch 0
+    }
+    57.14% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 50%, 1ch 0, 1ch 0
+    }
+    71.43% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 50%, 1ch 0
+    }
+    85.71% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 50%
+    }
+    100% {
+        background-size: 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%, 1ch 100%
+    }
+}
+
+@keyframes l18-1 {
+    0%, 50% {
+        background-position-y: 100%;
+    }
+    50.01%, to {
+        background-position-y: 0;
+    }
+}
