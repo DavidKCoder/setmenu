@@ -21,12 +21,15 @@ export default function RestaurantBookInfoPage({
     const router = useRouter();
 
     const handleBookEvent = () => {
-        const confirmationUrl = `/confirmation/book/?restaurant_name=${encodeURIComponent(name)}&menu_variant=${menuVariant}&eventType=${eventType}&people=${people}&date=${date}&location=${location}&price_per_person=${pricePerPerson}`;
+        const confirmationUrl =
+            `/confirmation/book/?restaurant_name=${encodeURIComponent(restaurantName)}&menu_variant=${menuVariant}&eventType=${eventType}&people=${people}&date=${date}&location=${location}&price_per_person=${pricePerPerson}`;
         router.push(confirmationUrl);
     };
 
     return (
-        <main className="min-h-screen flex justify-center items-center bg-gradient-to-br from-gray-900 to-black p-4">
+        <main
+            className="min-h-screen flex justify-center items-center bg-gradient-to-br from-gray-900 to-black p-4 bg-cover bg-center"
+            style={{ backgroundImage: "url('/confirmation/book_information.jpg')" }}>
             <div
                 className="relative bg-white rounded-3xl w-full max-w-sm md:max-w-4xl shadow-xl overflow-hidden md:flex md:gap-8">
                 <div className="relative h-max sm:h-max md:w-1/2 flex-shrink-0">
