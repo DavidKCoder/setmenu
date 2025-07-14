@@ -16,8 +16,8 @@ export const metadata = {
         images: [
             {
                 url: "https://setmenu.vercel.app/logo.webp",
-                width: 150,
-                height: 150,
+                width: 120,
+                height: 120,
             },
         ],
         locale: "en_US",
