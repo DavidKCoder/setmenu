@@ -15,7 +15,7 @@ export const metadata = {
         siteName: "SetMenu",
         images: [
             {
-                url: "https://setmenu.vercel.app/logo.webp",
+                url: "https://setmenu.vercel.app/logo_og_image.png",
                 width: 50,
                 height: 50,
             },
@@ -27,7 +27,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "SetMenu - Find the Perfect Menu for Any Event",
         description: "Discover and compare restaurant menus for any event. Browse options, compare dishes, and plan your perfect event with SetMenu.",
-        images: ["https://setmenu.vercel.app/logo.webp"],
+        images: ["https://setmenu.vercel.app/logo_og_image.png"],
     },
 };
 
