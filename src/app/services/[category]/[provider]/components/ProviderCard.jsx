@@ -38,7 +38,7 @@ export default function ProviderCard({ providerCakes }) {
     return (
         <div className="w-full">
             <div className="block overflow-x-auto no-scrollbar">
-                <div ref={sliderRef} className="grid grid-cols-3 mx-auto auto-rows-fr gap-4 px-2 py-2">
+                <div ref={sliderRef} className="grid grid-cols-1 sm:grid-cols-3 mx-auto auto-rows-fr gap-4 px-2 py-2">
                     {providerCakes?.map((cake, i) => (
                         <div
                             key={i}
