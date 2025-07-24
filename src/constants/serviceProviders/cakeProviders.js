@@ -43,7 +43,7 @@ export const cakeProviders = [
             },
             {
                 name: "Chocolate Fudge Cake",
-                image: "https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg",
+                image: "https://images.pexels.com/photos/13059624/pexels-photo-13059624.jpeg",
                 price: "$45",
                 serves: "For 8 persons",
                 description: "Rich chocolate layers with creamy ganache frosting.",
@@ -52,6 +52,14 @@ export const cakeProviders = [
             {
                 name: "Vanilla Berry Delight",
                 image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1098592/pexels-photo-1098592.jpeg",
                 price: "$50",
                 serves: "For 10 persons",
                 description: "Light vanilla sponge with whipped cream and fresh berries.",
@@ -81,6 +89,48 @@ export const cakeProviders = [
         about:
             "Tasty Bakes offers unique cake designs and flavors, using only high-quality ingredients to make your day extra special.",
         bookedDates: ["2025-07-22", "2025-07-25"],
+        cakes: [
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/13059624/pexels-photo-13059624.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1098592/pexels-photo-1098592.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            }
+        ]
     },
     {
         slug: "cake-me-happy",
@@ -104,6 +154,48 @@ export const cakeProviders = [
         about:
             "Cake Me Happy is a boutique cake studio specializing in custom cakes with artistic flair and unforgettable taste.",
         bookedDates: ["2025-07-23", "2025-07-27", "2025-07-30"],
+        cakes: [
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/13059624/pexels-photo-13059624.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1098592/pexels-photo-1098592.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            }
+        ]
     },
     {
         slug: "frosted-dreams",
@@ -127,6 +219,48 @@ export const cakeProviders = [
         about:
             "Frosted Dreams specializes in elegant and minimal cake designs for weddings and corporate events.",
         bookedDates: ["2025-07-19", "2025-07-26"],
+        cakes: [
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/13059624/pexels-photo-13059624.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1098592/pexels-photo-1098592.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            }
+        ]
     },
     {
         slug: "sugar-magic",
@@ -150,5 +284,47 @@ export const cakeProviders = [
         about:
             "Sugar Magic brings color and creativity to your table with its fun, themed cakes for kids and festive parties.",
         bookedDates: ["2025-07-28", "2025-07-29", "2025-07-31"],
+        cakes: [
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Chocolate Fudge Cake",
+                image: "https://images.pexels.com/photos/13059624/pexels-photo-13059624.jpeg",
+                price: "$45",
+                serves: "For 8 persons",
+                description: "Rich chocolate layers with creamy ganache frosting.",
+                ingredients: ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Vanilla"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            },
+            {
+                name: "Vanilla Berry Delight",
+                image: "https://images.pexels.com/photos/1098592/pexels-photo-1098592.jpeg",
+                price: "$50",
+                serves: "For 10 persons",
+                description: "Light vanilla sponge with whipped cream and fresh berries.",
+                ingredients: ["Vanilla", "Flour", "Sugar", "Cream", "Strawberries", "Blueberries"]
+            }
+        ]
     },
 ];

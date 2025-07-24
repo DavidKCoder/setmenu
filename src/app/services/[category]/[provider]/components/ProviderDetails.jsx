@@ -3,10 +3,11 @@
 import { FaFacebookF, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
 import React from "react";
 
-export default function ProviderDetails({phone, workingHours}) {
+export default function ProviderDetails({ phone, workingHours }) {
     return (
         <div className="flex justify-between align-items-center h-20">
-            <div className="flex items-center gap-3 text-gray-800">
+            <div className="flex items-center gap-1 text-gray-800">
+                <div>Contact:</div>
                 <FaPhone className="text-cyan-600" />
                 <a href={`tel:${phone}`} className="hover:underline">
                     {phone}

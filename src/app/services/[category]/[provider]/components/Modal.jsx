@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, provider }) => {
                         alt={provider.name}
                         width={400}
                         height={400}
-                        className="w-full h-auto object-cover rounded-lg"
+                        className="max-h-72 h-auto object-cover rounded-lg"
                     />
                     <p className="mt-4 text-gray-700">{provider.description}</p>
                     <div className="mt-4">
