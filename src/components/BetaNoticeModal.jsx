@@ -14,7 +14,7 @@ export default function BetaNoticeModal({ onClose }) {
 
                 <div className="flex flex-col items-center">
                 <span
-                    className="px-4 py-2 text-xl font-semibold uppercase tracking-wider bg-red-600 text-white rounded-full">
+                    className="px-4 py-2 text-lg sm:text-xl font-semibold uppercase tracking-wider bg-red-600 text-white rounded-full">
                     Welcome to our Beta Version!
                 </span>
                     {/*<h2 className="text-xl font-bold text-gray-800 text-center mb-2">*/}
