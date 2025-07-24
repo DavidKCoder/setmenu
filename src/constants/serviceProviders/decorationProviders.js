@@ -1,0 +1,116 @@
+export const decorationProviders = [
+    {
+        slug: "event-glam",
+        name: "Event Glam",
+        phone: "+374 91 112233",
+        mainImage: "https://images.pexels.com/photos/12098769/pexels-photo-12098769.jpeg",
+        images: [
+            "/vendors/event-glam/decor1.jpg",
+            "/vendors/event-glam/decor2.jpg",
+            "/vendors/event-glam/decor3.jpg",
+        ],
+        workingHours: {
+            Monday: "09:00 AM – 10:00 PM",
+            Tuesday: "09:00 AM – 10:00 PM",
+            Wednesday: "09:00 AM – 10:00 PM",
+            Thursday: "09:00 AM – 11:00 PM",
+            Friday: "09:00 AM – 11:30 PM",
+            Saturday: "09:00 AM – 11:30 PM",
+            Sunday: "09:00 AM – 11:30 PM",
+        },
+        about:
+            "Event Glam transforms ordinary venues into extraordinary experiences with creative and elegant decorations for all types of events.",
+        bookedDates: ["2025-07-20", "2025-07-22", "2025-07-27"],
+    },
+    {
+        slug: "balloon-bliss",
+        name: "Balloon Bliss",
+        phone: "+374 95 556677",
+        mainImage: "https://images.pexels.com/photos/32854443/pexels-photo-32854443.jpeg",
+        images: [
+            "/vendors/balloon-bliss/decor1.jpg",
+            "/vendors/balloon-bliss/decor2.jpg",
+        ],
+        workingHours: {
+            Monday: "09:00 AM – 10:00 PM",
+            Tuesday: "09:00 AM – 10:00 PM",
+            Wednesday: "09:00 AM – 10:00 PM",
+            Thursday: "09:00 AM – 11:00 PM",
+            Friday: "09:00 AM – 11:30 PM",
+            Saturday: "09:00 AM – 11:30 PM",
+            Sunday: "09:00 AM – 11:30 PM",
+        },
+        about:
+            "Balloon Bliss brings color and fun to life with creative balloon setups, arches, and themed party decorations perfect for kids and adults alike.",
+        bookedDates: ["2025-07-21", "2025-07-24", "2025-07-30"],
+    },
+    {
+        slug: "golden-touch",
+        name: "Golden Touch Decor",
+        phone: "+374 93 778899",
+        mainImage: "https://images.pexels.com/photos/32994470/pexels-photo-32994470.jpeg",
+        images: [
+            "/vendors/golden-touch/decor1.jpg",
+            "/vendors/golden-touch/decor2.jpg",
+            "/vendors/golden-touch/decor3.jpg",
+        ],
+        workingHours: {
+            Monday: "09:00 AM – 10:00 PM",
+            Tuesday: "09:00 AM – 10:00 PM",
+            Wednesday: "09:00 AM – 10:00 PM",
+            Thursday: "09:00 AM – 11:00 PM",
+            Friday: "09:00 AM – 11:30 PM",
+            Saturday: "09:00 AM – 11:30 PM",
+            Sunday: "09:00 AM – 11:30 PM",
+        },
+        about:
+            "Golden Touch Decor specializes in luxurious, stylish decorations for weddings, anniversaries, and formal occasions.",
+        bookedDates: ["2025-07-19", "2025-07-25"],
+    },
+    {
+        slug: "party-palette",
+        name: "Party Palette",
+        phone: "+374 96 223344",
+        mainImage: "https://banket.msk.ru/wp-content/uploads/2023/03/fotozona1-2.png",
+        images: [
+            "/vendors/party-palette/decor1.jpg",
+            "/vendors/party-palette/decor2.jpg",
+        ],
+        workingHours: {
+            Monday: "09:00 AM – 10:00 PM",
+            Tuesday: "09:00 AM – 10:00 PM",
+            Wednesday: "09:00 AM – 10:00 PM",
+            Thursday: "09:00 AM – 11:00 PM",
+            Friday: "09:00 AM – 11:30 PM",
+            Saturday: "09:00 AM – 11:30 PM",
+            Sunday: "09:00 AM – 11:30 PM",
+        },
+        about:
+            "Party Palette offers custom event styling and decoration services, tailored to match your vision and theme perfectly.",
+        bookedDates: ["2025-07-23", "2025-07-26", "2025-07-28"],
+    },
+    {
+        slug: "dreamscene",
+        name: "DreamScene Designers",
+        phone: "+374 99 667788",
+        mainImage: "https://images.pexels.com/photos/33104583/pexels-photo-33104583.jpeg",
+        images: [
+            "/vendors/dreamscene/decor1.jpg",
+            "/vendors/dreamscene/decor2.jpg",
+            "/vendors/dreamscene/decor3.jpg",
+            "/vendors/dreamscene/decor4.jpg",
+        ],
+        workingHours: {
+            Monday: "09:00 AM – 10:00 PM",
+            Tuesday: "09:00 AM – 10:00 PM",
+            Wednesday: "09:00 AM – 10:00 PM",
+            Thursday: "09:00 AM – 11:00 PM",
+            Friday: "09:00 AM – 11:30 PM",
+            Saturday: "09:00 AM – 11:30 PM",
+            Sunday: "09:00 AM – 11:30 PM",
+        },
+        about:
+            "DreamScene Designers turn your event into a dream with personalized backdrops, centerpieces, floral design, and lighting effects.",
+        bookedDates: ["2025-07-29", "2025-07-31"],
+    },
+];

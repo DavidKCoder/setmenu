@@ -128,5 +128,20 @@
     "terms": "Условия использования",
     "email": "support@setmenu.app",
     "copyright": "Все права защищены."
-  }
+  },
+  "chooseYourServices": "выберите услуги",
+  "cakeProviders": {
+    "title": "Поставщики тортов",
+    "subtitle": "Выберите свой сладкий десерт",
+    "reserveText": "Забронируйте торт сегодня",
+    "allLabel": "Торты"
+  },
+  "decorationProviders": {
+    "title": "Поставщики декораций",
+    "subtitle": "Оформите ваше событие стильно",
+    "reserveText": "Закажите оформление",
+    "allLabel": "Декорации"
+  },
+  "noProvidersTitle": "Поставщики не найдены",
+  "noProvidersSubtitle": "Пожалуйста, попробуйте позже или выберите другую категорию."
 }

@@ -157,5 +157,20 @@
     "terms": "Օգտագործման պայմաններ",
     "email": "support@setmenu.app",
     "copyright": "Բոլոր իրավունքները պաշտպանված են։"
-  }
+  },
+  "chooseYourServices": "ընտրեք ծառայությունները",
+  "cakeProviders": {
+    "title": "Տորթերի մատակարարներ",
+    "subtitle": "Ընտրեք ձեր քաղցր բունը",
+    "reserveText": "Ամրագրեք ձեր տորթը այսօր",
+    "allLabel": "Տորթեր"
+  },
+  "decorationProviders": {
+    "title": "Զարդարանքի մատակարարներ",
+    "subtitle": "Զարդարեք ձեր միջոցառումը կատարյալ",
+    "reserveText": "Պատվիրեք զարդարանք",
+    "allLabel": "Զարդարանքներ"
+  },
+  "noProvidersTitle": "Մատակարարներ չեն գտնվել",
+  "noProvidersSubtitle": "Խնդրում ենք փորձել ավելի ուշ կամ ընտրել այլ կատեգորիա։"
 }

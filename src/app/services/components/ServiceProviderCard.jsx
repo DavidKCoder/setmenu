@@ -7,7 +7,7 @@ import { HiOutlineClock } from "react-icons/hi";
 import { dayMap } from "@/constants/dayMap";
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 
-export default function RestaurantCard({ restaurant }) {
+export default function ServiceProviderCard({ provider }) {
     const [today, setToday] = useState(null);
 
     useEffect(() => {
@@ -18,26 +18,24 @@ export default function RestaurantCard({ restaurant }) {
     const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => {
-        const stored = JSON.parse(localStorage.getItem("favorite_restaurants")) || [];
-        setIsFavorite(stored.includes(restaurant.slug));
-    }, [restaurant.slug]);
+        const stored = JSON.parse(localStorage.getItem("favorite_serviceProviders")) || [];
+        setIsFavorite(stored.includes(provider.slug));
+    }, [provider.slug]);
 
 
     const addToFavorite = () => {
-        const key = "favorite_restaurants";
+        const key = "favorite_serviceProviders";
         const stored = JSON.parse(localStorage.getItem(key)) || [];
 
         let updated;
-        if (stored.includes(restaurant.slug)) {
-            updated = stored.filter(slug => slug !== restaurant.slug);
+        if (stored.includes(provider.slug)) {
+            updated = stored.filter(slug => slug !== provider.slug);
         } else {
-            updated = [...stored, restaurant.slug];
+            updated = [...stored, provider.slug];
         }
         setIsFavorite(!isFavorite);
         localStorage.setItem(key, JSON.stringify(updated));
     };
-
-    if (!today) return null;
 
     return (
         <div
@@ -46,8 +44,8 @@ export default function RestaurantCard({ restaurant }) {
             <div className="relative h-48">
                 <div className="relative w-full h-full overflow-hidden rounded-t-xl">
                     <Image
-                        src={restaurant.mainImage}
-                        alt={restaurant.name}
+                        src={provider.mainImage}
+                        alt={provider.name}
                         fill
                         className="object-cover"
                     />
@@ -67,39 +65,16 @@ export default function RestaurantCard({ restaurant }) {
                 </div>
                 <div
                     className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2 flex justify-between items-center">
-                    <h3 className="text-white text-lg font-semibold truncate">{restaurant.name}</h3>
-                    <div className="flex items-center text-yellow-400 text-sm ml-2">
-                        <FaStar className="mr-1" />
-                        <span>{restaurant.rating}</span>
-                    </div>
+                    <h3 className="text-white text-lg font-semibold truncate">{provider.name}</h3>
                 </div>
             </div>
 
             {/* Info section */}
             <div className="p-4 space-y-2">
-                <div className="flex flex-wrap gap-2">
-                    {restaurant.categories.map((cat, index) => (
-                        <span key={index}
-                              className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">
-                              <span
-                                  className="size-1.5 inline-block rounded-full w-1 h-1 bg-blue-800 dark:bg-blue-500"></span>
-                            {cat}
-                        </span>
-                    ))}
-                </div>
-                <div className="flex justify-between items-center gap-2 text-gray-700 text-sm">
-                    <div className="flex justify-between items-center">
-                        <FaMapMarkerAlt className="text-cyan-600" />
-                        <span className="mx-1 font-bold">{restaurant.location}</span>
-                    </div>
-                    <span>
-                        <span className="list-item">{restaurant.cuisine}</span>
-                    </span>
-                </div>
                 <div className="flex justify-between items-center gap-2 text-gray-600 text-sm">
                     <div className="flex justify-between items-center">
                         <HiOutlineClock className="text-cyan-600" />
-                        <span className="mx-1 font-semibold">{restaurant.workingHours[today]}</span>
+                        <span className="mx-1 font-semibold">{provider.workingHours[today]}</span>
                     </div>
                 </div>
                 <div className="flex justify-between items-center gap-2 text-gray-500 text-xs">
@@ -113,7 +88,7 @@ export default function RestaurantCard({ restaurant }) {
                                 WebkitLineClamp: 3,
                             }}
                         >
-                            {restaurant.about}
+                            {provider.about}
                         </span>
                     </div>
                 </div>

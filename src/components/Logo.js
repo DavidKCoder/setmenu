@@ -18,14 +18,14 @@ export default function Logo({ size = 20, textColor = "text-gray-300" }) {
                         height={size}
                         className="object-cover"
                     />
-                    <div className={`text-lg font-bold ${textColor} hover:text-gray-400 ml-1`}>
+                    <div className={`text-base font-bold ${textColor} hover:text-gray-400 ml-1`}>
                         SetMenu
                     </div>
                 </div>
             </Link>
             <Link href="/profile" passHref>
                 {/*<PiUserCircleGearFill size={30} />*/}
-                <img className="w-8 sm:w-10 rounded-full border-custom-beige border-2"
+                <img className="w-6 sm:w-8 rounded-full border-custom-beige border-2"
                      src={`https://ui-avatars.com/api/?color=fbfefb&background=e9c0a4&name=${userName}`}
                      alt="Rounded avatar" />
             </Link>

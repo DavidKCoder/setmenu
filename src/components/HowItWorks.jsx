@@ -63,9 +63,9 @@ const HowItWorks = React.memo(() => {
                             >
                                 {title}
                             </h2>
-                            <p className="text-gray-700 text-xs sm:text-sm">
-                                {description}
-                            </p>
+                            {/*<p className="text-gray-700 text-xs sm:text-sm">*/}
+                            {/*    {description}*/}
+                            {/*</p>*/}
                         </div>
                     ))}
                 </div>

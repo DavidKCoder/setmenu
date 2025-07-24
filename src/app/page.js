@@ -10,6 +10,7 @@ import { Suspense } from "react";
 import HowItWorks from "@/components/HowItWorks";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import ClientLoaderOverlay from "@/components/ClientLoaderOverlay";
+import Services from "@/app/services/components/Services";
 
 export default function Home() {
     return (
@@ -32,6 +33,10 @@ export default function Home() {
 
                 <section id="our-story">
                     <OurStory />
+                </section>
+
+                <section id="our-story">
+                    <Services />
                 </section>
 
                 <section id="stats">

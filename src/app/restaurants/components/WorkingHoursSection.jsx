@@ -4,14 +4,16 @@ import { dayMap } from "@/constants/dayMap";
 
 export default function WorkingHoursSection({ workingHours }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [today, setToday] = useState(null);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
             setIsOpen(window.innerWidth >= 500);
         }
+        const localDay = new Date().getDay();
+        setToday(dayMap[localDay]);
     }, []);
 
-    const today = dayMap[new Date().getDay()];
 
     return (
         <div className="text-gray-800">
