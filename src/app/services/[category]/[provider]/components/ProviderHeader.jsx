@@ -84,7 +84,7 @@ export default function ProviderHeader({ name, slug, rating, cuisine, location, 
                                 className={`
                                   absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 
                                   divide-y divide-gray-100 rounded-md shadow-lg z-50 transition-all duration-300 transform
-                                  ${open ? "opacity-100 visible scale-100 translate-y-0" : "opacity-0 invisible scale-95 -translate-y-2"}
+                                  ${open ? "opacity-100 visible scale-100 translate-y-0 translate-x-20" : "opacity-0 invisible scale-95 -translate-y-2"}
                                 `}
                                 role="menu"
                             >

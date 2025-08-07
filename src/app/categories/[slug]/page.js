@@ -34,7 +34,6 @@ export default function CategoryPage({ params }) {
     const headline = t(`eventHeadlines.${slug}`) || t(`${slug}`) || "Restaurants";
     const subHeadline = t(`eventPageTitles.${slug}`) || t(`${slug}`) || "Restaurants";
 
-
     return (
         <>
             <div className="bg-orange-50 mx-auto flex justify-between text-right py-2 px-2">

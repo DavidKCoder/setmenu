@@ -57,7 +57,7 @@ export default function ProviderCard({ providerCakes }) {
                                          style={{ background: "linear-gradient(to bottom, transparent 0, transparent 40%, transparent 40%, rgba(0, 0, 0, .7) 100%)" }} />
                                 </div>
                                 <div
-                                    className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2 flex justify-between items-center bg-main bg-opacity-60 text-white">
+                                    className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2 flex justify-between items-center text-white">
                                     <h3 className="text-lg font-semibold truncate">{cake.name}</h3>
                                     <h3 className="text-xl font-semibold truncate">{cake.price}</h3>
                                 </div>

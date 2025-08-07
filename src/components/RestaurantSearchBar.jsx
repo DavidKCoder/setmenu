@@ -74,7 +74,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
             <button
                 onClick={clearInput}
                 type="button"
-                className="absolute text-3xl right-2 top-1 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600 bg-white"
+                className="absolute text-3xl right-2 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600 bg-transparent"
                 aria-label="Clear filter"
             >
                 &times;
@@ -92,7 +92,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     value={restaurantName}
                     placeholder={t("searchByName")}
                     onChange={(e) => setRestaurantName(e.target.value)}
-                    className="border rounded px-4 py-2 w-full sm:col-span-2 truncate appearance-none"
+                    className="border rounded px-4 py-2 sm:col-span-2 truncate appearance-none"
                 />
                 {restaurantName && <ClearButton clearInput={() => setRestaurantName("")} />}
             </div>
@@ -105,14 +105,14 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     onChange={setSelectedDate}
                     minDate={new Date()}
                     // placeholderText={`📅 ${t("filterDate")}`}
-                    className="w-full border border-gray-300 p-2 rounded text-gray-400"
+                    className="border border-gray-300 p-2 rounded text-gray-400 w-28"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
                     highlightDates={[addDays(new Date(), 0)]}
                     disabledKeyboardNavigation
                     customInput={
                         <button
-                            className="w-full text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
+                            className="text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
                             {selectedDate
                                 ? <span className="text-gray-700">{format(selectedDate, "MMMM d")} </span>
                                 : <span className="flex items-center"><FaCalendarAlt className="text-main mr-1" />
@@ -125,7 +125,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
             <div className="relative w-full col-span-3 sm:col-auto">
                 <select
-                    className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
+                    className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={eventFilter}
                     onChange={(e) => setEventFilter(e.target.value)}
                 >
@@ -143,20 +143,20 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
             </div>
 
 
-            <div className="relative w-full col-span-3 sm:col-auto">
-                <select
-                    className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300"}`}
-                    value={locationFilter}
-                    onChange={(e) => setLocationFilter(e.target.value)}
-                >
-                    <option value="" className="text-gray-400 italic" disabled>{t("location")}...</option>
-                    {locations.map((location) => (
-                        <option key={location} value={location} className="text-gray-700">{location}</option>
-                    ))}
-                </select>
+            {/*<div className="relative w-full col-span-3 sm:col-auto">*/}
+            {/*    <select*/}
+            {/*        className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300"}`}*/}
+            {/*        value={locationFilter}*/}
+            {/*        onChange={(e) => setLocationFilter(e.target.value)}*/}
+            {/*    >*/}
+            {/*        <option value="" className="text-gray-400 italic" disabled>{t("location")}...</option>*/}
+            {/*        {locations.map((location) => (*/}
+            {/*            <option key={location} value={location} className="text-gray-700">{location}</option>*/}
+            {/*        ))}*/}
+            {/*    </select>*/}
 
-                {locationFilter && <ClearButton clearInput={() => setLocationFilter("")} />}
-            </div>
+            {/*    {locationFilter && <ClearButton clearInput={() => setLocationFilter("")} />}*/}
+            {/*</div>*/}
 
             <div className="col-span-2 col-start-3 row-start-3 flex justify-center sm:col-auto">
                 <button
