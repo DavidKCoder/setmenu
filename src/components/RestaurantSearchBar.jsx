@@ -92,13 +92,12 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     value={restaurantName}
                     placeholder={t("searchByName")}
                     onChange={(e) => setRestaurantName(e.target.value)}
-                    className="border rounded px-4 py-2 sm:col-span-2 truncate appearance-none"
+                    className="border rounded px-4 py-2 sm:col-span-2 truncate"
                 />
                 {restaurantName && <ClearButton clearInput={() => setRestaurantName("")} />}
             </div>
 
-
-            <div className="relative w-full col-span-2 col-start-5 sm:col-auto">
+            <div className="relative col-span-2 col-start-5 sm:col-auto">
                 <DatePicker
                     popperPlacement="left"
                     selected={selectedDate}
@@ -123,9 +122,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 />
             </div>
 
-            <div className="relative w-full col-span-3 sm:col-auto">
+            <div className="relative w-full col-span-6 sm:col-span-1">
                 <select
-                    className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
+                    className={`w-full border rounded bg-white px-2 py-2 truncate capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={eventFilter}
                     onChange={(e) => setEventFilter(e.target.value)}
                 >
