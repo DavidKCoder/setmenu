@@ -122,9 +122,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 />
             </div>
 
-            <div className="relative w-full col-span-6 sm:col-span-1">
+            <div className="relative w-full col-span-6 sm:col-span-auto">
                 <select
-                    className={`w-full border rounded bg-white px-2 py-4 truncate capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
+                    className={`w-full border rounded bg-white px-2 py-2 truncate capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={eventFilter}
                     onChange={(e) => setEventFilter(e.target.value)}
                 >
