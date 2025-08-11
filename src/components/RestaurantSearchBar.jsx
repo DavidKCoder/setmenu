@@ -103,7 +103,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     selected={selectedDate}
                     onChange={setSelectedDate}
                     minDate={new Date()}
-                    // placeholderText={`📅 ${t("filterDate")}`}
+                    // placeholderText={📅 ${t("filterDate")}}
                     className="border border-gray-300 p-2 rounded text-gray-400 w-28"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
@@ -140,7 +140,6 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
                 {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
             </div>
-
 
             {/*<div className="relative w-full col-span-3 sm:col-auto">*/}
             {/*    <select*/}
