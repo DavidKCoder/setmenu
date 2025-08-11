@@ -92,10 +92,11 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     value={restaurantName}
                     placeholder={t("searchByName")}
                     onChange={(e) => setRestaurantName(e.target.value)}
-                    className="border rounded px-4 py-2 sm:col-span-2 truncate"
+                    className="border rounded px-4 py-2 sm:col-span-2 truncate appearance-none"
                 />
                 {restaurantName && <ClearButton clearInput={() => setRestaurantName("")} />}
             </div>
+
 
             <div className="relative w-full col-span-2 col-start-5 sm:col-auto">
                 <DatePicker
@@ -103,7 +104,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     selected={selectedDate}
                     onChange={setSelectedDate}
                     minDate={new Date()}
-                    // placeholderText={📅 ${t("filterDate")}}
+                    // placeholderText={`📅 ${t("filterDate")}`}
                     className="border border-gray-300 p-2 rounded text-gray-400 w-28"
                     dateFormat="yyyy-MM-dd"
                     excludeDates={[addDays(new Date(), 0)]}
@@ -122,9 +123,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 />
             </div>
 
-            <div className="relative w-full">
+            <div className="relative w-full col-span-3 sm:col-auto">
                 <select
-                    className={`border rounded bg-white px-2 py-2 truncate capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
+                    className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
                     value={eventFilter}
                     onChange={(e) => setEventFilter(e.target.value)}
                 >
@@ -140,6 +141,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
 
                 {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
             </div>
+
 
             {/*<div className="relative w-full col-span-3 sm:col-auto">*/}
             {/*    <select*/}
