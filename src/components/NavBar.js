@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,9 +21,8 @@ export default function NavBar() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [language, setLanguage] = useState(currentLanguage);
-    const dropdownRef = useRef(null);
 
-    const [showBetaModal, setShowBetaModal] = useState(true);
+    const [showBetaModal, setShowBetaModal] = useState(false);
 
     const navItems = [
         { label: t("categories"), href: "#categories" },
@@ -32,20 +31,22 @@ export default function NavBar() {
         { label: t("contact.contact"), href: "/contact" },
     ];
 
-    useEffect(() => {
-        function handleClickOutside(event) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setDropdownOpen(false);
-            }
-        }
+    useLayoutEffect(() => {
+        const hasClosed = JSON.parse(sessionStorage.getItem("hasClosedBetaModal"));
 
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        if (!hasClosed) {
+            setShowBetaModal(true);
+        }
     }, []);
 
     const handleLanguageSelect = (code) => {
         setLanguage(code);
         i18n.changeLanguage(code);
+    };
+
+    const handleCloseModal = () => {
+        setShowBetaModal(false);
+        sessionStorage.setItem("hasClosedBetaModal", JSON.stringify(showBetaModal));
     };
 
     return (
@@ -114,7 +115,7 @@ export default function NavBar() {
                 </div>
             )}
 
-            {showBetaModal && <BetaNoticeModal onClose={() => setShowBetaModal(false)} />}
+            {showBetaModal && <BetaNoticeModal onClose={handleCloseModal} />}
         </nav>
     );
 }

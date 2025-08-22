@@ -1,25 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import "../app/loader.css"
+import { useEffect, useLayoutEffect, useState } from "react";
+import "../app/loader.css";
 import MainPageLoader from "@/components/MainPageLoader";
 
 export default function ClientLoaderOverlay({ children }) {
-    const [showLoader, setShowLoader] = useState(true);
+    const [showLoader, setShowLoader] = useState(false);
 
-    useEffect(() => {
-        const hasVisited = localStorage.removeItem("hasVisitedBefore");
+    useLayoutEffect(() => {
+        const hasVisited = JSON.parse(sessionStorage.getItem("hasVisitedBefore"));
 
         if (!hasVisited) {
             setShowLoader(true);
-            localStorage.setItem("hasVisitedBefore", "true");
+            sessionStorage.setItem("hasVisitedBefore", "true");
 
             const timeout = setTimeout(() => {
                 setShowLoader(false);
             }, 2000);
 
             return () => clearTimeout(timeout);
-        }
+        } else setShowLoader(false);
     }, []);
 
     return (

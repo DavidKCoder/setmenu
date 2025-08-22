@@ -1,8 +1,12 @@
+import React from "react";
 import { FaMapMarkerAlt, FaPhone, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { LuCircleCheckBig } from "react-icons/lu";
-import WorkingHoursSection from "@/app/restaurants/components/WorkingHoursSection";
-import React from "react";
+import dynamic from "next/dynamic";
+
+const WorkingHoursSection = dynamic(() => import("@/app/restaurants/components/WorkingHoursSection"), {
+    ssr: false,
+});
 
 export default function RestaurantDetails({ about, features, workingHours, location, phone, email }) {
     return (
