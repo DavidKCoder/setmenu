@@ -5,10 +5,10 @@ import "../app/loader.css";
 import MainPageLoader from "@/components/MainPageLoader";
 
 export default function ClientLoaderOverlay({ children }) {
-    const [showLoader, setShowLoader] = useState(false);
+    const [showLoader, setShowLoader] = useState(true);
 
     useLayoutEffect(() => {
-        const hasVisited = JSON.parse(sessionStorage.getItem("hasVisitedBefore"));
+        const hasVisited = sessionStorage.getItem("hasVisitedBefore");
 
         if (!hasVisited) {
             setShowLoader(true);
