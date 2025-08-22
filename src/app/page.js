@@ -9,8 +9,10 @@ import FAQ from "@/components/FAQ";
 import { Suspense } from "react";
 import HowItWorks from "@/components/HowItWorks";
 import { unstable_ViewTransition as ViewTransition } from "react";
-import ClientLoaderOverlay from "@/components/ClientLoaderOverlay";
 import Services from "@/app/services/components/Services";
+import dynamic from "next/dynamic";
+
+const ClientLoaderOverlay = dynamic(() => import("@/components/ClientLoaderOverlay"), { ssr: true });
 
 export default function Home() {
     return (

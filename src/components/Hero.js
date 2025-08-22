@@ -30,10 +30,10 @@ export default function Hero() {
             {/* Text Content */}
             <div
                 className="relative z-10 flex flex-col items-center justify-center text-center py-12">
-                <h1 className={`${isHy ? "text-xl" : "text-3xl"} sm:text-5xl md:text-6xl font-extrabold text-white max-w-2xl uppercase`}>
+                <h1 className={`${isHy ? "text-xl" : "text-3xl"} sm:text-5xl md:text-6xl font-extrabold text-white max-w-2xl sm:max-w-3xl uppercase`}>
                     {t("title")}
                 </h1>
-                <p className={`${isHy ? "text-xs" : "sm:text-lg"} text-white mt-4 max-w-xl font-bold`}>
+                <p className={`${isHy ? "text-xs" : "sm:text-lg"} text-white mt-4 max-w-sm sm:max-w-lg font-bold`}>
                     {t("subTitle")}
                 </p>
             </div>

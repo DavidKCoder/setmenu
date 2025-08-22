@@ -74,7 +74,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
             <button
                 onClick={clearInput}
                 type="button"
-                className="absolute text-3xl right-2 -translate-y-1/2 font-light text-gray-300 hover:text-gray-600 bg-transparent"
+                className="absolute text-3xl right-2 top-0 font-light text-gray-300 hover:text-gray-600 bg-transparent"
                 aria-label="Clear filter"
             >
                 &times;
@@ -83,92 +83,93 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
     };
 
     return (
-        <div
-            className="w-full md:w-auto grid grid-cols-6 sm:grid-cols-1 sm:grid-rows-3 md:flex gap-2 sm:gap-4 rounded-md items-center justify-between mx-2 sm:mx-0 bg-orange-300 py-4 px-2">
+        <div className="space-y-2 px-3 sm:px-6 md:px-10 pb-10">
+            <div className="bg-orange-300 rounded-md p-2">
+                <div className="grid grid-cols-2 sm:grid-cols-8 gap-x-4 gap-y-3">
 
-            <div className="relative w-full col-span-4 sm:col-auto">
-                <input
-                    type="text"
-                    value={restaurantName}
-                    placeholder={t("searchByName")}
-                    onChange={(e) => setRestaurantName(e.target.value)}
-                    className="border rounded px-4 py-2 sm:col-span-2 truncate appearance-none"
-                />
-                {restaurantName && <ClearButton clearInput={() => setRestaurantName("")} />}
-            </div>
+                    {/* Name input */}
+                    <div className="col-span-2 sm:col-span-2 sm:col-start-1">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                value={restaurantName}
+                                placeholder={t("searchByName")}
+                                onChange={(e) => setRestaurantName(e.target.value)}
+                                className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-gray-700 outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 truncate appearance-none"
+                            />
+                            {restaurantName && (
+                                <ClearButton clearInput={() => setRestaurantName("")} />
+                            )}
+                        </div>
+                    </div>
 
+                    {/* Date */}
+                    <div className="col-span-1 sm:col-span-2">
+                        <DatePicker
+                            popperPlacement="bottom-end"
+                            selected={selectedDate}
+                            onChange={setSelectedDate}
+                            minDate={new Date()}
+                            className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 border border-gray-300 p-2"
+                            dateFormat="yyyy-MM-dd"
+                            excludeDates={[addDays(new Date(), 0)]}
+                            highlightDates={[addDays(new Date(), 0)]}
+                            disabledKeyboardNavigation
+                            customInput={
+                                <button
+                                    className="text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize w-full">
+                                    {selectedDate ? (
+                                        <div className="flex items-center text-gray-700">
+                                            <FaCalendarAlt className="text-main mr-1" />
+                                            {format(selectedDate, "MMMM d")}
+                                        </div>
+                                    ) : (
+                                        <span className="flex items-center">
+                                            <FaCalendarAlt className="text-main mr-1" />
+                                            {t("filterDate")}
+                                        </span>
+                                    )}
+                                </button>
+                            }
+                        />
+                    </div>
 
-            <div className="relative w-full col-span-2 col-start-5 sm:col-auto">
-                <DatePicker
-                    popperPlacement="left"
-                    selected={selectedDate}
-                    onChange={setSelectedDate}
-                    minDate={new Date()}
-                    // placeholderText={`📅 ${t("filterDate")}`}
-                    className="border border-gray-300 p-2 rounded text-gray-400 w-28"
-                    dateFormat="yyyy-MM-dd"
-                    excludeDates={[addDays(new Date(), 0)]}
-                    highlightDates={[addDays(new Date(), 0)]}
-                    disabledKeyboardNavigation
-                    customInput={
+                    {/* Event Type */}
+                    <div className="col-span-1 sm:col-span-2">
+                        <div className="relative">
+                            <select
+                                className={`block w-full rounded-md bg-white/5 px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 border bg-white truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
+                                value={eventFilter}
+                                onChange={(e) => setEventFilter(e.target.value)}
+                            >
+                                <option value="" className="text-gray-400 italic" disabled>
+                                    {t("eventType")}...
+                                </option>
+                                {eventTypes.map((type) => (
+                                    <option key={type} value={type} className="text-gray-700">
+                                        {t(type)}
+                                    </option>
+                                ))}
+                            </select>
+                            {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
+                        </div>
+                    </div>
+
+                    {/* Search button */}
+                    <div className="col-span-2 sm:col-span-2">
                         <button
-                            className="text-gray-400 bg-white text-left border border-gray-300 p-2 rounded capitalize">
-                            {selectedDate
-                                ? <span className="text-gray-700">{format(selectedDate, "MMMM d")} </span>
-                                : <span className="flex items-center"><FaCalendarAlt className="text-main mr-1" />
-                                    {t("filterDate")}
-                                </span>}
+                            className="w-full py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                            onClick={handleSearch}
+                        >
+                            <span className="text-lg text-amber-500">
+                             <FiSearch />
+                            </span>
+                            {t("search")}
                         </button>
-                    }
-                />
-            </div>
-
-            <div className="relative w-full col-span-3 sm:col-auto">
-                <select
-                    className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
-                    value={eventFilter}
-                    onChange={(e) => setEventFilter(e.target.value)}
-                >
-                    <option value="" className="text-gray-400 italic" disabled>
-                        {t("eventType")}...
-                    </option>
-                    {eventTypes.map((type) => (
-                        <option key={type} value={type} className="text-gray-700">
-                            {t(type)}
-                        </option>
-                    ))}
-                </select>
-
-                {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
-            </div>
-
-
-            {/*<div className="relative w-full col-span-3 sm:col-auto">*/}
-            {/*    <select*/}
-            {/*        className={`border rounded bg-white px-2 py-2 truncate appearance-none capitalize ${locationFilter ? "text-gray-800" : "text-gray-300"}`}*/}
-            {/*        value={locationFilter}*/}
-            {/*        onChange={(e) => setLocationFilter(e.target.value)}*/}
-            {/*    >*/}
-            {/*        <option value="" className="text-gray-400 italic" disabled>{t("location")}...</option>*/}
-            {/*        {locations.map((location) => (*/}
-            {/*            <option key={location} value={location} className="text-gray-700">{location}</option>*/}
-            {/*        ))}*/}
-            {/*    </select>*/}
-
-            {/*    {locationFilter && <ClearButton clearInput={() => setLocationFilter("")} />}*/}
-            {/*</div>*/}
-
-            <div className="col-span-2 col-start-3 row-start-3 flex justify-center sm:col-auto">
-                <button
-                    className="px-8 py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
-                    onClick={handleSearch}
-                >
-                    <span className="text-lg text-amber-500">
-                      <FiSearch />
-                    </span>
-                    {t("search")}
-                </button>
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 }

@@ -53,12 +53,12 @@ const HowItWorks = React.memo(() => {
                             className="flex flex-col items-center text-center px-2"
                         >
                             <div
-                                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-main text-white flex items-center justify-center text-xl sm:text-2xl font-bold mb-4 ${splash.className}`}
+                                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-main text-white flex items-center justify-center text-xl sm:text-2xl font-bold mb-2 ${splash.className}`}
                             >
                                 {icon}
                             </div>
                             <h2
-                                className={`text-lg sm:text-2xl mb-2 text-gray-700 ${forum_splash.className}`}
+                                className={`text-lg sm:text-2xl text-gray-700 ${forum_splash.className}`}
                                 style={{ fontWeight: 600 }}
                             >
                                 {title}
