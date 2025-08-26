@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { categories } from "@/constants/categories";
+import { categories, childCategories } from "@/constants/categories";
 import { forum_splash, splash } from "@/app/fonts";
 import { useTranslation } from "next-i18next";
 
@@ -27,10 +27,11 @@ export default function Categories() {
             <div
                 className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8 auto-rows-fr"
             >
-                {categories.map((category) => (
+                {childCategories.map((category) => (
                     <Link href={`/categories/${category.slug}`} key={category.slug}>
                         <div
-                            className={`${category.slug !== "kids" ? "category-card" : ""} flex flex-col group bg-white opacity-100 items-center justify-start p-6 border rounded-lg shadow-md hover:bg-custom-blue hover:text-white cursor-pointer transition text-center h-full`}
+                            // style={{ backgroundImage: category.slug !== "kids" ? `url("https://png.pngtree.com/png-clipart/20211116/original/pngtree-coming-soon-png-image_6940246.png")` : "" }}
+                            className={`${category.slug !== "kids" ? "bg-gray-100 bg-cover bg-center" : "bg-white hover:bg-custom-blue hover:text-white"} flex flex-col group opacity-100 items-center justify-start p-6 border rounded-lg shadow-md cursor-pointer transition text-center h-full`}
                         >
                             <Image
                                 width={55}
@@ -39,10 +40,11 @@ export default function Categories() {
                                 alt="category img"
                                 className="object-cover mb-2 sm:mb-4 transition-all duration-200"
                             />
-                            <span className="text-lg font-medium capitalize">
+                            <span
+                                className={`${category.slug !== "kids" ? "text-gray-300" : "text-black"} text-lg font-medium capitalize`}>
                               {`${t(category.name.toLowerCase())}`}
                             </span>
-                            <p className="text-sm mt-2 line-clamp-2">
+                            <p className={`${category.slug !== "kids" ? "text-gray-300" : "text-black"} text-sm mt-2 line-clamp-2`}>
                                 {t(category.description)}
                             </p>
                         </div>

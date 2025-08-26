@@ -39,9 +39,9 @@ export default function NavBar() {
         }
     }, []);
 
-    const handleLanguageSelect = (code) => {
-        setLanguage(code);
-        i18n.changeLanguage(code);
+    const handleLanguageSelect = (lng) => {
+        setLanguage(lng);
+        i18n.changeLanguage(lng);
     };
 
     const handleCloseModal = () => {

@@ -1,6 +1,8 @@
 {
   "title": "Find the Perfect Menu for Every Event",
+  "kidsTitle": "The Perfect Menu for Little Foodies",
   "subTitle": "Weddings, birthdays, corporate events - we will help you choose the best place for your event.",
+  "subTitle_1": "Whatever the occasion, we’ll match you with the right place to make it unforgettable.",
   "categories": "categories",
   "story": "our Story",
   "stats": "statistics",
@@ -169,5 +171,7 @@
     "allLabel": "Decorations"
   },
   "noProvidersTitle": "No providers found",
-  "noProvidersSubtitle": "Please check back later or try a different category."
+  "noProvidersSubtitle": "Please check back later or try a different category.",
+  "allRestaurants": "All Restaurants",
+  "reserveYourFavoriteRestaurant": "Reserve your favorite restaurant"
 }

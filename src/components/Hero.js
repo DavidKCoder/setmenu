@@ -13,7 +13,8 @@ export default function Hero() {
     const currentLanguage = i18n.language;
     const isHy = currentLanguage === "hy";
 
-    const url = `url('https://images.pexels.com/photos/16120242/pexels-photo-16120242.jpeg')`;
+    const url = `url('https://www.woodlandtrust.org.uk/media/50384/childrens_birthday_party_-istockphoto_rawpixel.jpg')`;
+    // const url = `url('https://images.pexels.com/photos/16120242/pexels-photo-16120242.jpeg')`;
     // const url = `url('https://images.pexels.com/photos/16120265/pexels-photo-16120265.jpeg')`;
     // const url = `url('https://cdn0.weddingwire.com/article/3408/original/1280/jpg/18043-chart-house.jpeg')`;
 
@@ -31,10 +32,10 @@ export default function Hero() {
             <div
                 className="relative z-10 flex flex-col items-center justify-center text-center py-12">
                 <h1 className={`${isHy ? "text-xl" : "text-3xl"} sm:text-5xl md:text-6xl font-extrabold text-white max-w-2xl sm:max-w-3xl uppercase`}>
-                    {t("title")}
+                    {t("kidsTitle")}
                 </h1>
                 <p className={`${isHy ? "text-xs" : "sm:text-lg"} text-white mt-4 max-w-sm sm:max-w-lg font-bold`}>
-                    {t("subTitle")}
+                    {t("subTitle_1")}
                 </p>
             </div>
 

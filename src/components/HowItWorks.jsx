@@ -16,11 +16,11 @@ const HowItWorks = React.memo(() => {
             title: t("howSteps.discoverTitle"),
             description: t("howSteps.discoverDescription"),
         },
-        {
-            icon: <MdOutlineRestaurantMenu  />,
-            title: t("howSteps.selectTitle"),
-            description: t("howSteps.selectDescription"),
-        },
+        // {
+        //     icon: <MdOutlineRestaurantMenu  />,
+        //     title: t("howSteps.selectTitle"),
+        //     description: t("howSteps.selectDescription"),
+        // },
         {
             icon: <FaMapMarkedAlt  />,
             title: t("howSteps.exploreTitle"),
@@ -46,7 +46,7 @@ const HowItWorks = React.memo(() => {
                 >
                     {t("howItWorks")}
                 </h1>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-10">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-10 sm:flex sm:justify-center">
                     {steps.map(({ icon, title, description }, idx) => (
                         <div
                             key={idx}

@@ -12,7 +12,8 @@ export default function Stats() {
             <div
                 className="sm:bg-fixed bg-cover bg-center py-20sm:py-16 sm:py-16"
                 style={{
-                    backgroundImage: "url('https://images.pexels.com/photos/14280792/pexels-photo-14280792.jpeg')",
+                    // backgroundImage: "url('https://images.pexels.com/photos/14280792/pexels-photo-14280792.jpeg')",
+                    backgroundImage: "url('https://images.pexels.com/photos/587739/pexels-photo-587739.jpeg')",
                 }}
             >
                 <div className="bg-white/80 backdrop-blur-md rounded-xl mx-auto max-w-7xl px-6 py-16 lg:px-8">

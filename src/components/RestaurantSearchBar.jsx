@@ -85,7 +85,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
     return (
         <div className="space-y-2 px-3 sm:px-6 md:px-10 pb-10">
             <div className="bg-orange-300 rounded-md p-2">
-                <div className="grid grid-cols-2 sm:grid-cols-8 gap-x-4 gap-y-3">
+                <div className="grid grid-cols-2 sm:grid-cols-6 gap-x-4 gap-y-3">
 
                     {/* Name input */}
                     <div className="col-span-2 sm:col-span-2 sm:col-start-1">
@@ -104,7 +104,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     </div>
 
                     {/* Date */}
-                    <div className="col-span-1 sm:col-span-2">
+                    <div className="col-span-2 sm:col-span-2">
                         <DatePicker
                             popperPlacement="bottom-end"
                             selected={selectedDate}
@@ -135,30 +135,30 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     </div>
 
                     {/* Event Type */}
-                    <div className="col-span-1 sm:col-span-2">
-                        <div className="relative">
-                            <select
-                                className={`block w-full rounded-md bg-white/5 px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 border bg-white truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}
-                                value={eventFilter}
-                                onChange={(e) => setEventFilter(e.target.value)}
-                            >
-                                <option value="" className="text-gray-400 italic" disabled>
-                                    {t("eventType")}...
-                                </option>
-                                {eventTypes.map((type) => (
-                                    <option key={type} value={type} className="text-gray-700">
-                                        {t(type)}
-                                    </option>
-                                ))}
-                            </select>
-                            {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}
-                        </div>
-                    </div>
+                    {/*<div className="col-span-1 sm:col-span-2">*/}
+                    {/*    <div className="relative">*/}
+                    {/*        <select*/}
+                    {/*            className={`block w-full rounded-md bg-white/5 px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 border bg-white truncate appearance-none capitalize ${eventFilter ? "text-gray-800" : "text-gray-300"}`}*/}
+                    {/*            value={eventFilter}*/}
+                    {/*            onChange={(e) => setEventFilter(e.target.value)}*/}
+                    {/*        >*/}
+                    {/*            <option value="" className="text-gray-400 italic" disabled>*/}
+                    {/*                {t("eventType")}...*/}
+                    {/*            </option>*/}
+                    {/*            {eventTypes.map((type) => (*/}
+                    {/*                <option key={type} value={type} className="text-gray-700">*/}
+                    {/*                    {t(type)}*/}
+                    {/*                </option>*/}
+                    {/*            ))}*/}
+                    {/*        </select>*/}
+                    {/*        {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     {/* Search button */}
                     <div className="col-span-2 sm:col-span-2">
                         <button
-                            className="w-full py-2 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                            className="w-full py-1.5 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
                             onClick={handleSearch}
                         >
                             <span className="text-lg text-amber-500">

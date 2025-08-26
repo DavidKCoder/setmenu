@@ -57,7 +57,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                         {restaurant.name}
                         <p>{selectedVariant.title} Menu</p>
                     </h1>
-                    <div className="space-y-12">
+                    <div className="space-y-5">
                         {selectedVariant.menu.map((section, index) => (
                             <div
                                 key={index}
@@ -70,7 +70,7 @@ export default function Menu({ restaurant, selectedVariant }) {
                                     <h2 className={`text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-bold mb-px pb-2 text-black ${oswald_splash.className}`}>
                                         {section.category}
                                     </h2>
-                                    <ul className="space-y-2">
+                                    <ul className="space-y-1">
                                         {section.items.map((item, i) => (
                                             <div key={i}>
                                                 <div className="flex justify-between items-center">

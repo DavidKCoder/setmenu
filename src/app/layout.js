@@ -18,7 +18,7 @@ export const metadata = {
         "birthday dinner menus",
         "corporate event restaurants",
         "event venue menus",
-        "restaurant menu comparison"
+        "restaurant menu comparison",
     ],
     openGraph: {
         title: "SetMenu - Find the Perfect Menu for Any Event",
@@ -42,7 +42,6 @@ export const metadata = {
         images: ["https://setmenu.vercel.app/og-image.png"],
     },
 };
-
 
 export default function RootLayout({ children }) {
     return (

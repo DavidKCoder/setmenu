@@ -48,3 +48,18 @@ export const categories = [
         description: "Tasty treats and meals kids will love.",
     },
 ];
+
+export const childCategories = [
+    {
+        name: "Kids",
+        img: "/categories/kids-icon.png",
+        slug: "kids",
+        description: "Tasty treats and meals kids will love.",
+    },
+    {
+        name: "Weddings",
+        img: "/categories/wedding.png",
+        slug: "wedding",
+        description: "Elegant menus tailored for your special day.",
+    },
+];

@@ -27,7 +27,7 @@ export default function AllRestaurantsPage() {
                 >
                     <h1 className={`relative text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl py-8 sm:py-8 md:py-0 lg:py-0 xl:py-0 text-white text-center uppercase tracking-widest ${forum_splash.className}`}
                         style={{ fontWeight: 600 }}>
-                        All Restaurants
+                        {t("allRestaurants")}
                     </h1>
                     <div className="flex justify-center items-center sm:mt-20">
                         <Suspense fallback={<div>Loading search...</div>}>
@@ -44,7 +44,7 @@ export default function AllRestaurantsPage() {
                         className={`text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl uppercase ${forum_splash.className}`}
                         style={{ color: "#C8A96A" }}
                     >
-                        Reserve your favorite restaurant
+                        {t("reserveYourFavoriteRestaurant")}
                     </div>
 
                     <div

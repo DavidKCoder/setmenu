@@ -31,7 +31,8 @@ export default function OurStory() {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="relative w-full h-40">
                         <Image
-                            src="/story_1.jpg"
+                            // src="/story_1.jpg"
+                            src="https://images.pexels.com/photos/5610322/pexels-photo-5610322.jpeg"
                             alt="Story 1"
                             fill
                             className="object-cover rounded-xl shadow"
@@ -39,7 +40,7 @@ export default function OurStory() {
                     </div>
                     <div className="relative w-full h-40">
                         <Image
-                            src="/story_2.jpg"
+                            src="https://images.pexels.com/photos/19976278/pexels-photo-19976278.jpeg"
                             alt="Story 2"
                             fill
                             className="object-cover rounded-xl shadow"
@@ -47,7 +48,7 @@ export default function OurStory() {
                     </div>
                     <div className="relative w-full h-52 col-span-2">
                         <Image
-                            src="/story_3.jpg"
+                            src="https://images.pexels.com/photos/17637172/pexels-photo-17637172.jpeg"
                             alt="Story 3"
                             fill
                             className="object-cover rounded-xl shadow"
