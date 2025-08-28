@@ -36,7 +36,7 @@ export default function MenuVariantSelector({ params }) {
         <div className="relative min-h-screen overflow-hidden">
             <div
                 className="absolute top-0 left-0 w-full h-full -z-10 bg-fixed bg-cover bg-center"
-                style={{ backgroundImage: "url('https://images.pexels.com/photos/1741285/pexels-photo-1741285.jpeg')" }}
+                style={{ backgroundImage: "url('https://images.pexels.com/photos/4690384/pexels-photo-4690384.jpeg')" }}
             />
             <div
                 className="w-full items-center bg-white border rounded-xl gap-6 max-w-5xl mx-auto px-6 my-2 relative py-8 bg-opacity-80 text-black">

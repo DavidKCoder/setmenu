@@ -217,7 +217,8 @@ export default function AuthForm({ redirect }) {
 
             {/* Right Side */}
             <div className="hidden lg:block lg:w-1/2 bg-cover bg-center"
-                 style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}>
+                 // style={{ backgroundImage: `url('/auth/auth_screen.jpg')` }}>
+                 style={{ backgroundImage: `url('https://images.pexels.com/photos/2062883/pexels-photo-2062883.jpeg')` }}>
                 <div
                     className="h-full bg-black bg-opacity-50 flex items-center justify-center text-white px-12 text-center">
                     <div>
