@@ -16,7 +16,8 @@ export default function AllRestaurantsPage() {
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
     // const url = "https://images.pexels.com/photos/27626757/pexels-photo-27626757.png"
-    const url = "https://images.pexels.com/photos/10949663/pexels-photo-10949663.jpeg"
+    // const url = "https://images.pexels.com/photos/10949663/pexels-photo-10949663.jpeg"
+    const url = "https://images.pexels.com/photos/5610323/pexels-photo-5610323.jpeg"
 
     return (
         <>
@@ -26,7 +27,7 @@ export default function AllRestaurantsPage() {
             <section className="bg-white text-black">
                 <section
                     className="relative w-full bg-center bg-cover grid items-center h-auto py-2 sm:py-0 md:h-96 lg:h-96 xl:h-96"
-                    style={{ backgroundImage: `url(${url})` }} // замените на своё изображение
+                    style={{ backgroundImage: `url(${url})` }}
                 >
                     <h1 className={`relative text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl py-8 sm:py-8 md:py-0 lg:py-0 xl:py-0 text-white text-center uppercase tracking-widest ${forum_splash.className}`}
                         style={{ fontWeight: 600 }}>
