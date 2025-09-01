@@ -83,12 +83,12 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
     };
 
     return (
-        <div className="space-y-2 px-3 sm:px-6 md:px-10 pb-10">
+        <div className="space-y-2 px-5 sm:px-6 md:px-10 pb-10 w-screen sm:w-auto">
             <div className="bg-orange-300 rounded-md p-2">
-                <div className="grid grid-cols-2 sm:grid-cols-6 gap-x-4 gap-y-3">
+                <div className="grid grid-cols-4 sm:grid-cols-6 gap-x-4 gap-y-3">
 
                     {/* Name input */}
-                    <div className="col-span-2 sm:col-span-2 sm:col-start-1">
+                    <div className="col-span-4 sm:col-span-2 sm:col-start-1">
                         <div className="relative">
                             <input
                                 type="text"
@@ -134,6 +134,19 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                         />
                     </div>
 
+                    {/* Search button */}
+                    <div className="col-span-2 sm:col-span-2">
+                        <button
+                            className="w-full py-1.5 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                            onClick={handleSearch}
+                        >
+                            <span className="text-lg text-amber-500">
+                             <FiSearch />
+                            </span>
+                            {t("search")}
+                        </button>
+                    </div>
+
                     {/* Event Type */}
                     {/*<div className="col-span-1 sm:col-span-2">*/}
                     {/*    <div className="relative">*/}
@@ -154,19 +167,6 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     {/*        {eventFilter && <ClearButton clearInput={() => setEventFilter("")} />}*/}
                     {/*    </div>*/}
                     {/*</div>*/}
-
-                    {/* Search button */}
-                    <div className="col-span-2 sm:col-span-2">
-                        <button
-                            className="w-full py-1.5 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
-                            onClick={handleSearch}
-                        >
-                            <span className="text-lg text-amber-500">
-                             <FiSearch />
-                            </span>
-                            {t("search")}
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
