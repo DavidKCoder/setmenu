@@ -1,6 +1,7 @@
-import { FaChevronRight } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
 export default function UserInfoCard() {
+    const { t } = useTranslation();
     return (
         <div className="bg-white rounded-xl p-4 flex items-center justify-between mb-8 shadow">
             <div className="flex items-center gap-4">
@@ -11,7 +12,7 @@ export default function UserInfoCard() {
                 />
                 <div>
                     <h2 className="flex items-center gap-2 text-base font-bold text-gray-800">
-                        David Karapetyan
+                        {t("name_surname")}
                         <span
                             className="text-lg font-semibold text-blue-600 bg-transparent rounded-full dark:bg-gray-700 dark:text-blue-400">
                             <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +24,7 @@ export default function UserInfoCard() {
                             </svg>
                         </span>
                     </h2>
-                    <p className="text-sm text-gray-500">Customer</p>
+                    <p className="text-sm text-gray-500">{t("customer")}</p>
                 </div>
             </div>
             {/*<FaChevronRight className="text-gray-400" />*/}

@@ -1,26 +1,28 @@
 import React from "react";
 import { Dialog } from "@headlessui/react";
 import { forum_splash } from "@/app/fonts";
+import { useTranslation } from "next-i18next";
 
 export default function EventDetails({ selectedEvent, setSelectedEvent }) {
+    const { t } = useTranslation();
     return (
         <Dialog
             open={!!selectedEvent}
             onClose={() => setSelectedEvent(null)}
-            className="relative z-50"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
         >
             <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
 
             <div className="fixed inset-0 flex items-center justify-center">
                 <Dialog.Panel
-                    className="w-11/12 sm:w-full max-w-md rounded-lg bg-white px-4 py-4 shadow-lg space-y-1.5">
+                    className="w-11/12 sm:w-full max-w-md rounded-lg bg-white px-4 py-4 shadow-lg space-y-1.5 border-2 border-custom-beige">
                     <Dialog.Title className="text-lg font-bold text-gray-800">
-                        Event Details
+                        {t("event_details")}
                     </Dialog.Title>
 
                     {selectedEvent && (
                         <>
-                            <div className="w-full h-48 relative rounded border-2 overflow-hidden mb-4">
+                            <div className="rounded border border-custom-beige h-48 overflow-hidden">
                                 <div
                                     className="ova-section relative h-56 text-center flex flex-col items-center justify-center">
                                     <div className={`text-3xl text-secondary uppercase ${forum_splash.className}`}>
@@ -35,7 +37,7 @@ export default function EventDetails({ selectedEvent, setSelectedEvent }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded border-2 p-3 space-y-1">
+                            <div className="rounded border border-custom-beige p-3 space-y-1">
                                 <p>
                                     <span className="font-semibold text-gray-700">Event Type:</span>{" "}
                                     {selectedEvent.name}
@@ -81,7 +83,6 @@ export default function EventDetails({ selectedEvent, setSelectedEvent }) {
                                     {selectedEvent.totalAmount} amd
                                 </p>
                             </div>
-
                             <div className="flex justify-end mt-4">
                                 <button
                                     onClick={() => setSelectedEvent(null)}

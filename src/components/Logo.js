@@ -25,8 +25,9 @@ export default function Logo({ size = 20, textColor = "text-gray-300" }) {
             </Link>
             <Link href="/profile" passHref>
                 {/*<PiUserCircleGearFill size={30} />*/}
-                <img className="w-6 sm:w-8 rounded-full border-custom-beige border-2"
-                     src={`https://ui-avatars.com/api/?color=fbfefb&background=e9c0a4&name=${userName}`}
+                <img className="w-8 sm:w-8 "
+                     // src={`https://ui-avatars.com/api/?color=fbfefb&background=e9c0a4&name=${userName}`}
+                     src={`https://cdn-icons-png.flaticon.com/256/4716/4716881.png`}
                      alt="Rounded avatar" />
             </Link>
         </div>

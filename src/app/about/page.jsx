@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <div className="min-h-screen flex flex-col">
             {/* Hero section */}
-            <div className="relative h-80 md:h-96 flex items-center justify-center text-center z-10">
+            <div className="relative h-72 sm:h-80 md:h-96 flex items-center justify-center text-center z-10">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
@@ -31,7 +31,7 @@ export default function AboutPage() {
 
             {/* Content section */}
             <div
-                className="max-w-6xl w-full mx-auto bg-white -mt-12 md:-mt-16 rounded-lg shadow-lg overflow-hidden z-50">
+                className="w-11/12 sm:max-w-6xl sm:w-full mx-auto bg-white -mt-12 sm:-mt-16 rounded-lg shadow-lg overflow-hidden z-50">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
                     <div>
                         <h2 className={`text-2xl md:text-3xl font-bold text-gray-800 mb-4 ${forum_splash.className}`}>

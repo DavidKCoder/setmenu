@@ -10,7 +10,8 @@ export default function SettingsList() {
             <div className="bg-white rounded-xl divide-y divide-gray-200 shadow">
                 <ProfileSection />
                 <PasswordSection />
-                <SettingsRow icon={<FaBell />} label="Notifications" toggle disabled />
+                <LanguageSection />
+                <SettingsRow icon={<FaBell />} label="notifications" toggle disabled />
                 <SettingsRow
                     icon={<FaMoon />}
                     label="Dark mode"
@@ -23,19 +24,19 @@ export default function SettingsList() {
             <div className="bg-white rounded-xl divide-y divide-gray-200 shadow">
                 <SettingsRow
                     icon={<FaInfoCircle />}
-                    label="About Us"
+                    label="aboutUs"
                     href="/about"
                 />
 
                 <SettingsRow
                     icon={<FaQuestionCircle />}
-                    label="Help"
+                    label="help"
                     href="/contact"
                 />
 
                 <SettingsRow
                     icon={<FaTrash className="text-red-500" />}
-                    label="Deactivate my account"
+                    label="deactivate_account"
                     textColor="text-red-500"
                 />
             </div>
@@ -44,16 +45,20 @@ export default function SettingsList() {
 }
 
 import Link from "next/link";
+import LanguageSection from "@/app/profile/components/Language";
+import { useTranslation } from "next-i18next";
 
 function SettingsRow({ icon, label, toggle, textColor, href, disabled }) {
+    const { t } = useTranslation();
+
     const content = (
         <div className="flex items-center justify-between px-4 py-4 hover:bg-gray-50 cursor-pointer">
             <div className="flex items-center gap-3">
                 <span className="text-gray-500 text-lg">
                     {icon}
                 </span>
-                <span className={`text-sm font-medium ${textColor || "text-gray-800"}`}>
-                    {label} <span className={`${toggle ? "italic text-xs text-main" : ""}`}>{toggle ? "Coming soon." : ""}</span>
+                <span className={`text-sm font-medium ${textColor || "text-gray-800"} capitalize`}>
+                    {t(`${label}`)} <span className={`${toggle ? "italic text-xs text-main" : ""}`}>{toggle ? "Coming soon." : ""}</span>
                 </span>
             </div>
             {toggle ? (

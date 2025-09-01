@@ -7,13 +7,10 @@ export default function WorkingHoursSection({ workingHours }) {
     const [today, setToday] = useState(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            setIsOpen(window.innerWidth >= 500);
-        }
+        setIsOpen(window?.innerWidth >= 500);
         const localDay = new Date().getDay();
         setToday(dayMap[localDay]);
     }, []);
-
 
     return (
         <div className="text-gray-800">

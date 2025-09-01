@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { FaChevronRight, FaLock } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
 export default function PasswordSection() {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -14,7 +16,7 @@ export default function PasswordSection() {
             >
                 <div className="flex items-center gap-2">
                     <FaLock className="text-gray-500" />
-                    <span className="text-gray-700 font-medium">Password</span>
+                    <span className="text-gray-700 font-medium capitalize">{t("password")}</span>
                 </div>
                 <FaChevronRight
                     className={`text-gray-500 transform transition-transform duration-300 ${

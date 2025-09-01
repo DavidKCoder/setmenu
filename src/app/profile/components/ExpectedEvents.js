@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { GoDotFill } from "react-icons/go";
 import MyDatePicker from "@/app/profile/components/MyDatePicker";
 import EventDetails from "@/app/profile/components/EventDetails";
+import { useTranslation } from "next-i18next";
 
 const enumStatus = {
     1: "pending",
@@ -15,22 +16,23 @@ const enumStatus = {
 const statusStyles = {
     1: "text-amber-500 ring-yellow-600",
     2: "text-green-500 ring-green-500",
-    3: "text-blue-500 ring-blue-500",
+    3: "text-gray-400 ring-gray-400",
 };
 
 const borderColor = {
     1: "border-amber-500",
     2: "border-green-500",
-    3: "border-blue-500",
+    3: "border-gray-500",
 };
 
-const weekDay = new Date().setDate(new Date().getDate() - 14);
-const acceptedDate = format(weekDay, "yyyy-MM-dd");
-
-const inAnticipation = new Date().setDate(new Date().getDate() + 2);
-const pendingDate = format(inAnticipation, "yyyy-MM-dd");
-
 export default function ExpectedEvents() {
+    const { t } = useTranslation();
+    const weekDay = new Date().setDate(new Date().getDate() - 14);
+    const acceptedDate = format(weekDay, "yyyy-MM-dd");
+
+    const inAnticipation = new Date().setDate(new Date().getDate() + 2);
+    const pendingDate = format(inAnticipation, "yyyy-MM-dd");
+
     const [selectedEvent, setSelectedEvent] = useState(null);
 
     const upcomingEvents = [
@@ -120,7 +122,7 @@ export default function ExpectedEvents() {
                                     onClick={() => setSelectedEvent(event)}
                                     className="text-amber-500 hover:underline text-sm"
                                 >
-                                    View
+                                    {t("view")}
                                 </button>
                             </li>
                         ))}
