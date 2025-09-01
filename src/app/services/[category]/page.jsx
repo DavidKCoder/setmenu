@@ -99,7 +99,7 @@ export default function ServicesPage({ params }) {
                     </div>
                 </div>
 
-                <div className="max-w-6xl mt-10 mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
+                <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
                     {filteredProviders.length > 0 ? (
                         filteredProviders.map((provider) => (
                             <Link href={`/services/${category}/${provider.slug}`} key={provider.slug}>

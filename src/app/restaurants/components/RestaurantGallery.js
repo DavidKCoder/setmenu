@@ -25,7 +25,7 @@ export default function RestaurantGallery({ mainImage, images }) {
     );
 
     return (
-        <div className="w-full mb-12">
+        <div className="w-full mb-5">
             {/* Mobile Carousel */}
             <div className="block sm:hidden">
                 <div ref={sliderRef} className="keen-slider">

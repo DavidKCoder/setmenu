@@ -68,7 +68,7 @@ export default function AllRestaurantsPage() {
                     </div>
                 </div>
 
-                <div className="max-w-6xl mt-10 mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
+                <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10 px-3">
                     {filteredRestaurants.length > 0 ? (
                         filteredRestaurants.map((restaurant) => (
                             <Link href={`/restaurants/${restaurant.slug}`} key={restaurant.slug}>

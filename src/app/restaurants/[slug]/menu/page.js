@@ -17,11 +17,14 @@ export default function MenuPage({ params }) {
 
     const selectedVariant = restaurant.menuVariants.find(r => r.id === variantType);
 
+    // const url = "/menu_cover.jpg"
+    const url = "https://static.vecteezy.com/system/resources/previews/020/249/179/non_2x/food-coloring-pages-for-kids-free-vector.jpg"
+
     return (
         <div className="relative min-h-screen overflow-hidden py-6 px-4">
             <div
                 className="absolute top-0 left-0 w-full h-full -z-10 bg-fixed bg-cover bg-center"
-                style={{ backgroundImage: "url('/menu_cover.jpg')" }}
+                style={{ backgroundImage: `url(${url})` }}
             />
             <Menu
                 restaurant={restaurant}
