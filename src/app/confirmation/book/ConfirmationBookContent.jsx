@@ -85,7 +85,7 @@ export default function ConfirmationBookContent() {
              style={{ backgroundImage: "url('/confirmation/book_information.jpg')" }}
         >
             <div
-                className="bg-gray-50 w-11/12 sm:max-w-2xl rounded shadow-lg p-1 sm:p-1 gap-8 text-black"
+                className="bg-gray-50 w-11/12 sm:max-w-2xl rounded shadow-lg p-0.5 gap-8 text-black"
             >
                 {/* Booking Form */}
                 <div className="bg-gray-800 rounded p-6">

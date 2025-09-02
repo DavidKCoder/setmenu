@@ -33,7 +33,7 @@ export default function RestaurantBookInfoPage({
             <div
                 className="relative bg-white rounded-3xl w-full max-w-sm md:max-w-4xl shadow-xl overflow-hidden md:flex md:gap-8">
                 <div className="relative h-max sm:h-max md:w-1/2 flex-shrink-0">
-                    <div className="w-full h-full object-cover relative border-2 overflow-hidden mb-4">
+                    <div className="w-full h-full object-cover relative border-2 rounded-l-3xl overflow-hidden mb-4">
                         <div
                             className="relative h-24 sm:h-full text-center flex items-center justify-center">
                             <div className={`text-3xl sm:text-5xl text-secondary uppercase ${forum_splash.className}`}>
