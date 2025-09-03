@@ -88,7 +88,7 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                 <div className="grid grid-cols-4 sm:grid-cols-6 gap-x-4 gap-y-3">
 
                     {/* Name input */}
-                    <div className="col-span-4 sm:col-span-2 sm:col-start-1">
+                    <div className="col-span-4 sm:col-span-3 sm:col-start-1">
                         <div className="relative">
                             <input
                                 type="text"
@@ -135,9 +135,9 @@ export default function RestaurantSearchBar({ restaurants, onResults }) {
                     </div>
 
                     {/* Search button */}
-                    <div className="col-span-2 sm:col-span-2">
+                    <div className="col-span-2 sm:col-span-1">
                         <button
-                            className="w-full py-1.5 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
+                            className="w-full py-1.5 sm:px-3 bg-white rounded hover:bg-gray-200 flex justify-center items-center gap-2 capitalize"
                             onClick={handleSearch}
                         >
                             <span className="text-lg text-amber-500">

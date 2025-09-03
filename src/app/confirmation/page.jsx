@@ -12,7 +12,7 @@ function ConfirmationContent() {
     const params = useSearchParams();
 
     const restaurantName = params.get("restaurant_name");
-    const eventType = params.get("eventType");
+    // const eventType = params.get("eventType");
     const menuVariant = params.get("menu_variant");
     const people = params.get("people");
     const date = params.get("date");
@@ -26,7 +26,7 @@ function ConfirmationContent() {
             menuVariant={menuVariant}
             people={people}
             location={location}
-            eventType={eventType}
+            // eventType={eventType}
             pricePerPerson={pricePerPerson}
         />
     );

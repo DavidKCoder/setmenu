@@ -13,7 +13,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
     const { t } = useTranslation();
     const router = useRouter();
 
-    const [eventType, setEventType] = useState("");
+    // const [eventType, setEventType] = useState("");
     const [peopleCount, setPeopleCount] = useState("2");
     const [eventDate, setEventDate] = useState(null);
     const [errors, setErrors] = useState({});
@@ -22,7 +22,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
     const handleSubmit = async () => {
         setIsLoading(true);
         const newErrors = {};
-        if (!eventType) newErrors.eventType = "Please select an event type.";
+        // if (!eventType) newErrors.eventType = "Please select an event type.";
         if (!peopleCount || Number(peopleCount) < 1) newErrors.peopleCount = "Enter a valid number of people.";
         if (!eventDate) newErrors.eventDate = "Please choose a date.";
 
@@ -31,7 +31,7 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
 
         const formattedDate = eventDate.toISOString().split("T")[0];
 
-        const confirmationUrl = `/confirmation/?restaurant_name=${encodeURIComponent(name)}&menu_variant=${selectedVariant.title}&eventType=${eventType}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
+        const confirmationUrl = `/confirmation/?restaurant_name=${encodeURIComponent(name)}&menu_variant=${selectedVariant.title}&people=${peopleCount}&date=${formattedDate}&location=${location}&price_per_person=${price}`;
 
         router.push(confirmationUrl);
 
@@ -59,32 +59,32 @@ export default function Modal({ name, showModal, setShowModal, categories, locat
                         {t("SetYourMenuDetails")}
                     </h2>
 
-                    <div className="mb-4 w-full">
-                        <label className={`block mb-2 text-sm sm:text-base`}>
-                            Set Event Type:
-                        </label>
-                        <div className="relative w-full">
-                            <select
-                                className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventType ? "text-gray-800" : "text-gray-300"}`}
-                                value={eventType}
-                                onChange={e => setEventType(e.target.value)}
-                            >
-                                <option value="" className="text-gray-400 italic" disabled>
-                                    {t("eventType")}...
-                                </option>
-                                {categories.map((option, index) => (
-                                    <option key={index} value={option} className="text-gray-800">{option}</option>
-                                ))}
-                            </select>
-                            <div
-                                className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-400">
-                                <MdArrowDropDown />
-                            </div>
-                        </div>
-                        {errors.eventType && (
-                            <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>
-                        )}
-                    </div>
+                    {/*<div className="mb-4 w-full">*/}
+                    {/*    <label className={`block mb-2 text-sm sm:text-base`}>*/}
+                    {/*        Set Event Type:*/}
+                    {/*    </label>*/}
+                    {/*    <div className="relative w-full">*/}
+                    {/*        <select*/}
+                    {/*            className={`border rounded bg-white px-2 py-2 w-full truncate appearance-none capitalize ${eventType ? "text-gray-800" : "text-gray-300"}`}*/}
+                    {/*            value={eventType}*/}
+                    {/*            onChange={e => setEventType(e.target.value)}*/}
+                    {/*        >*/}
+                    {/*            <option value="" className="text-gray-400 italic" disabled>*/}
+                    {/*                {t("eventType")}...*/}
+                    {/*            </option>*/}
+                    {/*            {categories.map((option, index) => (*/}
+                    {/*                <option key={index} value={option} className="text-gray-800">{option}</option>*/}
+                    {/*            ))}*/}
+                    {/*        </select>*/}
+                    {/*        <div*/}
+                    {/*            className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-400">*/}
+                    {/*            <MdArrowDropDown />*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*    {errors.eventType && (*/}
+                    {/*        <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>*/}
+                    {/*    )}*/}
+                    {/*</div>*/}
 
 
                     <div className="mb-6">

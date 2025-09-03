@@ -43,23 +43,27 @@ export default function ConfirmationBookContent() {
                 year: "numeric",
             });
 
+            const encodedLocation = encodeURIComponent(location);
+
             const templateParams = {
+                customer_name: data.name,
                 from_name: "SetMenu App",
                 to_email: data.email,
-                from_email: reservationData.restaurantName || "noreply@setmenu.app",
+                from_email: restaurantName || "noreply@setmenu.app",
                 subject: "New Reservation Details",
-                restaurant_name: reservationData.restaurantName || "",
-                event_type: reservationData.eventType || "",
-                menu_variant: reservationData.menuVariant || "",
-                people: reservationData.people || "",
+                restaurant_name: restaurantName || "",
+                event_type: eventType || "",
+                menu_variant: menuVariant || "",
+                people: people || "",
                 date: reservationData.date
-                    ? formattedDate(reservationData.date)
+                    ? formattedDate(date)
                     : "",
-                location: reservationData.location || "",
-                price_per_person: reservationData.pricePerPerson
-                    ? `${Number(reservationData.pricePerPerson).toLocaleString("de-DE")} AMD`
+                location: location || "",
+                location_url_encoded: encodedLocation || "",
+                price_per_person: pricePerPerson
+                    ? `${Number(pricePerPerson).toLocaleString("de-DE")} AMD`
                     : "",
-                total_price: `${(reservationData.pricePerPerson * reservationData.people).toLocaleString("de-DE")} AMD`,
+                total_price: `${(pricePerPerson * people).toLocaleString("de-DE")} AMD`,
                 note: data.note || "",
             };
 

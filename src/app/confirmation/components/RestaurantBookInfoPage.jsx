@@ -22,7 +22,7 @@ export default function RestaurantBookInfoPage({
 
     const handleBookEvent = () => {
         const confirmationUrl =
-            `/confirmation/book/?restaurant_name=${encodeURIComponent(restaurantName)}&menu_variant=${menuVariant}&eventType=${eventType}&people=${people}&date=${date}&location=${location}&price_per_person=${pricePerPerson}`;
+            `/confirmation/book/?restaurant_name=${encodeURIComponent(restaurantName)}&menu_variant=${menuVariant}&people=${people}&date=${date}&location=${location}&price_per_person=${pricePerPerson}`;
         router.push(confirmationUrl);
     };
 
@@ -104,10 +104,10 @@ export default function RestaurantBookInfoPage({
                                 <FaUsers className="text-custom-beige" />
                                 <span className="text-gray-400">Guests:</span> {people}
                             </li>
-                            <li className="flex items-center gap-2 text-gray-800 font-mono capitalize">
-                                <FaUtensils className="text-custom-beige" />
-                                <span className="text-gray-400">Event Type:</span> {eventType}
-                            </li>
+                            {/*<li className="flex items-center gap-2 text-gray-800 font-mono capitalize">*/}
+                            {/*    <FaUtensils className="text-custom-beige" />*/}
+                            {/*    <span className="text-gray-400">Event Type:</span> {eventType}*/}
+                            {/*</li>*/}
                             <li className="flex items-center gap-2 text-gray-800 font-mono">
                                 <LuNotebookText className="text-custom-beige" />
                                 <span className="text-gray-400">Menu:</span> {menuVariant}
