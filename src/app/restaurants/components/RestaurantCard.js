@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { HiOutlineClock } from "react-icons/hi";
 import { dayMap } from "@/constants/dayMap";
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
+import { PiForkKnifeDuotone } from "react-icons/pi";
 
 export default function RestaurantCard({ restaurant }) {
     const [today, setToday] = useState(null);
@@ -93,7 +94,11 @@ export default function RestaurantCard({ restaurant }) {
                         <span className="mx-1 font-bold">{restaurant.location}</span>
                     </div>
                     <span>
-                        <span className="list-item">{restaurant.cuisine}</span>
+                        <span
+                            className="flex items-center justify-between gap-x-1">
+                            <PiForkKnifeDuotone className="text-cyan-600"/>
+                            {restaurant.cuisine}
+                        </span>
                     </span>
                 </div>
                 <div className="flex justify-between items-center gap-2 text-gray-600 text-sm">

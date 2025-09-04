@@ -64,7 +64,7 @@ export default function ConfirmationBookContent() {
                     ? `${Number(pricePerPerson).toLocaleString("de-DE")} AMD`
                     : "",
                 total_price: `${(pricePerPerson * people).toLocaleString("de-DE")} AMD`,
-                note: data.note || "",
+                note: data.note || "...",
             };
 
             const result = await emailjs.send(

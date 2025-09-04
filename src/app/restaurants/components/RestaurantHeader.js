@@ -5,6 +5,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { forum_splash } from "@/app/fonts";
 import React, { use, useEffect, useRef, useState } from "react";
 import RestaurantRating from "@/app/restaurants/components/RestaurantRating";
+import { PiForkKnifeDuotone, PiCastleTurret  } from "react-icons/pi";
 
 export default function RestaurantHeader({ name, slug, rating, cuisine, location, price }) {
     const [copied, setCopied] = useState(false);
@@ -67,8 +68,8 @@ export default function RestaurantHeader({ name, slug, rating, cuisine, location
             <div className="flex flex-wrap items-center justify-between gap-6 mb-6 text-gray-700">
                 <div className="flex flex-wrap items-center gap-2">
                     <RestaurantRating rating={rating} />
-                    <span className="flex items-center gap-1"><FaUtensils className="text-cyan-600" /> {cuisine}</span>
-                    <span className="flex items-center gap-1"><FaMapMarkerAlt
+                    <span className="flex items-center gap-1"><PiForkKnifeDuotone className="text-cyan-600" /> {cuisine}</span>
+                    <span className="flex items-center gap-1"><PiCastleTurret
                         className="text-cyan-600" />
                         <a
                             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
